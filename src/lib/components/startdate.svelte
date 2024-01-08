@@ -1,9 +1,11 @@
 <script>
+    export let text
     export let data
+    console.log(data)
 </script>
 
 <section>
-    <h2>{data.title}</h2>
+    <h2>{data.name} {text.title}</h2>
     <!-- <p>{new Intl.DateTimeFormat().format(data.date)}</p> -->
 </section>
 
