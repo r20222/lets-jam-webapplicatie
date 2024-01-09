@@ -6,7 +6,6 @@
 	import ChartContinents from '../lib/components/chartContinents.svelte';
 	import ChartRiverOcean from '../lib/components/chartRiverOcean.svelte';
 	import SystemStatus from '../lib/components/system-status.svelte';
-	import { onMount } from 'svelte';
 	export let data;
 </script>
 
@@ -24,9 +23,19 @@
 		<!-- Title + Searchbar -->
 		<section class="header-dashboard">
 			<h1>{data.dataHygraph.dashboard.title}</h1>
+			<!-- R20222 heeft de search uitgecomment -->
+			<!-- <form class="search" action="/" method="GET">
+				<input type="text" name="search" placeholder="Search.." />
+				<input
+					type="submit"
+					name="search-button"
+					aria-label="search button"
+					class="search-button"
+				/>
+
+			</form> -->
 		</section>
 
-		<TrashRemoved data={data.dataApi.totals} text={data.dataHygraph} />
 		<TrashRemoved data={data.dataApi.totals} text={data.dataHygraph} />
 
 		<!-- Box 3: percentage since 2013 -->
@@ -54,15 +63,83 @@
 		<SystemStatus {data} />
 
 		<!-- More: table more information links -->
-		<section class="panel more" />
-	</div>
+		<section class="panel more">
+			<h2>More about</h2>
+			<table class="table-more">
+				<tr class="more-row">
+					<td class="more-icon">
+						<a href="/" class="more-link">
+							<!-- add icon -->
+							Our river technology
+						</a>
+					</td>
+					<td class="arrow">
+						<!-- add icon -->
+					</td>
+				</tr>
 
-	<div class="back-to-top-button">
-		<a on:click={toggleAnimation} href="/" id="scroll-top-button" aria-label="scroll to top"
-			>back to top</a
-		>
+				<tr class="more-row">
+					<td class="more-icon">
+						<a href="/" class="more-link">
+							<!-- add icon -->
+							The economic impact
+						</a>
+					</td>
+					<td class="arrow">
+						<!-- add icon -->
+					</td>
+				</tr>
+
+				<tr class="more-row">
+					<td class="more-icon">
+						<a href="/" class="more-link">
+							<!-- add icon -->
+							Plastic sources
+						</a>
+					</td>
+					<td class="arrow">
+						<!-- add icon -->
+					</td>
+				</tr>
+
+				<tr class="more-row">
+					<td class="more-icon">
+						<a href="/" class="more-link">
+							<!-- add icon -->
+							Donate
+						</a>
+					</td>
+					<td class="arrow">
+						<!-- add icon -->
+					</td>
+				</tr>
+
+				<span>
+					<tr class="more-row">
+						<td class="more-icon">
+							<a href="/" class="more-link">
+								<!-- add icon -->
+								Sign up to newsletter
+							</a>
+						</td>
+						<td class="arrow">
+							<!-- add icon -->
+						</td>
+					</tr>
+				</span>
+			</table>
+		</section>
 	</div>
 </section>
+<!-- End main section -->
+
+<!-- Scroll to top button -->
+<a href="#top" class="scroll-top" aria-label="scroll to top">
+	<!-- add icon -->TOP
+</a>
+
+<!-- Footer -->
+<footer />
 
 <style>
 	/* Proxima font */
@@ -94,19 +171,6 @@
 		--iconSize: 2rem;
 	}
 
-	.back-to-top-button a {
-		z-index: 999;
-		z-index: 999;
-		position: absolute;
-		bottom: 1%;
-		right: 3%;
-		padding: 2rem;
-		background-color: var(--lightBlue);
-		color: var(--whiteColor);
-		cursor: pointer;
-		border-radius: 0.5rem;
-	}
-
 	/* Als darkmode de standaard instelling is */
 	@media (prefers-color-scheme: dark) {
 		:root {
@@ -125,7 +189,7 @@
 	}
 
 	:global(html) {
-		font-size: 62.5%;
+		/* font-size: 62.5%; */
 		scroll-behavior: smooth;
 	}
 
@@ -140,6 +204,11 @@
 		font-weight: 500;
 		color: var(--darkBlue);
 		margin-bottom: 1rem;
+	}
+
+	h3 {
+		font-size: 1.3rem;
+		font-weight: 500;
 	}
 
 	a {
@@ -206,6 +275,10 @@
 		grid-area: box-4;
 	}
 
+	.share {
+		grid-area: share;
+	}
+
 	.more {
 		grid-area: more;
 	}
@@ -242,7 +315,79 @@
 		color: var(--darkBlue);
 	}
 
+	/* more styling */
+	.more-link {
+		display: flex;
+		justify-content: left;
+		align-items: center;
+		gap: 2rem;
+		color: var(--textColor);
+		font-size: 1.5rem;
+		text-transform: capitalize;
+	}
+
+	.more-link:hover {
+		color: var(--lightBlue);
+	}
+
+	.more-icon {
+		font-size: 1.8rem;
+		color: var(--lightBlue);
+	}
+
+	.table-more {
+		border-collapse: collapse;
+	}
+
+	.more-row {
+		border-bottom: 0.5px solid var(--accentGray);
+		height: 4rem;
+	}
+
+	.arrow {
+		text-align: right;
+	}
+
 	/* search bar */
+	.search {
+		display: flex;
+		gap: 0.5rem;
+	}
+	.search-button {
+		max-width: 8rem;
+	}
+	.search input {
+		width: 130px;
+		height: 25px;
+		border-radius: 5px;
+		outline: none;
+		padding-left: 0.5rem;
+		background: var(--whiteColor);
+		box-shadow: var(--boxShadow) 0px 0px 8px;
+		border: none;
+		color: var(--textColor);
+	}
+
+	.search input::placeholder {
+		color: var(--darkBlue);
+		font-size: 1.3rem;
+	}
+
+	/* Scroll to top */
+	.scroll-top {
+		position: absolute;
+		bottom: 1%;
+		right: 2%;
+		width: 3rem;
+		height: 3rem;
+		padding: 0.5rem;
+		background-color: var(--lightBlue);
+		color: var(--whiteColor);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+	}
 
 	@keyframes progress {
 		0% {
@@ -271,7 +416,7 @@
 
 	@media (min-width: 992px) {
 		.container2 {
-			margin: 5rem 2rem 2rem 22.3rem;
+			margin: 3rem 2rem 2rem 18rem;
 			grid-template-columns: repeat(6, 1fr);
 			/* grid-template-rows: 0.01fr 0.1fr 0.3fr 0.4fr 0.4fr 0.6fr; */
 			grid-template-areas:
@@ -311,6 +456,42 @@
 		.box-4,
 		h2 {
 			font-size: 1.5rem;
+		}
+
+		.more h2 {
+			font-size: 1.8rem;
+		}
+
+		.share h2 {
+			font-size: 1.8rem;
+		}
+
+		.line {
+			height: 2px;
+			width: 6%;
+			background-color: var(--lightBlue);
+		}
+
+		.search input {
+			width: 190px;
+		}
+
+		.scroll-top {
+			display: none;
+		}
+
+		.amount h4 {
+			color: var(--lightBlue);
+			font-weight: 500;
+			font-size: 1.8rem;
+		}
+
+		h3 {
+			font-size: 1.5rem;
+		}
+
+		tr {
+			height: 3.3rem;
 		}
 	}
 </style>
