@@ -39,7 +39,7 @@
         --trashRemovedBackground: #143653;
         } 
     }
-       .map {
+    .map {
 		grid-area: map;
 		border-radius: 0.5rem;
 		padding: 0.5rem;
@@ -71,23 +71,23 @@
      /* vanaf 992px */
      @media (min-width:62em) {
      section{
-         margin: 5rem 2rem 2rem 22.3rem;
-         grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
-         grid-template-rows: 0.01fr 0.1fr 0.3fr 0.4fr 0.4fr 0.6fr;
+         margin: 0rem 2rem 2rem 18rem;
+         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+         /* grid-template-rows: 0.01fr 0.1fr 0.3fr 0.4fr 0.4fr 0.6fr; */
          grid-template-areas:
-             "header header header header header"
-             "trash-removed-total-box trash-removed-last-month map map map"
-             "dashboard-info dashboard-info map map map"
-             "dashboard-info dashboard-info map map map"
-             "dashboard-info dashboard-info map map map"
-             "dashboard-info dashboard-info image image image"
-             "dashboard-info dashboard-info image image image"
-             "dashboard-info dashboard-info image image image"
+         "header header header header header"
+            "trash-removed-total-box trash-removed-last-month map map map"
+            "dashboard-info dashboard-info map map map"
+            "dashboard-info dashboard-info map map map"
+            "dashboard-info dashboard-info map map map"
+            "dashboard-info-startdate dashboard-info-startdate image image image"
+            "dashboard-info-startdate dashboard-info-startdate image image image"
+            "dashboard-info-startdate dashboard-info-startdate image image image";
      }
-     .map{
+     /* .map{
          grid-area: map;
          width:100%;
          height:100%;
-     }
+     } */
  }   
 </style>
