@@ -41,7 +41,7 @@
 		</section>
 
 		<!-- system statuses -->
-		<!-- <SystemStatus {data} /> -->
+		<SystemStatus {data} />
 
 		<!-- chart-river-ocean -->
 		<section class="panel chart-river-ocean">
@@ -271,9 +271,10 @@
 		}
 	}
 
-	@media (min-width: 992px) {
+	/* screens min-width: 992px */
+	@media (min-width: 62em) {
 		.grid-container {
-			margin: 3rem 2rem 2rem 18rem;
+			margin: 0rem 2rem 2rem 18rem;
 			grid-template-columns: repeat(6, 1fr);
 			/* grid-template-rows: 0.01fr 0.1fr 0.3fr 0.4fr 0.4fr 0.6fr; */
 			grid-template-areas:
@@ -283,12 +284,13 @@
 				'dashboard-info dashboard-info map map map map'
 				'system-status system-status system-status system-status system-status system-status'
 				'chart-river-ocean chart-river-ocean chart-river-ocean chart-continents chart-continents chart-continents'
-				'trash-graph trash-graph trash-graph more more more';
+				'trash-graph trash-graph trash-graph trash-graph trash-graph trash-graph';
 		}
 	}
 
-	/* Breakpoints large screen */
-	@media (min-width: 1200px) {
+	/* Breakpoints large screen 1200px */
+	/* Is deze echt nodig? r20222 */
+	@media (min-width: 75em) {
 		.panel {
 			padding: 2rem;
 		}
