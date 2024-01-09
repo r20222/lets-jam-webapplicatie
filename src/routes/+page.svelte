@@ -18,6 +18,7 @@
 
 <section class="main">
 	<div class="grid-container">
+
 		<!-- Blue line -->
 		<div class="menu">
 			<div class="blue-dashboard-line" />
@@ -28,33 +29,35 @@
 			<h1>{data.dataHygraph.dashboard.title}</h1>
 		</section>
 
+		<!-- TrashRemoved -->
 		<TrashRemoved data={data.dataApi.totals} text={data.dataHygraph} />
 
-		<!-- Box 3: percentage since 2013 -->
-		<section class="panel chart-river-ocean">
-			<ChartRiverOcean {data} />
+		<!-- infotext -->
+		<Infotext data={data.dataHygraph.dashboard.infotext} />
+
+		<!-- map -->
+		<section class="map">
+			<Map {data} />
 		</section>
 
-		<!-- Box 4: percentage in 2040 -->
+		<!-- system statuses -->
+		<!-- <SystemStatus {data} /> -->
+
+		<!-- chart-river-ocean -->
+		<section class="panel chart-river-ocean">
+			<!-- <ChartRiverOcean {data} /> -->
+		</section>
+
+		<!-- chart-continents -->
 		<section class="panel chart-continents">
 			<h2>Plastic removed per continent</h2>
 			<ChartContinents {data} />
 		</section>
 
-		<!-- Grafiek: share swith icons -->
+		<!-- Trashgraph over time (bottles) -->
 		<section class="panel trash-graph">
 			<Trashgraph {data} />
 		</section>
-
-		<section class="map">
-			<Map {data} />
-		</section>
-
-		<Infotext data={data.dataHygraph.dashboard.infotext} />
-
-		<!-- system-status -->
-		<SystemStatus {data} />
-
 	</div>
 </section>
 <!-- End main section -->
@@ -133,9 +136,9 @@
 		text-decoration: none;
 	}
 
-	/* Grid */
+	/* Grid mobiel */
 	.grid-container {
-		margin: 8rem 1.5rem 1.5rem 1.5rem;
+		margin: 5rem 1.5rem 1.5rem 1.5rem;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		/* grid-template-rows: 0.01fr 0.1fr 1fr 1fr 0.5fr 0.8fr 0.5fr 0.5fr 1fr ; */
@@ -251,13 +254,11 @@
 		}
 	}
 
-	@media (min-width: 700px) {
+	/* screens with min-width: 700px */
+	@media (min-width: 43.75em) {
 		.grid-container {
-			margin: 8rem 1.5rem 1.5rem 1.5rem;
-			display: grid;
 			grid-template-columns: repeat(4, 1fr);
 			/* grid-template-rows: 0.01fr 0.1fr .5fr 1fr 1fr 1fr 1fr; */
-			gap: 1.2rem;
 			grid-template-areas:
 				'menu menu menu menu'
 				'header-dashboard header-dashboard header-dashboard header-dashboard'
@@ -266,7 +267,7 @@
 				'dashboard-info dashboard-info map map'
 				'system-status system-status system-status system-status'
 				'chart-river-ocean chart-river-ocean chart-continents chart-continents'
-				'trash-graph trash-graph trash-graph more';
+				'trash-graph trash-graph trash-graph trash-graph';
 		}
 	}
 
