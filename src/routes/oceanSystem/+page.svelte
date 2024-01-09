@@ -12,7 +12,8 @@
 <svelte:head>
     <title>Ocean System Dashboard</title>
 </svelte:head>
-<Navigation />
+
+    <Navigation />
 <section>
     <h2>{data.dataApi.systems[0]. name}</h2>
     <TrashRemovedOcean data={data.dataApi.systems[0]} text={data.dataHygraph} />
@@ -94,25 +95,19 @@
     /* vanaf 992px */
     @media (min-width:62em) {
     section{
-        margin: 5rem 2rem 2rem 22.3rem;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        margin: 0rem 2rem 2rem 18rem;
+        grid-template-columns: repeat(5, 1fr);
         /* grid-template-rows: 0.01fr 0.1fr 0.3fr 0.4fr 0.4fr 0.6fr; */
         grid-template-areas:
             "header header header header header"
-            "box-1 box-2 map map map"
+            "trash-removed-total-box trash-removed-last-month map map map"
             "dashboard-info dashboard-info map map map"
             "dashboard-info dashboard-info map map map"
             "dashboard-info dashboard-info map map map"
             "dashboard-info-startdate dashboard-info-startdate image image image"
             "dashboard-info-lastportcall dashboard-info-lastportcall image image image"
-            "dashboard-info-lastportcall dashboard-info-lastportcall image image image"
+            "dashboard-info-lastportcall dashboard-info-lastportcall image image image";
     }
-    /* .map{
-        grid-area: map;
-        width:100%;
-        height:100%;
-    } */
-   
 }
     
 </style>
