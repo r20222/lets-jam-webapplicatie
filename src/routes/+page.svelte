@@ -1,4 +1,5 @@
 <script>
+	import Navigation from '../lib/components/navigation.svelte';
 	import Infotext from '../lib/components/infotext.svelte';
 	import TrashRemoved from '../lib/components/trash-removed.svelte';
 	import Map from '../lib/components/map.svelte';
@@ -12,6 +13,8 @@
 <svelte:head>
 	<title>Dashboard The Ocean Cleanup</title>
 </svelte:head>
+
+<Navigation />
 
 <section class="main">
 	<div class="container2">
@@ -29,7 +32,7 @@
 
 		<!-- Box 3: percentage since 2013 -->
 		<section class="panel box-3">
-			<ChartRiverOcean {data} />
+			<!-- <ChartRiverOcean {data} /> -->
 		</section>
 
 		<!-- Box 4: percentage in 2040 -->
@@ -49,7 +52,7 @@
 
 		<Infotext data={data.dataHygraph.dashboard.infotext} />
 
-		<SystemStatus {data} />
+		<!-- <SystemStatus {data} /> -->
 
 	</div>
 </section>
@@ -61,7 +64,6 @@
 </a>
 
 <!-- Footer -->
-<footer />
 
 <style>
 	/* Proxima font */
