@@ -20,20 +20,9 @@
 			<div class="line" />
 		</div>
 
-		<!-- Title + Searchbar -->
+		<!-- Title  -->
 		<section class="header-dashboard">
 			<h1>{data.dataHygraph.dashboard.title}</h1>
-			<!-- R20222 heeft de search uitgecomment -->
-			<!-- <form class="search" action="/" method="GET">
-				<input type="text" name="search" placeholder="Search.." />
-				<input
-					type="submit"
-					name="search-button"
-					aria-label="search button"
-					class="search-button"
-				/>
-
-			</form> -->
 		</section>
 
 		<TrashRemoved data={data.dataApi.totals} text={data.dataHygraph} />
