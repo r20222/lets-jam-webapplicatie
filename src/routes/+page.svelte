@@ -17,10 +17,10 @@
 <Navigation />
 
 <section class="main">
-	<div class="container2">
+	<div class="grid-container">
 		<!-- Blue line -->
 		<div class="menu">
-			<div class="line" />
+			<div class="blue-dashboard-line" />
 		</div>
 
 		<!-- Title  -->
@@ -31,18 +31,18 @@
 		<TrashRemoved data={data.dataApi.totals} text={data.dataHygraph} />
 
 		<!-- Box 3: percentage since 2013 -->
-		<section class="panel box-3">
-			<!-- <ChartRiverOcean {data} /> -->
+		<section class="panel chart-river-ocean">
+			<ChartRiverOcean {data} />
 		</section>
 
 		<!-- Box 4: percentage in 2040 -->
-		<section class="panel box-4">
+		<section class="panel chart-continents">
 			<h2>Plastic removed per continent</h2>
 			<ChartContinents {data} />
 		</section>
 
 		<!-- Grafiek: share swith icons -->
-		<section class="panel grafiek">
+		<section class="panel trash-graph">
 			<Trashgraph {data} />
 		</section>
 
@@ -52,7 +52,8 @@
 
 		<Infotext data={data.dataHygraph.dashboard.infotext} />
 
-		<!-- <SystemStatus {data} /> -->
+		<!-- system-status -->
+		<SystemStatus {data} />
 
 	</div>
 </section>
@@ -63,7 +64,6 @@
 	<!-- add icon -->TOP
 </a>
 
-<!-- Footer -->
 
 <style>
 	/* Proxima font */
@@ -113,7 +113,6 @@
 	}
 
 	:global(html) {
-		/* font-size: 62.5%; */
 		scroll-behavior: smooth;
 	}
 
@@ -130,17 +129,12 @@
 		margin-bottom: 1rem;
 	}
 
-	h3 {
-		font-size: 1.3rem;
-		font-weight: 500;
-	}
-
 	a {
 		text-decoration: none;
 	}
 
 	/* Grid */
-	.container2 {
+	.grid-container {
 		margin: 8rem 1.5rem 1.5rem 1.5rem;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
@@ -149,14 +143,13 @@
 		grid-template-areas:
 			'menu menu'
 			'header-dashboard header-dashboard'
-			'box-1 box-2'
+			'trash-removed-total-box trash-removed-last-month'
 			'dashboard-info dashboard-info'
 			'map map'
-			'share share'
-			'box-3 box-3'
-			'box-4 box-4'
-			'grafiek grafiek'
-			'more more';
+			'system-status system-status'
+			'chart-river-ocean chart-river-ocean'
+			'chart-continents chart-continents'
+			'trash-graph trash-graph';
 	}
 
 	.panel {
@@ -178,8 +171,8 @@
 		grid-area: menu;
 	}
 
-	.grafiek {
-		grid-area: grafiek;
+	.trash-graph {
+		grid-area: trash-graph;
 	}
 
 	.map {
@@ -191,24 +184,21 @@
 		transition: 0.2s;
 	}
 
-	.box-3 {
-		grid-area: box-3;
+	.chart-river-ocean {
+		grid-area: chart-river-ocean;
 	}
 
-	.box-4 {
-		grid-area: box-4;
+	.chart-continents {
+		grid-area: chart-continents;
 	}
 
-	.share {
+	/* is nu system-status, staat in component gedefinieerd */
+	/* .share {
 		grid-area: share;
-	}
-
-	.more {
-		grid-area: more;
-	}
+	} */
 
 	/* line */
-	.line {
+	.blue-dashboard-line {
 		height: 2px;
 		width: 18%;
 		background-color: var(--lightBlue);
@@ -226,75 +216,17 @@
 	}
 
 	/* boxes styling */
-	.box-3,
-	.box-4 {
+	.chart-river-ocean,
+	.chart-continents {
 		font-size: 1.6rem;
 		color: var(--lightBlue);
 	}
 
-	.box-3,
-	.box-4,
+	.chart-river-ocean,
+	.chart-continents,
 	h2 {
 		font-size: 1.6rem;
 		color: var(--darkBlue);
-	}
-
-	/* more styling */
-	.more-link {
-		display: flex;
-		justify-content: left;
-		align-items: center;
-		gap: 2rem;
-		color: var(--textColor);
-		font-size: 1.5rem;
-		text-transform: capitalize;
-	}
-
-	.more-link:hover {
-		color: var(--lightBlue);
-	}
-
-	.more-icon {
-		font-size: 1.8rem;
-		color: var(--lightBlue);
-	}
-
-	.table-more {
-		border-collapse: collapse;
-	}
-
-	.more-row {
-		border-bottom: 0.5px solid var(--accentGray);
-		height: 4rem;
-	}
-
-	.arrow {
-		text-align: right;
-	}
-
-	/* search bar */
-	.search {
-		display: flex;
-		gap: 0.5rem;
-	}
-	.search-button {
-		max-width: 8rem;
-	}
-	.search input {
-		width: 130px;
-		height: 25px;
-		border-radius: 5px;
-		outline: none;
-		padding-left: 0.5rem;
-		background: var(--whiteColor);
-		box-shadow: var(--boxShadow) 0px 0px 8px;
-		border: none;
-		color: var(--textColor);
-	}
-
-	.search input::placeholder {
-		color: var(--darkBlue);
-		font-size: 1.3rem;
 	}
 
 	/* Scroll to top */
@@ -320,7 +252,7 @@
 	}
 
 	@media (min-width: 700px) {
-		.container2 {
+		.grid-container {
 			margin: 8rem 1.5rem 1.5rem 1.5rem;
 			display: grid;
 			grid-template-columns: repeat(4, 1fr);
@@ -329,37 +261,33 @@
 			grid-template-areas:
 				'menu menu menu menu'
 				'header-dashboard header-dashboard header-dashboard header-dashboard'
-				'box-1 box-1 box-2 box-2'
+				'trash-removed-total-box trash-removed-total-box trash-removed-last-month trash-removed-last-month'
 				'dashboard-info dashboard-info map map'
 				'dashboard-info dashboard-info map map'
-				'share share share share'
-				'box-3 box-3 box-4 box-4'
-				'grafiek grafiek grafiek more';
+				'system-status system-status system-status system-status'
+				'chart-river-ocean chart-river-ocean chart-continents chart-continents'
+				'trash-graph trash-graph trash-graph more';
 		}
 	}
 
 	@media (min-width: 992px) {
-		.container2 {
+		.grid-container {
 			margin: 3rem 2rem 2rem 18rem;
 			grid-template-columns: repeat(6, 1fr);
 			/* grid-template-rows: 0.01fr 0.1fr 0.3fr 0.4fr 0.4fr 0.6fr; */
 			grid-template-areas:
 				'menu menu menu menu menu menu'
 				'header-dashboard header-dashboard header-dashboard header-dashboard header-dashboard header-dashboard'
-				'box-1 box-1 box-1 box-2 box-2 box-2'
+				'trash-removed-total-box trash-removed-total-box trash-removed-total-box trash-removed-last-month trash-removed-last-month trash-removed-last-month'
 				'dashboard-info dashboard-info map map map map'
-				'share share share share share share'
-				'box-3 box-3 box-3 box-4 box-4 box-4'
-				'grafiek grafiek grafiek more more more';
+				'system-status system-status system-status system-status system-status system-status'
+				'chart-river-ocean chart-river-ocean chart-river-ocean chart-continents chart-continents chart-continents'
+				'trash-graph trash-graph trash-graph more more more';
 		}
 	}
 
 	/* Breakpoints large screen */
 	@media (min-width: 1200px) {
-		.more {
-			grid-area: more;
-		}
-
 		.panel {
 			padding: 2rem;
 		}
@@ -368,54 +296,28 @@
 			padding: 1.5rem;
 		}
 
-		.box-4 {
+		.chart-continents {
 			font-size: 3rem;
 		}
 
-		.box-3 {
+		.chart-river-ocean {
 			font-size: 2.5rem;
 		}
 
-		.box-3,
-		.box-4,
+		.chart-river-ocean,
+		.chart-continents,
 		h2 {
 			font-size: 1.5rem;
 		}
 
-		.more h2 {
-			font-size: 1.8rem;
-		}
-
-		.share h2 {
-			font-size: 1.8rem;
-		}
-
-		.line {
+		.blue-dashboard-line {
 			height: 2px;
 			width: 6%;
 			background-color: var(--lightBlue);
 		}
 
-		.search input {
-			width: 190px;
-		}
-
 		.scroll-top {
 			display: none;
-		}
-
-		.amount h4 {
-			color: var(--lightBlue);
-			font-weight: 500;
-			font-size: 1.8rem;
-		}
-
-		h3 {
-			font-size: 1.5rem;
-		}
-
-		tr {
-			height: 3.3rem;
 		}
 	}
 </style>

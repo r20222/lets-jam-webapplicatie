@@ -3,8 +3,6 @@
 	<slot />
 </main>
 
-<!-- <footer /> -->
-
 <style>
     /* Proxima font */
     @font-face {
