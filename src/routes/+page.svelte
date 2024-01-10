@@ -11,10 +11,10 @@
 </script>
 
 <svelte:head>
-	<title>Dashboard The Ocean Cleanup</title>
+	<title>{data.dataHygraph.dashboard.titlePage}</title>
 </svelte:head>
 
-<Navigation />
+<Navigation data={data.dataHygraph.dashboard.nav} />
 
 <section class="main">
 	<div class="grid-container">

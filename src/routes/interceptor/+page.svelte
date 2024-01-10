@@ -9,7 +9,12 @@
 
 </script>
 
-<Navigation />
+<svelte:head>
+    <title>{data.currentInterceptorHygraph[0].titlePage}</title>
+</svelte:head>
+
+<Navigation data={data.dataHygraph.dashboard.nav} />
+
 <section>
     <h2>{data.currentInterceptor[0].name}</h2>
     <Infotext data={data.currentInterceptorHygraph[0].riverInfoText} />

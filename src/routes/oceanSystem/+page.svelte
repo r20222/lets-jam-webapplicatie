@@ -10,10 +10,10 @@
 </script>
 
 <svelte:head>
-    <title>Ocean System Dashboard</title>
+    <title>{data.dataHygraph.dashboard.ocean.titlePage}</title>
 </svelte:head>
 
-    <Navigation />
+<Navigation data={data.dataHygraph.dashboard.nav} />
 <section>
     <h2>{data.dataApi.systems[0]. name}</h2>
     <TrashRemovedOcean data={data.dataApi.systems[0]} text={data.dataHygraph} />

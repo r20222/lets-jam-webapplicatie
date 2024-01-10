@@ -14,6 +14,9 @@ export async function load({ url, params }) {
         }
         id
       }
+      nav {
+        navLinkjes
+      }
       trashRemoved {
         total
         month
@@ -22,6 +25,7 @@ export async function load({ url, params }) {
       river {
         id
         slug
+        titlePage
         riverImage {
           image {
             url

@@ -23,7 +23,11 @@ export async function load() {
         chartRiverOcean {
           titel
         }
+        nav {
+          navLinkjes
+        }
         title
+        titlePage
         river {
           slug
         }

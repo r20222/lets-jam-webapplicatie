@@ -1,8 +1,11 @@
 <script>
+    export let data
+
     let visible = true
      function ToggleMenu() {
          visible = !visible
      }
+     console.log(data)
  </script>
 
  {#if visible}
@@ -12,43 +15,43 @@
          <ul>
              <li>
                  <a href="https://theoceancleanup.com/" class="nav-link" aria-label="back to the homepage">
-                     <span>Home</span>
+                     <span>{data.navLinkjes[0]}</span>
                  </a>
              </li>
  
              <li>
                  <a href="/" class="nav-link active" aria-label="dashboard">
-                     <span>Dashboard</span>
+                     <span>{data.navLinkjes[1]}</span>
                  </a>
              </li>
  
              <li>
                  <a href="/" class="nav-link" aria-label="our river technology">
-                     <span>Our Technology</span>
+                     <span>{data.navLinkjes[2]}</span>
                  </a>
              </li>
  
              <li>
                  <a href="/" class="nav-link" aria-label="the economic impact">
-                     <span>Economic Impact</span>
+                     <span>{data.navLinkjes[3]}</span>
                  </a>
              </li>
  
              <li>
                  <a href="/" class="nav-link" aria-label="plastic sources ">
-                     <span>Plastic Sources</span>
+                     <span>{data.navLinkjes[4]}</span>
                  </a>
              </li>
  
              <li>
                  <a href="/" class="nav-link" aria-label="donate">
-                     <span>Donate</span>
+                     <span>{data.navLinkjes[5]}</span>
                  </a>
              </li>
  
              <li>
                  <a href="/" class="nav-link" aria-label="sign up to newsletter">
-                     <span>Our Newsletter</span>
+                     <span>{data.navLinkjes[6]}</span>
                  </a>
              </li>
          </ul>

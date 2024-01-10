@@ -11,11 +11,15 @@ export async function load() {
         total
         month
       }
+      nav {
+        navLinkjes
+      }
       title
       river {
         slug
       }
       ocean {
+        titlePage
         oceanStartDate {
           title
           date
