@@ -29,12 +29,12 @@
 				<div class="pulse-container">
 					<div class="status-pulse">
 						<div class="pulse-marker green" />
-						<h3>In operation</h3>
+						<p>In operation</p>
 					</div>
 				</div>
 			</td>
 			<td class="amount">
-				<h4>{operational.length} interceptors</h4>
+				<p>{operational.length} interceptors</p>
 			</td>
 		</tr>
 
@@ -43,7 +43,7 @@
 				<div class="pulse-container">
 					<div class="status-pulse">
 						<div class="pulse-marker green" />
-						<h3>Harvesting</h3>
+						<p>Harvesting</p>
 					</div>
 				</div>
 			</td>
@@ -57,12 +57,12 @@
 				<div class="pulse-container">
 					<div class="status-pulse">
 						<div class="pulse-marker blue" />
-						<h3>Installed for testing</h3>
+						<p>Installed for testing</p>
 					</div>
 				</div>
 			</td>
 			<td class="amount">
-				<h4>{installed.length} interceptor</h4>
+				<p>{installed.length} interceptor</p>
 			</td>
 		</tr>
 
@@ -71,12 +71,12 @@
 				<div class="pulse-container">
 					<div class="status-pulse">
 						<div class="pulse-marker gray" />
-						<h3>Planned</h3>
+						<p>Planned</p>
 					</div>
 				</div>
 			</td>
 			<td class="amount">
-				<h4>{planned.length} interceptor</h4>
+				<p>{planned.length} interceptor</p>
 			</td>
 		</tr>
 
@@ -85,12 +85,12 @@
 				<div class="pulse-container">
 					<div class="status-pulse">
 						<div class="pulse-marker gray" />
-						<h3>Contract signed</h3>
+						<p>Contract signed</p>
 					</div>
 				</div>
 			</td>
 			<td class="amount">
-				<h4>{inMaintenance.length} interceptor</h4>
+				<p>{inMaintenance.length} interceptor</p>
 			</td>
 		</tr>
 	</table>
