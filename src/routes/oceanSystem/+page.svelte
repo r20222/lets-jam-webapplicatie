@@ -1,6 +1,6 @@
 <script>
 	import Navigation from '../../lib/components/navigation.svelte';
-    import Infotext from '../../lib/components/infotext.svelte';
+    import Infotext from '../../lib/components/info-text.svelte';
     import TrashRemovedOcean from '../../lib/components/trash-removed.svelte';
     import LastPortCall from '../../lib/components/lastportcall.svelte'
     import Image from '../../lib/molecules/image.svelte';
