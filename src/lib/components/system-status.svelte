@@ -21,7 +21,7 @@
 </script>
 
 <!-- Share: table system statuses -->
-<section class="panel share">
+<section class="panel system-status">
 	<h2>System statuses</h2>
 	<table>
 		<tr>
@@ -98,7 +98,7 @@
 
 <style>
 	section {
-		grid-area: share;
+		grid-area: system-status;
 		border-radius: 0.5rem;
 		padding: 1.5rem;
 		background-color: var(--whiteColor);

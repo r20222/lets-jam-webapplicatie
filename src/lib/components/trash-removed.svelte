@@ -3,12 +3,14 @@
     export let text
 </script>
 
-<section class="box-1">
+<!-- was box-1 -->
+<section class="trash-removed-total">
     <h2>{new Intl.NumberFormat().format(data.debris_extracted_total)} KG</h2>
     <p>{text.dashboard.trashRemoved.total}</p>
 </section>
 
-<section class="box-2">
+<!-- was box-2 -->
+<section class="trash-removed-last-month">
     <h2>{new Intl.NumberFormat().format(data.debris_extracted_last_30d)} KG</h2>
     <p>{text.dashboard.trashRemoved.month}</p>
 </section>
@@ -22,11 +24,11 @@
         transition: .2s;
         /* border: 20px solid var(--lightBlue) */
     }
-    .box-1 {
-        grid-area: box-1;
+    .trash-removed-total {
+        grid-area: trash-removed-total;
     }
 
-    .box-2 {
-        grid-area: box-2;
+    .trash-removed-last-month {
+        grid-area: trash-removed-last-month;
     }
 </style>

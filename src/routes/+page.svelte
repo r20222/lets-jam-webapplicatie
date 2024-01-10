@@ -1,10 +1,11 @@
 <script>
-	import Infotext from '../lib/components/infotext.svelte';
+	import Navigation from '../lib/components/navigation.svelte';
+	import Infotext from '../lib/components/info-text.svelte';
 	import TrashRemoved from '../lib/components/trash-removed.svelte';
 	import Map from '../lib/components/map.svelte';
-	import Trashgraph from '../lib/components/trashGraph.svelte';
-	import ChartContinents from '../lib/components/chartContinents.svelte';
-	import ChartRiverOcean from '../lib/components/chartRiverOcean.svelte';
+	import TrashChart from '../lib/components/trash-chart.svelte';
+	import ChartContinents from '../lib/components/chart-continents.svelte';
+	import ChartRiverOcean from '../lib/components/chart-river-ocean.svelte';
 	import SystemStatus from '../lib/components/system-status.svelte';
 	export let data;
 </script>
@@ -13,121 +14,49 @@
 	<title>Dashboard The Ocean Cleanup</title>
 </svelte:head>
 
+<Navigation />
+
 <section class="main">
-	<div class="container2">
+	<div class="grid-container">
+
 		<!-- Blue line -->
 		<div class="menu">
-			<div class="line" />
+			<div class="dashboard-line" />
 		</div>
 
-		<!-- Title + Searchbar -->
+		<!-- Title  -->
 		<section class="header-dashboard">
 			<h1>{data.dataHygraph.dashboard.title}</h1>
-			<!-- R20222 heeft de search uitgecomment -->
-			<!-- <form class="search" action="/" method="GET">
-				<input type="text" name="search" placeholder="Search.." />
-				<input
-					type="submit"
-					name="search-button"
-					aria-label="search button"
-					class="search-button"
-				/>
-
-			</form> -->
 		</section>
 
+		<!-- TrashRemoved -->
 		<TrashRemoved data={data.dataApi.totals} text={data.dataHygraph} />
 
-		<!-- Box 3: percentage since 2013 -->
-		<section class="panel box-3">
-			<ChartRiverOcean {data} />
-		</section>
+		<!-- infotext -->
+		<Infotext data={data.dataHygraph.dashboard.infotext} />
 
-		<!-- Box 4: percentage in 2040 -->
-		<section class="panel box-4">
-			<h2>Plastic removed per continent</h2>
-			<ChartContinents {data} />
-		</section>
-
-		<!-- Grafiek: share swith icons -->
-		<section class="panel grafiek">
-			<Trashgraph {data} />
-		</section>
-
+		<!-- map -->
 		<section class="map">
 			<Map {data} />
 		</section>
 
-		<Infotext data={data.dataHygraph.dashboard.infotext} />
-
+		<!-- system statuses -->
 		<SystemStatus {data} />
 
-		<!-- More: table more information links -->
-		<section class="panel more">
-			<h2>More about</h2>
-			<table class="table-more">
-				<tr class="more-row">
-					<td class="more-icon">
-						<a href="/" class="more-link">
-							<!-- add icon -->
-							Our river technology
-						</a>
-					</td>
-					<td class="arrow">
-						<!-- add icon -->
-					</td>
-				</tr>
+		<!-- chart-river-ocean -->
+		<section class="panel chart-river-ocean">
+			<ChartRiverOcean {data} />
+		</section>
 
-				<tr class="more-row">
-					<td class="more-icon">
-						<a href="/" class="more-link">
-							<!-- add icon -->
-							The economic impact
-						</a>
-					</td>
-					<td class="arrow">
-						<!-- add icon -->
-					</td>
-				</tr>
+		<!-- chart-continents -->
+		<section class="panel chart-continents">
+			<h2>Plastic removed per continent</h2>
+			<ChartContinents {data} />
+		</section>
 
-				<tr class="more-row">
-					<td class="more-icon">
-						<a href="/" class="more-link">
-							<!-- add icon -->
-							Plastic sources
-						</a>
-					</td>
-					<td class="arrow">
-						<!-- add icon -->
-					</td>
-				</tr>
-
-				<tr class="more-row">
-					<td class="more-icon">
-						<a href="/" class="more-link">
-							<!-- add icon -->
-							Donate
-						</a>
-					</td>
-					<td class="arrow">
-						<!-- add icon -->
-					</td>
-				</tr>
-
-				<span>
-					<tr class="more-row">
-						<td class="more-icon">
-							<a href="/" class="more-link">
-								<!-- add icon -->
-								Sign up to newsletter
-							</a>
-						</td>
-						<td class="arrow">
-							<!-- add icon -->
-						</td>
-					</tr>
-				</span>
-			</table>
+		<!-- TrashChart over time (bottles) -->
+		<section class="panel trash-collected-over-time-chart">
+			<TrashChart {data} />
 		</section>
 	</div>
 </section>
@@ -138,8 +67,6 @@
 	<!-- add icon -->TOP
 </a>
 
-<!-- Footer -->
-<footer />
 
 <style>
 	/* Proxima font */
@@ -189,7 +116,6 @@
 	}
 
 	:global(html) {
-		/* font-size: 62.5%; */
 		scroll-behavior: smooth;
 	}
 
@@ -206,18 +132,13 @@
 		margin-bottom: 1rem;
 	}
 
-	h3 {
-		font-size: 1.3rem;
-		font-weight: 500;
-	}
-
 	a {
 		text-decoration: none;
 	}
 
-	/* Grid */
-	.container2 {
-		margin: 8rem 1.5rem 1.5rem 1.5rem;
+	/* Grid mobiel */
+	.grid-container {
+		margin: 5rem 1.5rem 1.5rem 1.5rem;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		/* grid-template-rows: 0.01fr 0.1fr 1fr 1fr 0.5fr 0.8fr 0.5fr 0.5fr 1fr ; */
@@ -225,14 +146,13 @@
 		grid-template-areas:
 			'menu menu'
 			'header-dashboard header-dashboard'
-			'box-1 box-2'
+			'trash-removed-total trash-removed-last-month'
 			'dashboard-info dashboard-info'
 			'map map'
-			'share share'
-			'box-3 box-3'
-			'box-4 box-4'
-			'grafiek grafiek'
-			'more more';
+			'system-status system-status'
+			'chart-river-ocean chart-river-ocean'
+			'chart-continents chart-continents'
+			'trash-collected-over-time-chart trash-collected-over-time-chart';
 	}
 
 	.panel {
@@ -254,8 +174,8 @@
 		grid-area: menu;
 	}
 
-	.grafiek {
-		grid-area: grafiek;
+	.trash-collected-over-time-chart {
+		grid-area: trash-collected-over-time-chart;
 	}
 
 	.map {
@@ -267,24 +187,21 @@
 		transition: 0.2s;
 	}
 
-	.box-3 {
-		grid-area: box-3;
+	.chart-river-ocean {
+		grid-area: chart-river-ocean;
 	}
 
-	.box-4 {
-		grid-area: box-4;
+	.chart-continents {
+		grid-area: chart-continents;
 	}
 
-	.share {
+	/* is nu system-status, staat in component gedefinieerd */
+	/* .share {
 		grid-area: share;
-	}
-
-	.more {
-		grid-area: more;
-	}
+	} */
 
 	/* line */
-	.line {
+	.dashboard-line {
 		height: 2px;
 		width: 18%;
 		background-color: var(--lightBlue);
@@ -302,75 +219,17 @@
 	}
 
 	/* boxes styling */
-	.box-3,
-	.box-4 {
+	.chart-river-ocean,
+	.chart-continents {
 		font-size: 1.6rem;
 		color: var(--lightBlue);
 	}
 
-	.box-3,
-	.box-4,
+	.chart-river-ocean,
+	.chart-continents,
 	h2 {
 		font-size: 1.6rem;
 		color: var(--darkBlue);
-	}
-
-	/* more styling */
-	.more-link {
-		display: flex;
-		justify-content: left;
-		align-items: center;
-		gap: 2rem;
-		color: var(--textColor);
-		font-size: 1.5rem;
-		text-transform: capitalize;
-	}
-
-	.more-link:hover {
-		color: var(--lightBlue);
-	}
-
-	.more-icon {
-		font-size: 1.8rem;
-		color: var(--lightBlue);
-	}
-
-	.table-more {
-		border-collapse: collapse;
-	}
-
-	.more-row {
-		border-bottom: 0.5px solid var(--accentGray);
-		height: 4rem;
-	}
-
-	.arrow {
-		text-align: right;
-	}
-
-	/* search bar */
-	.search {
-		display: flex;
-		gap: 0.5rem;
-	}
-	.search-button {
-		max-width: 8rem;
-	}
-	.search input {
-		width: 130px;
-		height: 25px;
-		border-radius: 5px;
-		outline: none;
-		padding-left: 0.5rem;
-		background: var(--whiteColor);
-		box-shadow: var(--boxShadow) 0px 0px 8px;
-		border: none;
-		color: var(--textColor);
-	}
-
-	.search input::placeholder {
-		color: var(--darkBlue);
-		font-size: 1.3rem;
 	}
 
 	/* Scroll to top */
@@ -395,47 +254,43 @@
 		}
 	}
 
-	@media (min-width: 700px) {
-		.container2 {
-			margin: 8rem 1.5rem 1.5rem 1.5rem;
-			display: grid;
+	/* screens with min-width: 700px */
+	@media (min-width: 43.75em) {
+		.grid-container {
 			grid-template-columns: repeat(4, 1fr);
 			/* grid-template-rows: 0.01fr 0.1fr .5fr 1fr 1fr 1fr 1fr; */
-			gap: 1.2rem;
 			grid-template-areas:
 				'menu menu menu menu'
 				'header-dashboard header-dashboard header-dashboard header-dashboard'
-				'box-1 box-1 box-2 box-2'
+				'trash-removed-total trash-removed-total trash-removed-last-month trash-removed-last-month'
 				'dashboard-info dashboard-info map map'
 				'dashboard-info dashboard-info map map'
-				'share share share share'
-				'box-3 box-3 box-4 box-4'
-				'grafiek grafiek grafiek more';
+				'system-status system-status system-status system-status'
+				'chart-river-ocean chart-river-ocean chart-continents chart-continents'
+				'trash-collected-over-time-chart trash-collected-over-time-chart trash-collected-over-time-chart trash-collected-over-time-chart';
 		}
 	}
 
-	@media (min-width: 992px) {
-		.container2 {
-			margin: 3rem 2rem 2rem 18rem;
+	/* screens min-width: 992px */
+	@media (min-width: 62em) {
+		.grid-container {
+			margin: 0rem 2rem 2rem 18rem;
 			grid-template-columns: repeat(6, 1fr);
 			/* grid-template-rows: 0.01fr 0.1fr 0.3fr 0.4fr 0.4fr 0.6fr; */
 			grid-template-areas:
 				'menu menu menu menu menu menu'
 				'header-dashboard header-dashboard header-dashboard header-dashboard header-dashboard header-dashboard'
-				'box-1 box-1 box-1 box-2 box-2 box-2'
+				'trash-removed-total trash-removed-total trash-removed-total trash-removed-last-month trash-removed-last-month trash-removed-last-month'
 				'dashboard-info dashboard-info map map map map'
-				'share share share share share share'
-				'box-3 box-3 box-3 box-4 box-4 box-4'
-				'grafiek grafiek grafiek more more more';
+				'system-status system-status system-status system-status system-status system-status'
+				'chart-river-ocean chart-river-ocean chart-river-ocean chart-continents chart-continents chart-continents'
+				'trash-collected-over-time-chart trash-collected-over-time-chart trash-collected-over-time-chart trash-collected-over-time-chart trash-collected-over-time-chart trash-collected-over-time-chart';
 		}
 	}
 
-	/* Breakpoints large screen */
-	@media (min-width: 1200px) {
-		.more {
-			grid-area: more;
-		}
-
+	/* Breakpoints large screen 1200px */
+	/* Is deze echt nodig? r20222 */
+	@media (min-width: 75em) {
 		.panel {
 			padding: 2rem;
 		}
@@ -444,54 +299,28 @@
 			padding: 1.5rem;
 		}
 
-		.box-4 {
+		.chart-continents {
 			font-size: 3rem;
 		}
 
-		.box-3 {
+		.chart-river-ocean {
 			font-size: 2.5rem;
 		}
 
-		.box-3,
-		.box-4,
+		.chart-river-ocean,
+		.chart-continents,
 		h2 {
 			font-size: 1.5rem;
 		}
 
-		.more h2 {
-			font-size: 1.8rem;
-		}
-
-		.share h2 {
-			font-size: 1.8rem;
-		}
-
-		.line {
+		.dashboard-line {
 			height: 2px;
 			width: 6%;
 			background-color: var(--lightBlue);
 		}
 
-		.search input {
-			width: 190px;
-		}
-
 		.scroll-top {
 			display: none;
-		}
-
-		.amount h4 {
-			color: var(--lightBlue);
-			font-weight: 500;
-			font-size: 1.8rem;
-		}
-
-		h3 {
-			font-size: 1.5rem;
-		}
-
-		tr {
-			height: 3.3rem;
 		}
 	}
 </style>
