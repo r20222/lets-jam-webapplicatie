@@ -1,6 +1,6 @@
 <script>
 	import Navigation from '../../lib/components/navigation.svelte';
-    import Infotext from '../../lib/components/infotext.svelte';
+    import Infotext from '../../lib/components/info-text.svelte';
 	import TrashRemoved from '../../lib/components/trash-removed.svelte';
     import Startdate from '../../lib/components/startdate.svelte';
     import Image from '../../lib/molecules/image.svelte';
