@@ -4,7 +4,7 @@
 </script>
 
 <!-- was box-1 -->
-<section class="trash-removed-total-box">
+<section class="trash-removed-total">
     <h2>{new Intl.NumberFormat().format(data.debris_extracted_total)} KG</h2>
     <p>{text.dashboard.trashRemoved.total}</p>
 </section>
@@ -24,8 +24,8 @@
         transition: .2s;
         /* border: 20px solid var(--lightBlue) */
     }
-    .trash-removed-total-box {
-        grid-area: trash-removed-total-box;
+    .trash-removed-total {
+        grid-area: trash-removed-total;
     }
 
     .trash-removed-last-month {

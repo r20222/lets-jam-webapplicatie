@@ -1,11 +1,11 @@
 <script>
 	import Navigation from '../lib/components/navigation.svelte';
-	import Infotext from '../lib/components/infotext.svelte';
+	import Infotext from '../lib/components/info-text.svelte';
 	import TrashRemoved from '../lib/components/trash-removed.svelte';
 	import Map from '../lib/components/map.svelte';
-	import Trashgraph from '../lib/components/trashGraph.svelte';
-	import ChartContinents from '../lib/components/chartContinents.svelte';
-	import ChartRiverOcean from '../lib/components/chartRiverOcean.svelte';
+	import TrashChart from '../lib/components/trash-chart.svelte';
+	import ChartContinents from '../lib/components/chart-continents.svelte';
+	import ChartRiverOcean from '../lib/components/chart-river-ocean.svelte';
 	import SystemStatus from '../lib/components/system-status.svelte';
 	export let data;
 </script>
@@ -21,7 +21,7 @@
 
 		<!-- Blue line -->
 		<div class="menu">
-			<div class="blue-dashboard-line" />
+			<div class="dashboard-line" />
 		</div>
 
 		<!-- Title  -->
@@ -45,7 +45,7 @@
 
 		<!-- chart-river-ocean -->
 		<section class="panel chart-river-ocean">
-			<!-- <ChartRiverOcean {data} /> -->
+			<ChartRiverOcean {data} />
 		</section>
 
 		<!-- chart-continents -->
@@ -54,9 +54,9 @@
 			<ChartContinents {data} />
 		</section>
 
-		<!-- Trashgraph over time (bottles) -->
-		<section class="panel trash-graph">
-			<Trashgraph {data} />
+		<!-- TrashChart over time (bottles) -->
+		<section class="panel trash-collected-over-time-chart">
+			<TrashChart {data} />
 		</section>
 	</div>
 </section>
@@ -146,13 +146,13 @@
 		grid-template-areas:
 			'menu menu'
 			'header-dashboard header-dashboard'
-			'trash-removed-total-box trash-removed-last-month'
+			'trash-removed-total trash-removed-last-month'
 			'dashboard-info dashboard-info'
 			'map map'
 			'system-status system-status'
 			'chart-river-ocean chart-river-ocean'
 			'chart-continents chart-continents'
-			'trash-graph trash-graph';
+			'trash-collected-over-time-chart trash-collected-over-time-chart';
 	}
 
 	.panel {
@@ -174,8 +174,8 @@
 		grid-area: menu;
 	}
 
-	.trash-graph {
-		grid-area: trash-graph;
+	.trash-collected-over-time-chart {
+		grid-area: trash-collected-over-time-chart;
 	}
 
 	.map {
@@ -201,7 +201,7 @@
 	} */
 
 	/* line */
-	.blue-dashboard-line {
+	.dashboard-line {
 		height: 2px;
 		width: 18%;
 		background-color: var(--lightBlue);
@@ -262,12 +262,12 @@
 			grid-template-areas:
 				'menu menu menu menu'
 				'header-dashboard header-dashboard header-dashboard header-dashboard'
-				'trash-removed-total-box trash-removed-total-box trash-removed-last-month trash-removed-last-month'
+				'trash-removed-total trash-removed-total trash-removed-last-month trash-removed-last-month'
 				'dashboard-info dashboard-info map map'
 				'dashboard-info dashboard-info map map'
 				'system-status system-status system-status system-status'
 				'chart-river-ocean chart-river-ocean chart-continents chart-continents'
-				'trash-graph trash-graph trash-graph trash-graph';
+				'trash-collected-over-time-chart trash-collected-over-time-chart trash-collected-over-time-chart trash-collected-over-time-chart';
 		}
 	}
 
@@ -280,11 +280,11 @@
 			grid-template-areas:
 				'menu menu menu menu menu menu'
 				'header-dashboard header-dashboard header-dashboard header-dashboard header-dashboard header-dashboard'
-				'trash-removed-total-box trash-removed-total-box trash-removed-total-box trash-removed-last-month trash-removed-last-month trash-removed-last-month'
+				'trash-removed-total trash-removed-total trash-removed-total trash-removed-last-month trash-removed-last-month trash-removed-last-month'
 				'dashboard-info dashboard-info map map map map'
 				'system-status system-status system-status system-status system-status system-status'
 				'chart-river-ocean chart-river-ocean chart-river-ocean chart-continents chart-continents chart-continents'
-				'trash-graph trash-graph trash-graph trash-graph trash-graph trash-graph';
+				'trash-collected-over-time-chart trash-collected-over-time-chart trash-collected-over-time-chart trash-collected-over-time-chart trash-collected-over-time-chart trash-collected-over-time-chart';
 		}
 	}
 
@@ -313,7 +313,7 @@
 			font-size: 1.5rem;
 		}
 
-		.blue-dashboard-line {
+		.dashboard-line {
 			height: 2px;
 			width: 6%;
 			background-color: var(--lightBlue);

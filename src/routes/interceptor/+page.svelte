@@ -57,7 +57,7 @@
      gap: 1.2rem;
      grid-template-areas:
          "header header"
-         "trash-removed-total-box trash-removed-last-month"
+         "trash-removed-total trash-removed-last-month"
          "dashboard-info dashboard-info"
          "dashboard-info-startdate dashboard-info-startdate"
          "map map"
@@ -76,7 +76,7 @@
          /* grid-template-rows: 0.01fr 0.1fr 0.3fr 0.4fr 0.4fr 0.6fr; */
          grid-template-areas:
          "header header header header header"
-            "trash-removed-total-box trash-removed-last-month map map map"
+            "trash-removed-total trash-removed-last-month map map map"
             "dashboard-info dashboard-info map map map"
             "dashboard-info dashboard-info map map map"
             "dashboard-info dashboard-info map map map"
