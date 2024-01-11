@@ -12,7 +12,7 @@
 </script>
 
 <svelte:head>
-	<title>Dashboard The Ocean Cleanup</title>
+	<title>{data.dataHygraph.dashboard.titlePage}</title>
 </svelte:head>
 
 <!-- Met bind update je gridWithWithoutNav naar dezelfde waarde als visible uit het Navigation component -->
@@ -56,7 +56,7 @@
 
 		<!-- chart-continents -->
 		<section class="panel chart-continents">
-			<h2>Plastic removed per continent</h2>
+			<h2>{data.dataHygraph.dashboard.chartContinent.title}</h2>
 			<ChartContinents {data} />
 		</section>
 
@@ -70,7 +70,7 @@
 
 <!-- Scroll to top button -->
 <a href="#top" class="scroll-top" aria-label="scroll to top">
-	<!-- add icon -->TOP
+	<!-- add icon -->{data.dataHygraph.dashboard.buttonTop}
 </a>
 
 
@@ -253,6 +253,7 @@
 		align-items: center;
 		justify-content: center;
 		cursor: pointer;
+		text-transform: uppercase;
 	}
 
 	@keyframes progress {

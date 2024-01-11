@@ -22,19 +22,19 @@
 
 <!-- Share: table system statuses -->
 <section class="panel system-status">
-	<h2>System statuses</h2>
+	<h2>{data.dataHygraph.dashboard.systemStatus.title}</h2>
 	<table>
 		<tr>
 			<td>
 				<div class="pulse-container">
 					<div class="status-pulse">
 						<div class="pulse-marker green" />
-						<p>In operation</p>
+						<p>{data.dataHygraph.dashboard.systemStatus.opties[0]}</p>
 					</div>
 				</div>
 			</td>
 			<td class="amount">
-				<p>{operational.length} interceptors</p>
+				<p>{operational.length} {data.dataHygraph.dashboard.systemStatus.opties[5]}</p>
 			</td>
 		</tr>
 
@@ -43,12 +43,12 @@
 				<div class="pulse-container">
 					<div class="status-pulse">
 						<div class="pulse-marker green" />
-						<p>Harvesting</p>
+						<p>{data.dataHygraph.dashboard.systemStatus.opties[1]}</p>
 					</div>
 				</div>
 			</td>
 			<td class="amount">
-				<p>1 ocean system</p>
+				<p>{data.dataHygraph.dashboard.systemStatus.opties[6]}</p>
 			</td>
 		</tr>
 
@@ -57,12 +57,12 @@
 				<div class="pulse-container">
 					<div class="status-pulse">
 						<div class="pulse-marker blue" />
-						<p>Installed for testing</p>
+						<p>{data.dataHygraph.dashboard.systemStatus.opties[2]}</p>
 					</div>
 				</div>
 			</td>
 			<td class="amount">
-				<p>{installed.length} interceptor</p>
+				<p>{installed.length} {data.dataHygraph.dashboard.systemStatus.opties[5]}</p>
 			</td>
 		</tr>
 
@@ -71,12 +71,12 @@
 				<div class="pulse-container">
 					<div class="status-pulse">
 						<div class="pulse-marker gray" />
-						<p>Planned</p>
+						<p>{data.dataHygraph.dashboard.systemStatus.opties[3]}</p>
 					</div>
 				</div>
 			</td>
 			<td class="amount">
-				<p>{planned.length} interceptor</p>
+				<p>{planned.length} {data.dataHygraph.dashboard.systemStatus.opties[5]}</p>
 			</td>
 		</tr>
 
@@ -85,12 +85,12 @@
 				<div class="pulse-container">
 					<div class="status-pulse">
 						<div class="pulse-marker gray" />
-						<p>Contract signed</p>
+						<p>{data.dataHygraph.dashboard.systemStatus.opties[4]}</p>
 					</div>
 				</div>
 			</td>
 			<td class="amount">
-				<p>{inMaintenance.length} interceptor</p>
+				<p>{inMaintenance.length} {data.dataHygraph.dashboard.systemStatus.opties[5]}</p>
 			</td>
 		</tr>
 	</table>

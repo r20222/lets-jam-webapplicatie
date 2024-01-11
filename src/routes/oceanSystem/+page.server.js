@@ -7,15 +7,16 @@ export async function load() {
   let query = gql`
   query Assets {
     dashboard(where: {id: "cln32p50anrma0bw03q8fsa54"}) {
-      trashRemoved {
-        total
-        month
+      buttonTop
+      map {
+        title
+        opties
       }
-      title
-      river {
-        slug
+      nav {
+        navLinkjes
       }
       ocean {
+        titlePage
         oceanStartDate {
           title
           date
@@ -33,6 +34,14 @@ export async function load() {
         oceanExtractionDate {
           markdown
         }
+      }
+      river {
+        slug
+      }
+      title
+      trashRemoved {
+        total
+        month
       }
     }
   }

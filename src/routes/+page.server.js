@@ -8,24 +8,46 @@ export async function load() {
   let query = gql`
     query Assets {
       dashboard(where: {id: "cln32p50anrma0bw03q8fsa54"}) {
+        buttonTop
         infotext {
           infotext {
             html
-            text
-            raw
             markdown
+            raw
+            text
           }
         }
-        trashRemoved {
-          total
-          month
+        chartContinent {
+          title
         }
         chartRiverOcean {
+          buttons
+          moreInfo
           titel
         }
-        title
+        map {
+          title
+          opties
+        }
+        nav {
+          navLinkjes
+        }
         river {
           slug
+        }
+        systemStatus {
+          opties
+          title
+        }
+        title
+        titlePage
+        trashChart {
+          measurement
+          title
+        }
+        trashRemoved {
+          month
+          total
         }
       }
     }

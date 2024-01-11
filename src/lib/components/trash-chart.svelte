@@ -111,8 +111,8 @@
 });
 </script>
 
-<h2>Trash collected over time</h2>
-<p>In kilogram</p>
+<h2>{data.dataHygraph.dashboard.trashChart.title}</h2>
+<p>{data.dataHygraph.dashboard.trashChart.measurement}</p>
 
 
 

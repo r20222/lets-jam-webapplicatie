@@ -17,6 +17,7 @@
 			i++;
 		}
 	}
+	console.log(data.dataApi.totals.ocean_river_ratio)
 </script>
 
 <section class="container-chart-river-ocean">
@@ -27,13 +28,11 @@
 
 <section>
 	<details aria-label="more-info-ocean-cleanup" class="more-info-systems">
-		<summary>More info</summary>
+		<summary>{data.dataHygraph.dashboard.chartRiverOcean.buttons[0]}</summary>
 		<p>
-			We named our company "The Ocean Cleanup" but a lot of plastic finds its way into the ocean via
-			rivers first. To prevent the plastic from reaching the ocean, we've put inceptors in the most
-			polluting rivers.
+			{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[0]}
 		</p>
-		<a href="interceptor?id=100">Learn more</a>
+		<a href="interceptor?id=100">{data.dataHygraph.dashboard.chartRiverOcean.buttons[1]}</a>
 	</details>
 </section>
 
@@ -44,19 +43,20 @@
 		<a href="/oceanSystem"><SvgPlasticBottle /></a>
 
 		<div>
-			<h3>Ocean <!-- {percentage} -->% </h3>
+			<h3>{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[1]} {new Intl.NumberFormat().format(data.dataApi.totals.ocean_river_ratio.percent_ocean)}%</h3>
 
 			<details class="more-info-ocean">
-			
-				<summary>More info</summary>
+				<summary>{data.dataHygraph.dashboard.chartRiverOcean.buttons[0]}</summary>
 				<p>
-					The total amount of plastic removed by The Ocean Cleanup is {new Intl.NumberFormat().format(
-						data.dataApi.totals.debris_extracted_total
-					)} kg. The amount of plastic that is removed by the ocean system is {new Intl.NumberFormat().format(
-						data.oceanDataJson.systems[0].debris_extracted_total
-					)} kg. This means <!-- {percentage} -->% of the total amount of collected trash comes from the ocean.
+					{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[2]} 
+					{new Intl.NumberFormat().format(data.dataApi.totals.debris_extracted_total)} 
+					{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[3]} 
+					{new Intl.NumberFormat().format(data.oceanDataJson.systems[0].debris_extracted_total)} 
+					{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[4]}
+					{new Intl.NumberFormat().format(data.dataApi.totals.ocean_river_ratio.percent_ocean)}
+					{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[5]}
 				</p>
-				<a href="/oceanSystem">To the ocean system</a>
+				<a href="/oceanSystem">{data.dataHygraph.dashboard.chartRiverOcean.buttons[2]}</a>
 			</details>
 
 		</div>
@@ -66,19 +66,20 @@
 		<a href="/interceptor?id=100"><SvgPlasticBottle /></a>
 
 		<div>
-			<h3>River <!-- {percentage} -->% </h3>
+			<h3>{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[6]} {new Intl.NumberFormat().format(data.dataApi.totals.ocean_river_ratio.percent_river)}%</h3>
+			<!-- {percentage} -->
 
 			<details class="more-info-river">
-				
-				<summary>More info</summary>
+				<summary>{data.dataHygraph.dashboard.chartRiverOcean.buttons[0]}</summary>
 				<p>
-					The total amount of plastic removed by The Ocean Cleanup is {new Intl.NumberFormat().format(
-						data.dataApi.totals.debris_extracted_total
-					)} kg. The amount of plastic removed by all river systems combined is {new Intl.NumberFormat().format(
-						totalTrashKgRiver
-					)} kg. This means <!-- {percentage} -->% of the total amount of collected trash comes from rivers.
+					{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[2]} 
+					{new Intl.NumberFormat().format(data.dataApi.totals.debris_extracted_total)} 
+					{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[7]} 
+					{new Intl.NumberFormat().format(totalTrashKgRiver)} 
+					{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[4]}
+					{new Intl.NumberFormat().format(data.dataApi.totals.ocean_river_ratio.percent_river)}{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[8]}
 				</p>
-				<a href="/interceptor?id=100"> To river systems</a>
+				<a href="/interceptor?id=100"> {data.dataHygraph.dashboard.chartRiverOcean.buttons[3]}</a>
 			</details>
 
 		</div>
