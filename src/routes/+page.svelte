@@ -210,7 +210,7 @@
 	/* dashboard H1 */
 	h1 {
 		line-height: 1.2;
-		font-weight: 500;
+		/* font-weight: 500; */
 		text-transform: uppercase;
 		color: var(--darkBlue);
 	}
@@ -219,7 +219,7 @@
 	}
 
 	/* boxes styling */
-	.chart-river-ocean,
+	/* .chart-river-ocean,
 	.chart-continents {
 		font-size: 1.6rem;
 		color: var(--lightBlue);
@@ -230,7 +230,7 @@
 	h2 {
 		font-size: 1.6rem;
 		color: var(--darkBlue);
-	}
+	} */
 
 	/* Scroll to top */
 	.scroll-top {
@@ -300,17 +300,17 @@
 		}
 
 		.chart-continents {
-			font-size: 3rem;
+			/* font-size: 3rem; */
 		}
 
 		.chart-river-ocean {
-			font-size: 2.5rem;
+			/* font-size: 2.5rem; */
 		}
 
 		.chart-river-ocean,
 		.chart-continents,
 		h2 {
-			font-size: 1.5rem;
+			/* font-size: 1.5rem; */
 		}
 
 		.dashboard-line {
