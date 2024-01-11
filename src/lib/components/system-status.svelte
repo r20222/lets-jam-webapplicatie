@@ -25,30 +25,30 @@
 	<h2>{data.dataHygraph.dashboard.systemStatus.title}</h2>
 	<table>
 		<tr>
-			<td class="dot">
+			<td>
 				<div class="pulse-container">
 					<div class="status-pulse">
 						<div class="pulse-marker green" />
-						<h3>{data.dataHygraph.dashboard.systemStatus.opties[0]}</h3>
+						<p>{data.dataHygraph.dashboard.systemStatus.opties[0]}</p>
 					</div>
 				</div>
 			</td>
 			<td class="amount">
-				<h4>{operational.length} {data.dataHygraph.dashboard.systemStatus.opties[5]}</h4>
+				<p>{operational.length} {data.dataHygraph.dashboard.systemStatus.opties[5]}<p>
 			</td>
 		</tr>
 
 		<tr>
-			<td class="dot">
+			<td>
 				<div class="pulse-container">
 					<div class="status-pulse">
 						<div class="pulse-marker green" />
-						<h3>{data.dataHygraph.dashboard.systemStatus.opties[1]}</h3>
+						<p>{data.dataHygraph.dashboard.systemStatus.opties[1]}</p>
 					</div>
 				</div>
 			</td>
 			<td class="amount">
-				<h4>{data.dataHygraph.dashboard.systemStatus.opties[6]}</h4>
+				<p>{data.dataHygraph.dashboard.systemStatus.opties[6]}<p>
 			</td>
 		</tr>
 
@@ -57,12 +57,12 @@
 				<div class="pulse-container">
 					<div class="status-pulse">
 						<div class="pulse-marker blue" />
-						<h3>{data.dataHygraph.dashboard.systemStatus.opties[2]}</h3>
+						<p>{data.dataHygraph.dashboard.systemStatus.opties[2]}</p>
 					</div>
 				</div>
 			</td>
 			<td class="amount">
-				<h4>{installed.length} {data.dataHygraph.dashboard.systemStatus.opties[5]}</h4>
+				<p>{installed.length} {data.dataHygraph.dashboard.systemStatus.opties[5]}</p>
 			</td>
 		</tr>
 
@@ -71,12 +71,12 @@
 				<div class="pulse-container">
 					<div class="status-pulse">
 						<div class="pulse-marker gray" />
-						<h3>{data.dataHygraph.dashboard.systemStatus.opties[3]}</h3>
+						<p>{data.dataHygraph.dashboard.systemStatus.opties[3]}</p>
 					</div>
 				</div>
 			</td>
 			<td class="amount">
-				<h4>{planned.length} {data.dataHygraph.dashboard.systemStatus.opties[5]}</h4>
+				<p>{planned.length} {data.dataHygraph.dashboard.systemStatus.opties[5]}</p>
 			</td>
 		</tr>
 
@@ -85,12 +85,12 @@
 				<div class="pulse-container">
 					<div class="status-pulse">
 						<div class="pulse-marker gray" />
-						<h3>{data.dataHygraph.dashboard.systemStatus.opties[4]}</h3>
+						<p>{data.dataHygraph.dashboard.systemStatus.opties[4]}</p>
 					</div>
 				</div>
 			</td>
 			<td class="amount">
-				<h4>{inMaintenance.length} {data.dataHygraph.dashboard.systemStatus.opties[5]}</h4>
+				<p>{inMaintenance.length} {data.dataHygraph.dashboard.systemStatus.opties[5]}</p>
 			</td>
 		</tr>
 	</table>
