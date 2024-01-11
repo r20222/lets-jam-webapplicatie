@@ -293,6 +293,7 @@
 				'chart-river-ocean chart-river-ocean chart-river-ocean chart-continents chart-continents chart-continents'
 				'trash-collected-over-time-chart trash-collected-over-time-chart trash-collected-over-time-chart trash-collected-over-time-chart trash-collected-over-time-chart trash-collected-over-time-chart';
 		}
+		/* past de margin aan als de nav in of uitgeklapt is */
 		.margin-with-navigation{
 			margin: 0rem 2rem 2rem 18rem;
 			transition:.1s;
@@ -300,8 +301,6 @@
 		.margin-without-navigation{
 			margin: 0rem 2rem 2rem 2rem;
 			transition:.1s;
-
-
 		}
 	}
 
