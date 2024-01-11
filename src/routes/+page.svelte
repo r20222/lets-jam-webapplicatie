@@ -1,8 +1,5 @@
 <script>
 	import Navigation from '../lib/components/navigation.svelte';
-	let gridWithWithoutNav
-
-	// console.log( `heyy ${visible} `)
 	import Infotext from '../lib/components/info-text.svelte';
 	import TrashRemoved from '../lib/components/trash-removed.svelte';
 	import Map from '../lib/components/map.svelte';
@@ -11,6 +8,7 @@
 	import ChartRiverOcean from '../lib/components/chart-river-ocean.svelte';
 	import SystemStatus from '../lib/components/system-status.svelte';
 	export let data;
+	let gridWithWithoutNav;
 </script>
 
 <svelte:head>
