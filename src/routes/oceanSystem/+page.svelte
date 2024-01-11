@@ -14,7 +14,7 @@
     <title>Ocean System Dashboard</title>
 </svelte:head>
 
-    <Navigation  bind:visible={gridWithWithoutNav} />
+    <Navigation  bind:visible={gridWithWithoutNav} data={data.dataHygraph.dashboard.nav}/>
     
 <section class="{gridWithWithoutNav ? 'margin-with-navigation' : 'margin-without-navigation'}">
     <h2>{data.dataApi.systems[0]. name}</h2>

@@ -9,7 +9,11 @@
     let gridWithWithoutNav;
 </script>
 
-<Navigation bind:visible={gridWithWithoutNav} />
+<svelte:head>
+    <title>{data.currentInterceptorHygraph[0].titlePage}</title>
+</svelte:head>
+
+<Navigation bind:visible={gridWithWithoutNav} data={data.dataHygraph.dashboard.nav}/>
 <section class="{gridWithWithoutNav ? 'margin-with-navigation' : 'margin-without-navigation'}">
     <h2>{data.currentInterceptor[0].name}</h2>
     <Infotext data={data.currentInterceptorHygraph[0].riverInfoText} />

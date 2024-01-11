@@ -1,4 +1,5 @@
 <script>
+    export let data
     export let visible = true
      function ToggleMenu() {
          visible = !visible

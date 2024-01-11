@@ -16,7 +16,7 @@
 </svelte:head>
 
 <!-- Met bind update je gridWithWithoutNav naar dezelfde waarde als visible uit het Navigation component -->
-<Navigation bind:visible={gridWithWithoutNav} />
+<Navigation bind:visible={gridWithWithoutNav} data={data.dataHygraph.dashboard.nav} />
 
 <section class="main">
 
