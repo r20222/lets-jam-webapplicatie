@@ -21,6 +21,8 @@ export async function load() {
           month
         }
         chartRiverOcean {
+          buttons
+          moreInfo
           titel
         }
         nav {
