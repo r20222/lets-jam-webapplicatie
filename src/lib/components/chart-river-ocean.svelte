@@ -17,6 +17,11 @@
 			i++;
 		}
 	}
+
+	let percentageOcean = (data.oceanDataJson.systems[0].debris_extracted_total / data.dataApi.totals.debris_extracted_total * 100)
+	let percentageRiver = (totalTrashKgRiver / data.dataApi.totals.debris_extracted_total * 100)
+	console.log(data.oceanDataJson.systems[0].debris_extracted_total, data.dataApi.totals.debris_extracted_total)
+	// console.log(percentageOcean, percentageRiver)
 </script>
 
 <!-- * needs dynamic content -->
