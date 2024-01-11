@@ -19,16 +19,12 @@
 	}
 </script>
 
-<!-- * needs dynamic content -->
-<!-- 1 = atom -->
-<!-- 2 = molecule -->
-<!-- 3 = organism -->
+<section class="container-chart-river-ocean">
 
 <h2>{data.dataHygraph.dashboard.chartRiverOcean.titel}</h2>
-<!-- * -->
 
 <!-- show more info -->
-<!-- 2 -->
+
 <section>
 	<details aria-label="more-info-ocean-cleanup" class="more-info-systems">
 		<summary>{data.dataHygraph.dashboard.chartRiverOcean.buttons[0]}</summary>
@@ -60,6 +56,7 @@
 				</p>
 				<a href="/oceanSystem">{data.dataHygraph.dashboard.chartRiverOcean.buttons[2]}</a>
 			</details>
+
 		</div>
 	</section>
 
@@ -82,26 +79,25 @@
 				</p>
 				<a href="/interceptor?id=100"> {data.dataHygraph.dashboard.chartRiverOcean.buttons[3]}</a>
 			</details>
+
 		</div>
 	</section>
 </div>
 
+</section>
+
 <style>
+
+.container-chart-river-ocean {
+
+}
 	/* SVG */
+
 	.wrapper-graph-ocean-river {
+		box-sizing: border-box;
 		width: 100%;
 		padding: 2em 0;
-		display: flex; /* @media flex */
-		gap: 2em;
-		justify-content: space-around;
-	}
-
-	.wrapper-ocean-trash-removed {
-		/* border: 1px solid lightblue; */
-	}
-
-	.wrapper-river-trash-removed {
-		/* border: 1px solid hotpink; */
+		margin: 1em auto;
 	}
 
 	.wrapper-river-trash-removed,
@@ -111,7 +107,7 @@
 		gap: 2em;
 		align-items: center;
 		justify-content: center;
-		padding: 0 0 2rem 0;
+		/* padding: 0 0 2em 1em; */
 	}
 
 	/* DETAILS */
@@ -133,8 +129,8 @@
 	}
 
 	details > summary {
-		padding: 1em 0.7em;
-		width: 8em;
+		padding: 0.5em 2em;
+		width: 5em;
 		background-color: #f0efef;
 		box-shadow: 5px 5px 5px rgb(195, 192, 192);
 		display: flex;
@@ -149,14 +145,13 @@
 		/* border: solid 1px black; */
 		box-shadow: 5px 5px 5px rgb(195, 192, 192);
 		background-color: #f0efef;
-		padding: 1em 0.5em;
+		padding: .5em .5em;
 		margin: 0;
 		text-decoration: none;
 		color: var(--textColor);
 	}
 
 	details > a:hover {
-		/* transform: scale(1.1); */
 		background-color: var(--lightBlue);
 	}
 
@@ -167,9 +162,66 @@
 		transition: 0.4s;
 	}
 
-	/* SVG animations */
+	/* SVG ANIMATIONS */
 
-	/* Container/media queries */
+	/* CONTAINER / MEDIA QUERIES */
 
-	/*  */
+	/* @media accessibility */
+	@media (prefers-color-scheme: dark) {
+		details > summary {
+			background-color: var(--lightBlue);
+			box-shadow: 5px 5px 5px rgb(195, 192, 192);
+		}
+
+		details > a {
+			box-shadow: 5px 5px 5px rgb(195, 192, 192);
+			background-color: var(--lightBlue);
+			padding: .5em .5em;
+			margin: 0;
+			text-decoration: none;
+			color: var(--textColor);
+		}
+
+		details > a:hover {
+			outline: 1px solid var(--accentGray);
+		}
+
+		details > summary:hover {
+			outline: 1px solid var(--accentGray);
+		}
+	}
+
+	/* Breakpoints medium screen */
+	@media (min-width: 600px) {
+	
+		.wrapper-graph-ocean-river {
+			display: flex; 
+			gap: 2em;
+			justify-content: space-around;
+		}
+		}
+
+		@media (min-width: 700px) {
+	
+	.wrapper-graph-ocean-river {
+		display: flex; 
+		flex-direction: column;
+		gap: 2em;
+		justify-content: space-around;
+	}
+	}
+
+
+		/* Breakpoints large screen */
+	@media (min-width: 1300px) {
+		.wrapper-graph-ocean-river {
+		display: flex; 
+		flex-direction: row;
+		gap: 2em;
+		justify-content: space-around;
+	}
+	}
+
+	
+
 </style>
