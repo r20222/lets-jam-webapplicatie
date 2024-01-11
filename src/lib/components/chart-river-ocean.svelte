@@ -17,7 +17,6 @@
 			i++;
 		}
 	}
-	console.log(data.dataHygraph.dashboard.chartRiverOcean)
 </script>
 
 <!-- * needs dynamic content -->

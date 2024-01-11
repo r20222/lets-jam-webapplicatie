@@ -7,25 +7,26 @@ export async function load({ url, params }) {
   let query = gql`
   query Assets {
     dashboard(where: {id: "cln32p50anrma0bw03q8fsa54"}) {
+      buttonTop
       infotext {
+        id
         infotext {
           html
           text
         }
-        id
+      }
+      map {
+        opties
+        title
       }
       nav {
         navLinkjes
       }
-      map {
-        title
-        opties
-      }
-      trashRemoved {
-        total
-        month
-      }
       title
+      trashRemoved {
+        month
+        total
+      }
       river {
         id
         slug
@@ -35,7 +36,6 @@ export async function load({ url, params }) {
             url
           }
         }
-        riverTitle
         riverInfoText {
           infotext {
             markdown
@@ -45,6 +45,7 @@ export async function load({ url, params }) {
         riverStartDate {
           title
         }
+        riverTitle
       }
     }
   } 

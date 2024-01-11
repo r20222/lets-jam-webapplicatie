@@ -28,7 +28,7 @@
 
 <!-- Scroll to top button -->
 <a href="#top" class="scroll-top" aria-label="scroll to top">
-	<!-- add icon -->TOP
+	<!-- add icon -->{data.dataHygraph.dashboard.buttonTop}
 </a>
 
 
@@ -96,6 +96,24 @@
     h2 {
         grid-area: header;
     }
+    
+	/* Scroll to top */
+	.scroll-top {
+		position: absolute;
+		bottom: 1%;
+		right: 2%;
+		width: 3rem;
+		height: 3rem;
+		padding: 0.5rem;
+		background-color: var(--lightBlue);
+		color: var(--whiteColor);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		text-transform: uppercase;
+	}
+
     /* vanaf 992px */
     @media (min-width:62em) {
     section{
