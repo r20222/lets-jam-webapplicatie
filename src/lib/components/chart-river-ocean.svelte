@@ -17,6 +17,7 @@
 			i++;
 		}
 	}
+	console.log(data.dataApi.totals.ocean_river_ratio)
 </script>
 
 <section class="container-chart-river-ocean">
@@ -42,17 +43,18 @@
 		<a href="/oceanSystem"><SvgPlasticBottle /></a>
 
 		<div>
-			<h3>{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[1]} ..% <!-- {percentage} --></h3>
+			<h3>{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[1]} {new Intl.NumberFormat().format(data.dataApi.totals.ocean_river_ratio.percent_ocean)}%</h3>
 
 			<details class="more-info-ocean">
-				<!-- 2 -->
 				<summary>{data.dataHygraph.dashboard.chartRiverOcean.buttons[0]}</summary>
 				<p>
-					{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[2]} {new Intl.NumberFormat().format(
-						data.dataApi.totals.debris_extracted_total
-					)} {data.dataHygraph.dashboard.chartRiverOcean.moreInfo[3]} {new Intl.NumberFormat().format(
-						data.oceanDataJson.systems[0].debris_extracted_total
-					)} {data.dataHygraph.dashboard.chartRiverOcean.moreInfo[4]}
+					{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[2]} 
+					{new Intl.NumberFormat().format(data.dataApi.totals.debris_extracted_total)} 
+					{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[3]} 
+					{new Intl.NumberFormat().format(data.oceanDataJson.systems[0].debris_extracted_total)} 
+					{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[4]}
+					{new Intl.NumberFormat().format(data.dataApi.totals.ocean_river_ratio.percent_ocean)}
+					{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[5]}
 				</p>
 				<a href="/oceanSystem">{data.dataHygraph.dashboard.chartRiverOcean.buttons[2]}</a>
 			</details>
@@ -64,18 +66,18 @@
 		<a href="/interceptor?id=100"><SvgPlasticBottle /></a>
 
 		<div>
-			<h3>{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[5]} ..%</h3>
+			<h3>{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[6]} {new Intl.NumberFormat().format(data.dataApi.totals.ocean_river_ratio.percent_river)}%</h3>
 			<!-- {percentage} -->
 
 			<details class="more-info-river">
-				<!-- 2 -->
 				<summary>{data.dataHygraph.dashboard.chartRiverOcean.buttons[0]}</summary>
 				<p>
-					{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[2]} {new Intl.NumberFormat().format(
-						data.dataApi.totals.debris_extracted_total
-					)} {data.dataHygraph.dashboard.chartRiverOcean.moreInfo[6]} {new Intl.NumberFormat().format(
-						totalTrashKgRiver
-					)} {data.dataHygraph.dashboard.chartRiverOcean.moreInfo[7]}
+					{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[2]} 
+					{new Intl.NumberFormat().format(data.dataApi.totals.debris_extracted_total)} 
+					{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[7]} 
+					{new Intl.NumberFormat().format(totalTrashKgRiver)} 
+					{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[4]}
+					{new Intl.NumberFormat().format(data.dataApi.totals.ocean_river_ratio.percent_river)}{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[8]}
 				</p>
 				<a href="/interceptor?id=100"> {data.dataHygraph.dashboard.chartRiverOcean.buttons[3]}</a>
 			</details>
