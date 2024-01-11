@@ -22,19 +22,19 @@
 
 <!-- Share: table system statuses -->
 <section class="panel system-status">
-	<h2>System statuses</h2>
+	<h2>{data.dataHygraph.dashboard.systemStatus.title}</h2>
 	<table>
 		<tr>
 			<td class="dot">
 				<div class="pulse-container">
 					<div class="status-pulse">
 						<div class="pulse-marker green" />
-						<h3>In operation</h3>
+						<h3>{data.dataHygraph.dashboard.systemStatus.opties[0]}</h3>
 					</div>
 				</div>
 			</td>
 			<td class="amount">
-				<h4>{operational.length} interceptors</h4>
+				<h4>{operational.length} {data.dataHygraph.dashboard.systemStatus.opties[5]}</h4>
 			</td>
 		</tr>
 
@@ -43,12 +43,12 @@
 				<div class="pulse-container">
 					<div class="status-pulse">
 						<div class="pulse-marker green" />
-						<h3>Harvesting</h3>
+						<h3>{data.dataHygraph.dashboard.systemStatus.opties[1]}</h3>
 					</div>
 				</div>
 			</td>
 			<td class="amount">
-				<h4>1 ocean system</h4>
+				<h4>{data.dataHygraph.dashboard.systemStatus.opties[6]}</h4>
 			</td>
 		</tr>
 
@@ -57,12 +57,12 @@
 				<div class="pulse-container">
 					<div class="status-pulse">
 						<div class="pulse-marker blue" />
-						<h3>Installed for testing</h3>
+						<h3>{data.dataHygraph.dashboard.systemStatus.opties[2]}</h3>
 					</div>
 				</div>
 			</td>
 			<td class="amount">
-				<h4>{installed.length} interceptor</h4>
+				<h4>{installed.length} {data.dataHygraph.dashboard.systemStatus.opties[5]}</h4>
 			</td>
 		</tr>
 
@@ -71,12 +71,12 @@
 				<div class="pulse-container">
 					<div class="status-pulse">
 						<div class="pulse-marker gray" />
-						<h3>Planned</h3>
+						<h3>{data.dataHygraph.dashboard.systemStatus.opties[3]}</h3>
 					</div>
 				</div>
 			</td>
 			<td class="amount">
-				<h4>{planned.length} interceptor</h4>
+				<h4>{planned.length} {data.dataHygraph.dashboard.systemStatus.opties[5]}</h4>
 			</td>
 		</tr>
 
@@ -85,12 +85,12 @@
 				<div class="pulse-container">
 					<div class="status-pulse">
 						<div class="pulse-marker gray" />
-						<h3>Contract signed</h3>
+						<h3>{data.dataHygraph.dashboard.systemStatus.opties[4]}</h3>
 					</div>
 				</div>
 			</td>
 			<td class="amount">
-				<h4>{inMaintenance.length} interceptor</h4>
+				<h4>{inMaintenance.length} {data.dataHygraph.dashboard.systemStatus.opties[5]}</h4>
 			</td>
 		</tr>
 	</table>

@@ -17,6 +17,10 @@ export async function load({ url, params }) {
       nav {
         navLinkjes
       }
+      map {
+        title
+        opties
+      }
       trashRemoved {
         total
         month

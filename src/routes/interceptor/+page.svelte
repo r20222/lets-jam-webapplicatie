@@ -25,6 +25,11 @@
         <Map data={data} />
     </div>
 </section>
+
+<!-- Scroll to top button -->
+<a href="#top" class="scroll-top" aria-label="scroll to top">
+	<!-- add icon -->TOP
+</a>
    
 <style>
 

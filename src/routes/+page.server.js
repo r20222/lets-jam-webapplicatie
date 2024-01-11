@@ -26,6 +26,14 @@ export async function load() {
         nav {
           navLinkjes
         }
+        map {
+          title
+          opties
+        }
+        systemStatus {
+          opties
+          title
+        }
         title
         titlePage
         river {

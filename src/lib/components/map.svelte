@@ -91,10 +91,10 @@
 <section id="map">
 	<section class="container-dropdown">
 		<details class="dropdown">
-			<summary class="for-dropdown">Filter on Systems:</summary>
+			<summary class="for-dropdown">{data.dataHygraph.dashboard.map.title}</summary>
 			<div>
 				<details class="dropdown-sub">
-					<summary class="for-dropdown-sub">System River</summary>
+					<summary class="for-dropdown-sub">{data.dataHygraph.dashboard.map.opties[1]}</summary>
 					{#each data.dataHygraph.dashboard.river as item, index}
 						<ul>
 							<li>
@@ -109,7 +109,7 @@
 					{/each}
 				</details>
 				<details class="dropdown-sub">
-					<summary class="for-dropdown-sub">System Ocean</summary>
+					<summary class="for-dropdown-sub">{data.dataHygraph.dashboard.map.opties[0]}</summary>
 					<ul>
 						<li>
 							<a href="/oceanSystem">

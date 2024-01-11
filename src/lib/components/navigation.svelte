@@ -5,7 +5,6 @@
      function ToggleMenu() {
          visible = !visible
      }
-     console.log(data)
  </script>
 
  {#if visible}

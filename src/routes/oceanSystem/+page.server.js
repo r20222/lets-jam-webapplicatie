@@ -14,6 +14,10 @@ export async function load() {
       nav {
         navLinkjes
       }
+      map {
+        title
+        opties
+      }
       title
       river {
         slug
