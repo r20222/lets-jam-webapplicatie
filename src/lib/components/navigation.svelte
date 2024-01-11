@@ -1,8 +1,9 @@
 <script>
-    let visible = true
+    export let visible = false
      function ToggleMenu() {
          visible = !visible
      }
+
  </script>
 
  {#if visible}
@@ -120,6 +121,7 @@
 
  button:hover {
      background-color: rgba(128, 128, 128, 0.332);
+     cursor: pointer;
  }
 
  .nav-link {
