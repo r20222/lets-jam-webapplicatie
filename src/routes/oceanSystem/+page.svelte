@@ -7,14 +7,16 @@
 	import Startdate from '../../lib/components/startdate.svelte';
     import Map from '../../lib/components/map.svelte'
     export let data
+    let gridWithWithoutNav;
 </script>
 
 <svelte:head>
     <title>{data.dataHygraph.dashboard.ocean.titlePage}</title>
 </svelte:head>
 
-<Navigation data={data.dataHygraph.dashboard.nav} />
-<section>
+    <Navigation  bind:visible={gridWithWithoutNav} />
+    
+<section class="{gridWithWithoutNav ? 'margin-with-navigation' : 'margin-without-navigation'}">
     <h2>{data.dataApi.systems[0]. name}</h2>
     <TrashRemovedOcean data={data.dataApi.systems[0]} text={data.dataHygraph} />
     <Infotext data={data.dataHygraph.dashboard.ocean.oceanInfotext} />
@@ -117,7 +119,7 @@
     /* vanaf 992px */
     @media (min-width:62em) {
     section{
-        margin: 0rem 2rem 2rem 18rem;
+        /* margin: 0rem 2rem 2rem 18rem; */
         grid-template-columns: repeat(5, 1fr);
         /* grid-template-rows: 0.01fr 0.1fr 0.3fr 0.4fr 0.4fr 0.6fr; */
         grid-template-areas:
@@ -130,6 +132,15 @@
             "dashboard-info-lastportcall dashboard-info-lastportcall image image image"
             "dashboard-info-lastportcall dashboard-info-lastportcall image image image";
     }
+    /* past de margin aan als de nav in of uitgeklapt is */
+		.margin-with-navigation{
+			margin: 0rem 2rem 2rem 18rem;
+			transition:.1s;
+		}
+		.margin-without-navigation{
+			margin: 0rem 2rem 2rem 2rem;
+			transition:.1s;
+		}
 }
     
 </style>

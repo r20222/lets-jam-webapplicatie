@@ -6,16 +6,15 @@
     import Image from '../../lib/molecules/image.svelte';
     import Map from '../../lib/components/map.svelte'
     export let data
-
+    let gridWithWithoutNav;
 </script>
 
 <svelte:head>
     <title>{data.currentInterceptorHygraph[0].titlePage}</title>
 </svelte:head>
 
-<Navigation data={data.dataHygraph.dashboard.nav} />
-
-<section>
+<Navigation bind:visible={gridWithWithoutNav} />
+<section class="{gridWithWithoutNav ? 'margin-with-navigation' : 'margin-without-navigation'}">
     <h2>{data.currentInterceptor[0].name}</h2>
     <Infotext data={data.currentInterceptorHygraph[0].riverInfoText} />
     <TrashRemoved data={data.currentInterceptor[0]} text={data.dataHygraph} />
@@ -113,10 +112,14 @@
             "dashboard-info-startdate dashboard-info-startdate image image image"
             "dashboard-info-startdate dashboard-info-startdate image image image";
      }
-     /* .map{
-         grid-area: map;
-         width:100%;
-         height:100%;
-     } */
+       /* past de margin aan als de nav in of uitgeklapt is */
+		.margin-with-navigation{
+			margin: 0rem 2rem 2rem 18rem;
+			transition:.1s;
+		}
+		.margin-without-navigation{
+			margin: 0rem 2rem 2rem 2rem;
+			transition:.1s;
+		}
  }   
 </style>

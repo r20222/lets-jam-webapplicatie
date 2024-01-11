@@ -1,14 +1,11 @@
 <script>
-    export let data
-
-    let visible = true
+    export let visible = true
      function ToggleMenu() {
          visible = !visible
      }
  </script>
 
- {#if visible}
- <header class="Header" >
+ <header class="Header {visible ? 'visible-nav' : 'unvisible-nav'}" >
      <nav>
          <img src="/Ocean-Cleanup-Logo-Dark.png" alt="logo of The ocean cleanup" />
          <ul>
@@ -57,7 +54,7 @@
          <button on:click={ToggleMenu}>HIDE MENU</button>
      </nav>
  </header>
- {/if}
+
  <button on:click={ToggleMenu}>SHOW MENU</button>
  
 
@@ -98,6 +95,15 @@
      overflow: hidden;
  }
 
+/* animatie visible/unvisible nav (r20222) */
+ .visible-nav{
+    transform: 0;
+    transition:.1s;
+}
+ .unvisible-nav{
+    transform: translateY(-5.5rem);
+    transition:.1s;
+}
  nav img {
      left: 0;
      top: 0;
@@ -107,6 +113,7 @@
  }
 
  button {
+    /* position:fixed; */
      background-color: #143653;
      border: 1px #fff solid;
      border-radius: 0.3rem;
@@ -122,6 +129,7 @@
 
  button:hover {
      background-color: rgba(128, 128, 128, 0.332);
+     cursor: pointer;
  }
 
  .nav-link {
@@ -162,6 +170,17 @@
          justify-content: left;
          gap: 6rem;
          overflow: hidden;
+     }
+
+
+     /* animatie visible/unvisible nav (r20222) */
+     .visible-nav{
+        transform: 0;
+        transition:.1s;
+     }
+     .unvisible-nav{
+        transform: translateX(-250px);
+        transition:.1s;
      }
 
      .nav-link {

@@ -8,17 +8,23 @@
 	import ChartRiverOcean from '../lib/components/chart-river-ocean.svelte';
 	import SystemStatus from '../lib/components/system-status.svelte';
 	export let data;
+	let gridWithWithoutNav;
 </script>
 
 <svelte:head>
 	<title>{data.dataHygraph.dashboard.titlePage}</title>
 </svelte:head>
 
-<Navigation data={data.dataHygraph.dashboard.nav} />
+<!-- Met bind update je gridWithWithoutNav naar dezelfde waarde als visible uit het Navigation component -->
+<Navigation bind:visible={gridWithWithoutNav} />
 
 <section class="main">
-	<div class="grid-container">
 
+	<!-- {#if visible} -->
+	<div class="grid-container {gridWithWithoutNav ? 'margin-with-navigation' : 'margin-without-navigation'}">
+	<!-- {:else}	 -->
+	<!-- <div class="grid-container margin-without-navigation"> -->
+	<!-- {/if} -->
 		<!-- Blue line -->
 		<div class="menu">
 			<div class="dashboard-line" />
@@ -136,6 +142,7 @@
 		text-decoration: none;
 	}
 
+	
 	/* Grid mobiel */
 	.grid-container {
 		margin: 5rem 1.5rem 1.5rem 1.5rem;
@@ -275,7 +282,7 @@
 	/* screens min-width: 992px */
 	@media (min-width: 62em) {
 		.grid-container {
-			margin: 0rem 2rem 2rem 18rem;
+			
 			grid-template-columns: repeat(6, 1fr);
 			/* grid-template-rows: 0.01fr 0.1fr 0.3fr 0.4fr 0.4fr 0.6fr; */
 			grid-template-areas:
@@ -286,6 +293,15 @@
 				'system-status system-status system-status system-status system-status system-status'
 				'chart-river-ocean chart-river-ocean chart-river-ocean chart-continents chart-continents chart-continents'
 				'trash-collected-over-time-chart trash-collected-over-time-chart trash-collected-over-time-chart trash-collected-over-time-chart trash-collected-over-time-chart trash-collected-over-time-chart';
+		}
+		/* past de margin aan als de nav in of uitgeklapt is */
+		.margin-with-navigation{
+			margin: 0rem 2rem 2rem 18rem;
+			transition:.1s;
+		}
+		.margin-without-navigation{
+			margin: 0rem 2rem 2rem 2rem;
+			transition:.1s;
 		}
 	}
 
