@@ -19,7 +19,7 @@
 	"type": "module",
 	"dependencies": {
 		"auto": "^11.0.4",
-		"chart.js": "^4.4.0",
+		"chart.js": "^4.4.1",
 		"fetch": "^1.1.0",
 		"graphql": "^16.8.1",
 		"graphql-request": "^6.1.0",
