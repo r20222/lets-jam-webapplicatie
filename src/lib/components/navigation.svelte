@@ -5,13 +5,6 @@
      }
  </script>
 
-
-
-
-
-
-
- <!-- {#if visible} -->
  <header class="Header {visible ? 'visible-nav' : 'unvisible-nav'}" >
      <nav>
          <img src="/Ocean-Cleanup-Logo-Dark.png" alt="logo of The ocean cleanup" />
@@ -61,7 +54,7 @@
          <button on:click={ToggleMenu}>HIDE MENU</button>
      </nav>
  </header>
- <!-- {/if} -->
+
  <button on:click={ToggleMenu}>SHOW MENU</button>
  
 
@@ -102,6 +95,15 @@
      overflow: hidden;
  }
 
+/* animatie visible/unvisible nav (r20222) */
+ .visible-nav{
+    transform: 0;
+    transition:.1s;
+}
+ .unvisible-nav{
+    transform: translateY(-5.5rem);
+    transition:.1s;
+}
  nav img {
      left: 0;
      top: 0;
@@ -170,6 +172,8 @@
          overflow: hidden;
      }
 
+
+     /* animatie visible/unvisible nav (r20222) */
      .visible-nav{
         transform: 0;
         transition:.1s;
