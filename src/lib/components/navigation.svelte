@@ -1,9 +1,8 @@
 <script>
-    export let visible = false
+    export let visible = true
      function ToggleMenu() {
          visible = !visible
      }
-
  </script>
 
  {#if visible}
