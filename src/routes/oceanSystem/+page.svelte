@@ -11,10 +11,10 @@
 </script>
 
 <svelte:head>
-    <title>Ocean System Dashboard</title>
+    <title>{data.dataHygraph.dashboard.ocean.titlePage}</title>
 </svelte:head>
 
-    <Navigation  bind:visible={gridWithWithoutNav} />
+    <Navigation  bind:visible={gridWithWithoutNav} data={data.dataHygraph.dashboard.nav}/>
     
 <section class="{gridWithWithoutNav ? 'margin-with-navigation' : 'margin-without-navigation'}">
     <h2>{data.dataApi.systems[0]. name}</h2>
@@ -28,6 +28,10 @@
     </div>
 </section>
 
+<!-- Scroll to top button -->
+<a href="#top" class="scroll-top" aria-label="scroll to top">
+	<!-- add icon -->{data.dataHygraph.dashboard.buttonTop}
+</a>
 
 
 <style>
@@ -94,6 +98,24 @@
     h2 {
         grid-area: header;
     }
+    
+	/* Scroll to top */
+	.scroll-top {
+		position: absolute;
+		bottom: 1%;
+		right: 2%;
+		width: 3rem;
+		height: 3rem;
+		padding: 0.5rem;
+		background-color: var(--lightBlue);
+		color: var(--whiteColor);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		text-transform: uppercase;
+	}
+
     /* vanaf 992px */
     @media (min-width:62em) {
     section{
