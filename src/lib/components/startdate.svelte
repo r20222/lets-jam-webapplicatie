@@ -5,8 +5,8 @@
 </script>
 
 <section>
-    <h2>{data.systems[0].name} {text.title}</h2>
-    <!-- <p>{new Intl.DateTimeFormat().format(data.date)}</p> -->
+    <h2>{data.name} {text.title}</h2>
+    <p>{data.in_operation_since}</p>
 </section>
 
 <style>
