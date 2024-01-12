@@ -1,7 +1,6 @@
 <script>
     export let text
     export let data
-    console.log(data)
 </script>
 
 <section>
