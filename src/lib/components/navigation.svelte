@@ -11,44 +11,20 @@
          <img src="/Ocean-Cleanup-Logo-Dark.png" alt="logo of The ocean cleanup" />
          <ul>
              <li>
-                 <a href="https://theoceancleanup.com/" class="nav-link" aria-label="back to the homepage">
+                 <a href="/" class="nav-link active" aria-label="dashboard">
                      <span>{data.navLinkjes[0]}</span>
                  </a>
              </li>
  
              <li>
-                 <a href="/" class="nav-link active" aria-label="dashboard">
+                 <a href="/" class="nav-link" aria-label="donate">
                      <span>{data.navLinkjes[1]}</span>
                  </a>
              </li>
  
              <li>
-                 <a href="/" class="nav-link" aria-label="our river technology">
-                     <span>{data.navLinkjes[2]}</span>
-                 </a>
-             </li>
- 
-             <li>
-                 <a href="/" class="nav-link" aria-label="the economic impact">
-                     <span>{data.navLinkjes[3]}</span>
-                 </a>
-             </li>
- 
-             <li>
-                 <a href="/" class="nav-link" aria-label="plastic sources ">
-                     <span>{data.navLinkjes[4]}</span>
-                 </a>
-             </li>
- 
-             <li>
-                 <a href="/" class="nav-link" aria-label="donate">
-                     <span>{data.navLinkjes[5]}</span>
-                 </a>
-             </li>
- 
-             <li>
                  <a href="/" class="nav-link" aria-label="sign up to newsletter">
-                     <span>{data.navLinkjes[6]}</span>
+                     <span>{data.navLinkjes[2]}</span>
                  </a>
              </li>
          </ul>
