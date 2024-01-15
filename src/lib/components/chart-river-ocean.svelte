@@ -67,7 +67,6 @@
 
 		<div>
 			<h3>{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[6]} {new Intl.NumberFormat().format(data.dataApi.totals.ocean_river_ratio.percent_river)}%</h3>
-			<!-- {percentage} -->
 
 			<details class="more-info-river">
 				<summary>{data.dataHygraph.dashboard.chartRiverOcean.buttons[0]}</summary>
@@ -90,10 +89,11 @@
 
 <style>
 
-.container-chart-river-ocean {
-
-}
 	/* SVG */
+
+.animation-fill-waterbottle {
+	animation: move 2s linear infinite;
+}
 
 	.wrapper-graph-ocean-river {
 		box-sizing: border-box;
