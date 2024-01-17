@@ -1,218 +1,273 @@
 <script>
-    export let data
-    export let visible = true
-     function ToggleMenu() {
-         visible = !visible
-     }
- </script>
+	export let data;
+	export let visible = true;
+	function ToggleMenu() {
+		visible = !visible;
+	}
+</script>
 
- <header class="Header {visible ? 'visible-nav' : 'unvisible-nav'}" >
-     <nav>
-         <img src="/Ocean-Cleanup-Logo-Dark.png" alt="logo of The ocean cleanup" />
-         <ul>
-             <li>
-                 <a href="/" class="nav-link active" aria-label="dashboard">
-                     <span>{data.navLinkjes[0]}</span>
-                 </a>
-             </li>
- 
-             <li>
-                 <a href="/" class="nav-link" aria-label="donate">
-                     <span>{data.navLinkjes[1]}</span>
-                 </a>
-             </li>
- 
-             <li>
-                 <a href="/" class="nav-link" aria-label="sign up to newsletter">
-                     <span>{data.navLinkjes[2]}</span>
-                 </a>
-             </li>
-         </ul>
-         <button on:click={ToggleMenu}>HIDE MENU</button>
-     </nav>
- </header>
+<header class="Header {visible ? 'visible-nav' : 'unvisible-nav'}">
+	<nav>
+		<img src="/Ocean-Cleanup-Logo-Dark.png" alt="logo of The ocean cleanup" />
+		<ul>
+			<li>
+				<a href="/" class="nav-link active" aria-label="dashboard">
+					<span>{data.navLinkjes[0]}</span>
+				</a>
+			</li>
 
- <button on:click={ToggleMenu}>SHOW MENU</button>
- 
+			<li>
+				<a href="/" class="nav-link" aria-label="donate">
+					<span>{data.navLinkjes[1]}</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="/" class="nav-link" aria-label="sign up to newsletter">
+					<span>{data.navLinkjes[2]}</span>
+				</a>
+			</li>
+		</ul>
+		<button on:click={ToggleMenu} class="button-nav">HIDE MENU</button>
+		<button class="btn-mobile" type="button">
+			<svg
+				class="svg-icon"
+				role="img"
+				fill="#fff"
+				height="30"
+				width="50"
+				viewBox="0 0 10 10"
+				aria-hidden="true"
+				focusable="false"
+			>
+				<path d="m1 7h8v2h-8zm0-3h8v2h-8zm0-3h8v2h-8z" />
+			</svg>
+		</button>
+	</nav>
+</header>
+
+<button on:click={ToggleMenu} class="btn-show-menu">SHOW MENU</button>
 
 <style>
- ul,
- li {
-     list-style: none;
- }
+	ul,
+	li {
+		list-style: none;
+		color: white;
+	}
 
- ul {
-     padding-left: 2rem;
-     padding-right: 2rem;
+	ul {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
 
- }
- a {
-     text-decoration: none;
- }
+	a {
+		text-decoration: none;
+		color: white;
+	}
 
- /* Nav */
- header {
-     position: fixed;
-     top: 0;
-     left: 0;
-     width: 100vw;
-     height: 5.5rem;
-     background-color: var(--whiteColor);
-     box-shadow: var(--boxShadow) 0px 0px 8px;
-     z-index: 100;
- }
+	/* Nav */
+	header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 5.5rem;
+		background-color: var(--whiteColor);
+		box-shadow: var(--boxShadow) 0px 0px 8px;
+		z-index: 100;
+	}
 
- nav {
-     height: 5.5rem;
-     display: flex;
-     flex-direction: row;
-     -webkit-box-pack: justify;
-     -ms-flex-pack: justify;
-     justify-content: space-between;
-     overflow: hidden;
- }
+	nav {
+		height: 5.5rem;
+		display: flex;
+		flex-direction: row;
+		-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+		justify-content: space-between;
+		overflow: hidden;
+	}
 
-/* animatie visible/unvisible nav (r20222) */
- .visible-nav{
-    transform: 0;
-    transition:.1s;
-}
- .unvisible-nav{
-    transform: translateY(-5.5rem);
-    transition:.1s;
-}
- nav img {
-     left: 0;
-     top: 0;
-     width: 11rem;
-     height: 100%;
-     padding: 0rem;
- }
+	.btn-mobile {
+		margin: 1rem;
+		background-color: #143653;
+		text-decoration: none;
+		border: none;
+	}
 
- button {
-    /* position:fixed; */
-     background-color: #143653;
-     border: 1px #fff solid;
-     border-radius: 0.3rem;
-     padding: 0.8rem;
-     width: fit-content;
-     margin: 0 auto;
-     color: #fff;
-     font-weight: 600;
-     /* font-size: 1.5rem; */
-     text-transform: uppercase;
-     letter-spacing: 0.05rem;
- }
+	.button-nav {
+		display: none;
+	}
 
- button:hover {
-     background-color: rgba(128, 128, 128, 0.332);
-     cursor: pointer;
- }
+	/* animatie visible/unvisible nav (r20222) */
+	.visible-nav {
+		transform: 0;
+		transition: 0.1s;
+	}
+	.unvisible-nav {
+		transform: translateY(-5.5rem);
+		transition: 0.1s;
+	}
+	nav img {
+		left: 0;
+		top: 0;
+		width: 11rem;
+		height: 100%;
+		padding: 0rem;
+	}
 
- .nav-link {
-     text-align: center;
-     color: var(--darkBlue);
-     /* font-size: 1.5rem; */
- }
+	.nav-link {
+		text-align: center;
+		color: var(--darkBlue);
+		/* font-size: 1.5rem; */
+	}
 
- .nav-link span {
-     display: none;
- }
+	.nav-link span {
+		display: flex;
+		justify-content: center;
+		/* gap: 1rem; */
+		font-weight: 600;
+		/* font-size: 1.5rem; */
+		text-transform: uppercase;
+		letter-spacing: 0.05rem;
+	}
 
- .active {
-     color: var(--lightBlue);
- }
+	.active {
+		color: var(--lightBlue);
+	}
 
- /* Breakpoints medium screen */
- @media (min-width: 992px) {
-     /* Nav */
-     header {
-         position: fixed;
-         top: 0;
-         left: 0;
-         width: 250px;
-         height: 100vh;
-         box-shadow: var(--boxShadow) 0px 0px 8px;
-     }
+	/* Breakpoints medium screen */
+	@media (min-width: 992px) {
+		/* Nav */
+		header {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 250px;
+			height: 100vh;
+			box-shadow: var(--boxShadow) 0px 0px 8px;
+		}
 
-     nav img {
-         width: 250px;
-         height: auto;
-     }
+		nav img {
+			width: 250px;
+			height: auto;
+		}
 
-     nav {
-         height: 100%;
-         width:250px;
-         flex-direction: column;
-         justify-content: left;
-         gap: 6rem;
-         overflow: hidden;
-     }
+		nav {
+			height: 100%;
+			width: 250px;
+			flex-direction: column;
+			justify-content: left;
+			gap: 6rem;
+			overflow: hidden;
+		}
 
+		.btn-mobile {
+			display: none;
+		}
 
-     /* animatie visible/unvisible nav (r20222) */
-     .visible-nav{
-        transform: 0;
-        transition:.1s;
-     }
-     .unvisible-nav{
-        transform: translateX(-250px);
-        transition:.1s;
-     }
+		.button-nav {
+			position: absolute;
+			display: block;
+			background-color: #143653;
+			border: 1px #fff solid;
+			border-radius: 1rem;
+			padding: 0.8rem;
+			bottom: 2rem;
+			left: 2rem;
+			width: fit-content;
+			color: #fff;
+			font-weight: 600;
+			/* font-size: 1.5rem; */
+			text-transform: uppercase;
+			letter-spacing: 0.05rem;
+		}
 
-     .nav-link {
-         display: flex;
-         justify-content: left;
-         align-items: center;
-         margin-bottom: 1rem;
-         gap: 1rem;
-     }
+		.btn-show-menu {
+			position: fixed;
+			display: block;
+			background-color: #143653;
+			border: 1px #fff solid;
+			border-radius: 1rem;
+			padding: 0.8rem;
+			bottom: 2rem;
+			left: 2rem;
+			width: fit-content;
+			color: #fff;
+			font-weight: 600;
+			/* font-size: 1.5rem; */
+			text-transform: uppercase;
+			letter-spacing: 0.05rem;
+			z-index: 2;
+		}
 
-     .nav-link span {
-         display: flex;
-         justify-content: left;
-         align-items: center;
-         /* gap: 1rem; */
-         font-weight: 600;
-         /* font-size: 1.5rem; */
-         text-transform: uppercase;
-         letter-spacing: 0.05rem;
-     }
+		button:hover {
+			background-color: rgba(128, 128, 128, 0.332);
+			cursor: pointer;
+		}
 
-     .nav-link span:hover {
-         color: var(--lightBlue);
-     }
+		/* animatie visible/unvisible nav (r20222) */
+		.visible-nav {
+			transform: 0;
+			transition: 0.1s;
+		}
+		.unvisible-nav {
+			transform: translateX(-250px);
+			transition: 0.1s;
+		}
 
-     .active {
-         color: var(--lightBlue);
-     }
- }
+		.nav-link {
+			display: flex;
+			justify-content: left;
+			align-items: center;
+			margin-bottom: 1rem;
+			gap: 1rem;
+		}
 
- /* Breakpoints large screen */
- @media (min-width: 1200px) {
-     .nav-link {
-         display: flex;
-         justify-content: left;
-         align-items: center;
-     }
+		.nav-link span {
+			display: flex;
+			justify-content: left;
+			align-items: center;
+			/* gap: 1rem; */
+			font-weight: 600;
+			/* font-size: 1.5rem; */
+			text-transform: uppercase;
+			letter-spacing: 0.05rem;
+		}
 
-     .nav-link span {
-         display: flex;
-         justify-content: left;
-         align-items: center;
-         gap: 1rem;
-         font-weight: 600;
-         font-size: 1rem;
-         text-transform: uppercase;
-         letter-spacing: 0.05rem;
-     }
+		.nav-link span:hover {
+			color: var(--lightBlue);
+		}
 
-     .nav-link:hover {
-         color: var(--lightBlue);
-     }
+		.active {
+			color: var(--lightBlue);
+		}
+	}
 
-     .active {
-         color: var(--lightBlue);
-     }
- }
+	/* Breakpoints large screen */
+	@media (min-width: 1200px) {
+		.nav-link {
+			display: flex;
+			justify-content: left;
+			align-items: center;
+		}
+
+		.nav-link span {
+			display: flex;
+			justify-content: left;
+			align-items: center;
+			gap: 1rem;
+			font-weight: 600;
+			font-size: 1rem;
+			text-transform: uppercase;
+			letter-spacing: 0.05rem;
+		}
+
+		.nav-link:hover {
+			color: var(--lightBlue);
+		}
+
+		.active {
+			color: var(--lightBlue);
+		}
+	}
 </style>
