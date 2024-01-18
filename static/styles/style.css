@@ -1,7 +1,6 @@
 *:focus-visible, button:focus-visible{
     border: 3px solid black;
 }
-
 :root {
     --darkBlue: #143653;
     --trashRemovedBackground: white;
