@@ -285,19 +285,19 @@
 			padding: 1.5rem;
 		}
 
-		.chart-continents {
-			/* font-size: 3rem; */
+		/* .chart-continents {
+			font-size: 3rem;
 		}
 
 		.chart-river-ocean {
-			/* font-size: 2.5rem; */
+			font-size: 2.5rem;
 		}
 
 		.chart-river-ocean,
 		.chart-continents,
 		h2 {
-			/* font-size: 1.5rem; */
-		}
+			font-size: 1.5rem;
+		} */
 
 		.dashboard-line {
 			height: 2px;
