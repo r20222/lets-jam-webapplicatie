@@ -8,7 +8,30 @@
 
 <header class="Header {visible ? 'visible-nav' : 'unvisible-nav'}">
 	<nav>
-		<img src="/Ocean-Cleanup-Logo-Dark.png" alt="logo of The ocean cleanup" />
+        <ul class="mobile-nav">
+            <li>
+
+                <img src="/Ocean-Cleanup-Logo-Dark.png" alt="logo of The ocean cleanup" />
+            </li>
+            <li>
+
+                <button class="btn-mobile" type="button">
+                    <svg
+                        class="svg-icon"
+                        role="img"
+                        fill="#fff"
+                        height="30"
+                        width="50"
+                        viewBox="0 0 10 10"
+                        aria-hidden="true"
+                        focusable="false"
+                    >
+                        <path d="m1 7h8v2h-8zm0-3h8v2h-8zm0-3h8v2h-8z" />
+                    </svg>
+                </button>
+            </li>
+
+        </ul>
 		<ul>
 			<li>
 				<a href="/" class="nav-link active" aria-label="dashboard">
@@ -29,20 +52,7 @@
 			</li>
 		</ul>
 		<button on:click={ToggleMenu} class="button-nav">HIDE MENU</button>
-		<button class="btn-mobile" type="button">
-			<svg
-				class="svg-icon"
-				role="img"
-				fill="#fff"
-				height="30"
-				width="50"
-				viewBox="0 0 10 10"
-				aria-hidden="true"
-				focusable="false"
-			>
-				<path d="m1 7h8v2h-8zm0-3h8v2h-8zm0-3h8v2h-8z" />
-			</svg>
-		</button>
+		
 	</nav>
 </header>
 
@@ -53,8 +63,13 @@
 	li {
 		list-style: none;
 		color: white;
+        background-color: var(--whiteColor);
 	}
-
+.mobile-nav{
+    display:flex;
+    justify-content: space-between;
+  
+}
 	ul {
 		padding-left: 2rem;
 		padding-right: 2rem;
@@ -80,11 +95,11 @@
 	nav {
 		height: 5.5rem;
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
 		-webkit-box-pack: justify;
 		-ms-flex-pack: justify;
 		justify-content: space-between;
-		overflow: hidden;
+		/* overflow: hidden; */
 	}
 
 	.btn-mobile {
@@ -123,6 +138,7 @@
 
 	.nav-link span {
 		display: flex;
+        padding: 0.5rem;
 		justify-content: center;
 		/* gap: 1rem; */
 		font-weight: 600;
@@ -227,6 +243,7 @@
 			display: flex;
 			justify-content: left;
 			align-items: center;
+            padding: 0rem;
 			/* gap: 1rem; */
 			font-weight: 600;
 			/* font-size: 1.5rem; */
