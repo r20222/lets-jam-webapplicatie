@@ -65,24 +65,10 @@
 	<!-- add icon -->{data.dataHygraph.dashboard.buttonTop}
 </a>
 
+
+   
 <style>
-	/* Als darkmode de standaard instelling is */
-	@media (prefers-color-scheme: dark) {
-		:root {
-			--darkBlue: #ffffff;
-			--lightBlue: #5cc8de;
-			--whiteColor: #143653;
-			--lightGray: #0d2437;
-			--accentGray: rgb(228, 228, 228);
-			--textColor: #ffffff;
-			--boxShadow: rgba(128, 128, 128, 0);
-			--color: rgb(212, 212, 212);
-			--textSize: 1.2rem;
-			--iconSize: 2rem;
-			--trashRemovedBackground: #143653;
-		}
-	}
-	.map {
+    .map {
 		grid-area: map;
 		border-radius: 0.5rem;
 		padding: 0.5rem;

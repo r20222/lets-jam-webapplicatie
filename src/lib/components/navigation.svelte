@@ -85,7 +85,6 @@
      box-shadow: var(--boxShadow) 0px 0px 8px;
      z-index: 100;
  }
-
  nav {
      height: 5.5rem;
      display: flex;
