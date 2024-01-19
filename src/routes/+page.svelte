@@ -6,7 +6,7 @@
 	import ChartContinents from '../lib/components/chart-continents.svelte'
 	import ChartRiverOcean from '../lib/components/chart-river-ocean.svelte'
 	import SystemStatus from '../lib/components/system-status.svelte'
-	import { Map, MapDropDown } from '$lib/index.js'
+	import { Map, MapDropDown } from '../lib/index.js'
 	export let data
 	let gridWithWithoutNav
 </script>
