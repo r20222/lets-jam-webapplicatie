@@ -4,35 +4,45 @@
 	function ToggleMenu() {
 		visible = !visible;
 	}
+
+	let menuOpen = true;
+
+	function toggleMobileMenu() {
+		menuOpen = !menuOpen;
+	}
+
+	// const mobileButton = document.querySelector('.btn-mobile');
+	// const menuList = document.querySelector('.menu-list');
+
+	// mobileButton.addEventListener('click', function () {
+	// 	menuList.classList.toggle('menu-list-open');
+	// });
 </script>
 
 <header class="Header {visible ? 'visible-nav' : 'unvisible-nav'}">
 	<nav>
-        <ul class="mobile-nav">
-            <li>
-
-                <img src="/Ocean-Cleanup-Logo-Dark.png" alt="logo of The ocean cleanup" />
-            </li>
-            <li>
-
-                <button class="btn-mobile" type="button">
-                    <svg
-                        class="svg-icon"
-                        role="img"
-                        fill="#fff"
-                        height="30"
-                        width="50"
-                        viewBox="0 0 10 10"
-                        aria-hidden="true"
-                        focusable="false"
-                    >
-                        <path d="m1 7h8v2h-8zm0-3h8v2h-8zm0-3h8v2h-8z" />
-                    </svg>
-                </button>
-            </li>
-
-        </ul>
-		<ul>
+		<ul class="mobile-nav">
+			<li>
+				<img src="/Ocean-Cleanup-Logo-Dark.png" alt="logo of The ocean cleanup" />
+			</li>
+			<li>
+				<button on:click={toggleMobileMenu} class="btn-mobile" type="button">
+					<svg
+						class="svg-icon"
+						role="img"
+						fill="#fff"
+						height="30"
+						width="50"
+						viewBox="0 0 10 10"
+						aria-hidden="true"
+						focusable="false"
+					>
+						<path d="m1 7h8v2h-8zm0-3h8v2h-8zm0-3h8v2h-8z" />
+					</svg>
+				</button>
+			</li>
+		</ul>
+		<ul class="menu-list {menuOpen ? 'menu-list' : 'menu-list-open'}">
 			<li>
 				<a href="/" class="nav-link active" aria-label="dashboard">
 					<span>{data.navLinkjes[0]}</span>
@@ -52,7 +62,6 @@
 			</li>
 		</ul>
 		<button on:click={ToggleMenu} class="button-nav">HIDE MENU</button>
-		
 	</nav>
 </header>
 
@@ -63,21 +72,38 @@
 	li {
 		list-style: none;
 		color: white;
-        background-color: var(--whiteColor);
+		background-color: var(--whiteColor);
 	}
-.mobile-nav{
-    display:flex;
-    justify-content: space-between;
-  
-}
+
+	.mobile-nav {
+		display: flex;
+		justify-content: space-between;
+	}
 	ul {
 		padding-left: 2rem;
 		padding-right: 2rem;
+		margin: 0;
+		padding-top: 1rem;
 	}
 
 	a {
 		text-decoration: none;
 		color: white;
+	}
+	.menu-list {
+		z-index: -1;
+		padding: 3rem 0rem;
+		margin-top: -2rem;
+		opacity: 0;
+		transform: translateY(-300px);
+		transition: 0.3s;
+	}
+
+	.menu-list-open {
+		z-index: -1;
+		opacity: 1;
+		transform: translateY(0px);
+		transition: 0.3s;
 	}
 
 	/* Nav */
@@ -138,7 +164,7 @@
 
 	.nav-link span {
 		display: flex;
-        padding: 0.5rem;
+		padding: 0.5rem;
 		justify-content: center;
 		/* gap: 1rem; */
 		font-weight: 600;
@@ -175,6 +201,20 @@
 			justify-content: left;
 			gap: 6rem;
 			overflow: hidden;
+		}
+
+		.menu-list {
+			padding: 3rem 1rem;
+			margin-top: 0rem;
+			opacity: 1;
+			transform: translateY(0px);
+		}
+
+		.menu-list-open {
+			opacity: 1;
+		}
+		ul{
+			padding:0;
 		}
 
 		.btn-mobile {
@@ -243,7 +283,7 @@
 			display: flex;
 			justify-content: left;
 			align-items: center;
-            padding: 0rem;
+			padding: 0rem;
 			/* gap: 1rem; */
 			font-weight: 600;
 			/* font-size: 1.5rem; */
