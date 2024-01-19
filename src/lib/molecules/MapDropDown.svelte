@@ -1,6 +1,6 @@
 <script>
 	export let data
-	import { DropDown, Link } from '../lib/index.js'
+	import { DropDown, Link } from '../index.js'
 
 	const getStatusColor = (status) => {
 		switch (status) {
