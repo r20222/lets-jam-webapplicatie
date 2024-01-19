@@ -1,87 +1,92 @@
 <script>
-	export let data 
+	export let data;
 </script>
 
-
 <section class="continents-graph-container">
-
-<section>
-	<details aria-label="more-info-ocean-cleanup" class="more-info-continents">
-		<summary>More info</summary>
-		<p>more info over continents ocean cleanup</p>
-	</details>
-</section>
+	<section>
+		<details aria-label="more-info-ocean-cleanup" class="more-info-continents">
+			<summary>More info</summary>
+			<p>more info over continents ocean cleanup</p>
+		</details>
+	</section>
 
 	<div class="wrapper-continents">
-
-		<div class="continents-variables" style="
+		<div
+			class="continents-variables"
+			style="
 			--asia: {data.dataApi.totals.world_ratio.asia}%;
 			--africa: {data.dataApi.totals.world_ratio.africa}%; 
 			--north-america: {data.dataApi.totals.world_ratio.north_america}%; 
 			--south-america: {data.dataApi.totals.world_ratio.south_america}%;
 			--europe:  {data.dataApi.totals.world_ratio.europe}%;
 			--antarctica:  {data.dataApi.totals.world_ratio.antarctica}%;
-			--oceania: {data.dataApi.totals.world_ratio.oceania}%;">
-		</div>
+			--oceania: {data.dataApi.totals.world_ratio.oceania}%;"
+		/>
 
 		<ul class="continents-key">
 			<li class="key-item">
 				<details>
-					<summary class="continent-summary"><div class="key-item-asia"></div>Asia</summary>
-					<p>{data.dataApi.totals.world_ratio.asia}% of total global removed trash is from the Asian continent </p>
-				</details>	
-			</li>
-
-			<li class="key-item">
-				<details>
-					<summary class="continent-summary"><div class="key-item-africa"></div>Africa</summary>
-					<p>{data.dataApi.totals.world_ratio.africa}% of total global removed trash is from the African continent </p>
+					<summary class="continent-summary"><div class="key-item-asia" />Asia</summary>
+					<p>{data.dataApi.totals.world_ratio.asia}% of total global removed trash is from the Asian continent</p>
 				</details>
 			</li>
 
 			<li class="key-item">
 				<details>
-					<summary class="continent-summary"><div class="key-item-north-america"></div>North America</summary>
-					<p>{data.dataApi.totals.world_ratio.north_america}% of total global removed trash is from the North American continent </p>
+					<summary class="continent-summary"><div class="key-item-africa" />Africa</summary>
+					<p>{data.dataApi.totals.world_ratio.africa}% of total global removed trash is from the African continent</p>
 				</details>
 			</li>
 
 			<li class="key-item">
 				<details>
-					<summary class="continent-summary"><div class="key-item-south-america"></div>South America</summary>
-					<p>{data.dataApi.totals.world_ratio.south_america}% of total global removed trash is from the South American continent </p>
+					<summary class="continent-summary"><div class="key-item-north-america" />North America</summary>
+					<p>{data.dataApi.totals.world_ratio.north_america}% of total global removed trash is from the North American continent</p>
 				</details>
 			</li>
 
 			<li class="key-item">
 				<details>
-					<summary class="continent-summary"><div class="key-item-europe"></div>Europe</summary>
-					<p>{data.dataApi.totals.world_ratio.europe}% of total global removed trash is from the European continent </p>
+					<summary class="continent-summary"><div class="key-item-south-america" />South America</summary>
+					<p>{data.dataApi.totals.world_ratio.south_america}% of total global removed trash is from the South American continent</p>
 				</details>
 			</li>
 
 			<li class="key-item">
 				<details>
-					<summary class="continent-summary"><div class="key-item-antarctica"></div>Antarctica</summary>
-					<p>{data.dataApi.totals.world_ratio.antarctica}% of total global removed trash is from the Antartic continent </p>
+					<summary class="continent-summary"><div class="key-item-europe" />Europe</summary>
+					<p>{data.dataApi.totals.world_ratio.europe}% of total global removed trash is from the European continent</p>
 				</details>
 			</li>
 
 			<li class="key-item">
 				<details>
-					<summary class="continent-summary"><div class="key-item-oceania"></div>Oceania</summary>
+					<summary class="continent-summary"><div class="key-item-antarctica" />Antarctica</summary>
+					<p>{data.dataApi.totals.world_ratio.antarctica}% of total global removed trash is from the Antartic continent</p>
+				</details>
+			</li>
+
+			<li class="key-item">
+				<details>
+					<summary class="continent-summary"><div class="key-item-oceania" />Oceania</summary>
 					<p>Kilograms of removed trash from Oceania is {data.dataApi.totals.world_ratio.oceania}%</p>
 				</details>
 			</li>
 		</ul>
-
 	</div>
-
 </section>
 
-
 <style>
+	.wrapper-continents {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+		justify-content: center;
+		margin: 0 auto;
+		margin-top: 2rem;
+	}
 
+	/* PIE CHART (continents graph)  */
 	.continents-graph-container {
 		display: flex;
 		flex-direction: column;
@@ -94,24 +99,36 @@
 		height: 15rem;
 		background: conic-gradient(
 			#5cc8de var(--asia),
-			#B0B0B0 var(--asia) calc(var(--africa) + var(--asia)),
-			#64D0F2 var(--africa) calc(var(--africa) + var(--asia) + var(--north-america)),
-			#003854 var(--north-america) calc(var(--africa) + var(--asia) + var(--north-america) + var(--south-america)),
-			#84CE5F var(--south-america) calc(var(--africa) + var(--asia) + var(--north-america) + var(--south-america) + var(--europe)),
-			#95d6e3 var(--europe) calc(var(--africa) + var(--asia) + var(--north-america) + var(--south-america) + var(--europe) + var(--antarctica)),
-			#ebebcb var(--antarctica) calc(var(--africa) + var(--asia) + var(--north-america) + var(--south-america) + var(--europe) + var(--antarctica) + var(--oceania))
+			#b0b0b0 var(--asia) calc(var(--africa) + var(--asia)),
+			#64d0f2 var(--africa) calc(var(--africa) + var(--asia) + var(--north-america)),
+			#003854 var(--north-america)
+				calc(var(--africa) + var(--asia) + var(--north-america) + var(--south-america)),
+			#84ce5f var(--south-america)
+				calc(
+					var(--africa) + var(--asia) + var(--north-america) + var(--south-america) + var(--europe)
+				),
+			#95d6e3 var(--europe)
+				calc(
+					var(--africa) + var(--asia) + var(--north-america) + var(--south-america) + var(--europe) +
+						var(--antarctica)
+				),
+			#ebebcb var(--antarctica)
+				calc(
+					var(--africa) + var(--asia) + var(--north-america) + var(--south-america) + var(--europe) +
+						var(--antarctica) + var(--oceania)
+				)
 		);
-		
+
 		border-radius: 50%;
+		box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);
 	}
 
-	
-
+	/*  KEY */
 	.continents-key {
 		list-style: none;
 		display: flex;
 		flex-direction: column;
-		gap: .3rem;
+		gap: 0.3rem;
 	}
 
 	.key-item-asia {
@@ -121,39 +138,39 @@
 		background-color: #5cc8de;
 	}
 
-	.key-item-africa{
+	.key-item-africa {
 		width: 2rem;
 		height: 1rem;
 		border: solid 1px black;
-		background-color: #B0B0B0;
+		background-color: #b0b0b0;
 	}
 
-	.key-item-north-america{
+	.key-item-north-america {
 		width: 2rem;
 		height: 1rem;
 		border: solid 1px black;
-		background-color: #64D0F2;
+		background-color: #64d0f2;
 	}
 
 	.key-item-south-america {
 		width: 2rem;
 		height: 1rem;
 		border: solid 1px black;
-		background-color: #003854 ;
+		background-color: #003854;
 	}
 
 	.key-item-europe {
 		width: 2rem;
 		height: 1rem;
 		border: solid 1px black;
-		background-color: #84CE5F;
+		background-color: #84ce5f;
 	}
 
-	.key-item-antarctica{
+	.key-item-antarctica {
 		width: 2rem;
 		height: 1rem;
 		border: solid 1px black;
-		background-color: #95d6e3 ;
+		background-color: #95d6e3;
 	}
 
 	.key-item-oceania {
@@ -163,11 +180,10 @@
 		background-color: #ebebcb;
 	}
 
-
-.continent-summary {
-	display: flex;
-	gap: .3em;
-}
+	.continent-summary {
+		display: flex;
+		gap: 0.3em;
+	}
 
 	/* DETAILS */
 
@@ -181,7 +197,6 @@
 	}
 
 	.more-info-continents > summary:active {
-		/* show <p> show less</p> */
 		background-color: var(--darkBlue);
 		color: var(--accentGray);
 		translate: 0 2px;
@@ -212,10 +227,52 @@
 		transition: 0.4s;
 	}
 
-	/*  media queries */
+	/*  MEDIA QUERIES */
 
-	/* darkmode */
+	/* DARKMODE */
+	@media (prefers-color-scheme: dark) {
+		.more-info-continents > summary {
+			background-color: var(--lightBlue);
+			box-shadow: none;
+		}
 
+		.more-info-continents > a {
+			box-shadow: none;
+			background-color: var(--lightBlue);
+			padding: 0.5em 0.5em;
+			margin: 0;
+			text-decoration: none;
+			color: var(--textColor);
+		}
 
+		.more-info-continents > a:hover {
+			outline: 1px solid var(--accentGray);
+		}
 
+		.more-info-continents > summary:hover {
+			outline: 1px solid var(--accentGray);
+		}
+
+		.continents-variables {
+			border: 1px solid white;
+			box-shadow: 0 3px 10px rgba(238, 236, 236, 0.3);
+		}
+
+		.key-item-south-america {
+			border: 1px solid white;
+		}
+	}
+
+	/* BREAKPOINTS */
+
+	/* Breakpoints medium screen */
+	@media (min-width: 600px) {
+	}
+
+	@media (min-width: 700px) {
+	}
+
+	/* Breakpoints large screen */
+	@media (min-width: 1300px) {
+	}
 </style>
