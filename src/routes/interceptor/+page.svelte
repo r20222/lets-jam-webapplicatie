@@ -4,7 +4,7 @@
 	import TrashRemoved from '../../lib/components/trash-removed.svelte'
 	import Startdate from '../../lib/components/startdate.svelte'
 	import Image from '../../lib/molecules/image.svelte'
-	import { Map } from '$lib/index.js'
+	import { Map } from '../../lib/index.js'
 	import {
 		initializeMap,
 		createRiverGeoData,
