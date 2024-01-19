@@ -5,7 +5,7 @@
 	import LastPortCall from '../../lib/components/lastportcall.svelte'
 	import Image from '../../lib/molecules/image.svelte'
 	import Startdate from '../../lib/components/startdate.svelte'
-	import { Map } from '../../index.js'
+	import { Map } from '../../lib/index.js'
 	import {
 		initializeMap,
 		RiverGeoData,

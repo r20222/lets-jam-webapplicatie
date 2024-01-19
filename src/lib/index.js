@@ -4,7 +4,7 @@ export { default as Link } from '../lib/atoms/Link.svelte'
 
 export { default as MapDropDown } from '../lib/molecules/MapDropDown.svelte'
 
-export { default as Map } from '../lib/organisms/Map.svelte'
+export { default as Map } from './organisms/map.svelte'
 
 
 
