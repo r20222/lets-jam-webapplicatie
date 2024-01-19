@@ -132,10 +132,9 @@
 	}
 
 	h2 {
-		line-height: 1.2;
-		font-weight: 500;
 		color: var(--darkBlue);
 		margin-bottom: 1rem;
+		margin-top: 1rem;
 	}
 
 	a {
@@ -224,20 +223,6 @@
 	.header-dashboard h1 {
 		font-size: 2rem;
 	}
-
-	/* boxes styling */
-	/* .chart-river-ocean,
-	.chart-continents {
-		font-size: 1.6rem;
-		color: var(--lightBlue);
-	}
-
-	.chart-river-ocean,
-	.chart-continents,
-	h2 {
-		font-size: 1.6rem;
-		color: var(--darkBlue);
-	} */
 
 	/* Scroll to top */
 	.scroll-top {
