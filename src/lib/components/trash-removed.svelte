@@ -31,4 +31,9 @@
 	.trash-removed-last-month {
 		grid-area: trash-removed-last-month;
 	}
+
+	span {
+		font-size: 2em;
+		font-weight: bold;
+	}
 </style>
