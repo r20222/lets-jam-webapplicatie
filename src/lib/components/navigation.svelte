@@ -44,19 +44,19 @@
 		</ul>
 		<ul class="menu-list {menuOpen ? 'menu-list' : 'menu-list-open'}">
 			<li>
-				<a href="/" class="nav-link active" aria-label="dashboard">
+				<a href="/" class="nav-link active" aria-label="{data.navLinkjes[0]}">
 					<span>{data.navLinkjes[0]}</span>
 				</a>
 			</li>
 
 			<li>
-				<a href="/" class="nav-link" aria-label="donate">
+				<a href="/" class="nav-link" aria-label="{data.navLinkjes[1]}">
 					<span>{data.navLinkjes[1]}</span>
 				</a>
 			</li>
 
 			<li>
-				<a href="/" class="nav-link" aria-label="sign up to newsletter">
+				<a href="/" class="nav-link" aria-label="{data.navLinkjes[2]}">
 					<span>{data.navLinkjes[2]}</span>
 				</a>
 			</li>
