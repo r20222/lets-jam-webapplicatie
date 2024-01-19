@@ -1,10 +1,10 @@
 <script>
-	import Navigation from '../../lib/components/navigation.svelte';
-	import Infotext from '../../lib/components/info-text.svelte';
-	import TrashRemoved from '../../lib/components/trash-removed.svelte';
-	import Startdate from '../../lib/components/startdate.svelte';
-	import Image from '../../lib/molecules/image.svelte';
-	import { Map } from '$lib/index.js';
+	import Navigation from '../../lib/components/navigation.svelte'
+	import Infotext from '../../lib/components/info-text.svelte'
+	import TrashRemoved from '../../lib/components/trash-removed.svelte'
+	import Startdate from '../../lib/components/startdate.svelte'
+	import Image from '../../lib/molecules/image.svelte'
+	import { Map } from '$lib/index.js'
 	import {
 		initializeMap,
 		createRiverGeoData,
@@ -13,32 +13,32 @@
 		addClickEvent,
 		addMouseEnterEvent,
 		addMouseLeaveEvent
-	} from '../../lib/utils/mapUtils.js';
-	export let data;
-	let gridWithWithoutNav;
-	import { onMount } from 'svelte';
-	let map;
+	} from '../../lib/utils/mapUtils.js'
+	export let data
+	let gridWithWithoutNav
+	import { onMount } from 'svelte'
+	let map
 
 	onMount(() => {
-		map = initializeMap();
+		map = initializeMap()
 
-		const riverGeoData = createRiverGeoData(data);
-		const oceanGeoData = createOceanGeoData(data);
+		const riverGeoData = createRiverGeoData(data)
+		const oceanGeoData = createOceanGeoData(data)
 
-		addMapLoadEvent(map, oceanGeoData, riverGeoData);
+		addMapLoadEvent(map, oceanGeoData, riverGeoData)
 
 		addClickEvent(map, (properties, coordinates) => {
 			if (riverGeoData) {
 				window.location.href = `/interceptor/?id=${properties.id}&coordinates=${JSON.stringify(
 					coordinates
-				)}`;
+				)}`
 			} else {
-				window.location.href = `/oceanSystem?coordinates=${JSON.stringify(coordinates)}`;
+				window.location.href = `/oceanSystem?coordinates=${JSON.stringify(coordinates)}`
 			}
-		});
-		addMouseEnterEvent(map);
-		addMouseLeaveEvent(map);
-	});
+		})
+		addMouseEnterEvent(map)
+		addMouseLeaveEvent(map)
+	})
 </script>
 
 <svelte:head>
@@ -65,10 +65,8 @@
 	<!-- add icon -->{data.dataHygraph.dashboard.buttonTop}
 </a>
 
-
-   
 <style>
-    .map {
+	.map {
 		grid-area: map;
 		border-radius: 0.5rem;
 		padding: 0.5rem;
