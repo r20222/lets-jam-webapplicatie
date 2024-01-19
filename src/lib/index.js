@@ -2,7 +2,7 @@
 export { default as DropDown } from '$lib/atoms/DropDown.svelte'
 export { default as Link } from '$lib/atoms/Link.svelte'
 
-export { default as MapDropDown } from  '$lib/molecules/MapDrownDown.svelte'
+export { default as MapDropDown } from '$lib/molecules/MapDropDown.svelte'
 
 export { default as Map } from '$lib/organisms/Map.svelte'
 
