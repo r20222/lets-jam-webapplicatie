@@ -1,23 +1,23 @@
 <script>
-	export let data;
+	export let data
 
-	let operational = [];
-	let installed = [];
-	let planned = [];
-	let inMaintenance = [];
+	let operational = []
+	let installed = []
+	let planned = []
+	let inMaintenance = []
 
 	function checked(check, pushed) {
 		data.riverDataJson.systems.forEach((interceptor) => {
 			if (interceptor.status == check) {
-				pushed.push(interceptor);
+				pushed.push(interceptor)
 			}
-		});
+		})
 	}
 
-	checked('in_operation', operational);
-	checked('installed_for_testing', installed);
-	checked('planned', planned);
-	checked('in_maintenance', inMaintenance);
+	checked('in_operation', operational)
+	checked('installed_for_testing', installed)
+	checked('planned', planned)
+	checked('in_maintenance', inMaintenance)
 </script>
 
 <!-- Share: table system statuses -->
@@ -191,11 +191,6 @@
 		}
 	}
 
-	h3 {
-		font-size: 1.5rem;
-		margin: 1rem;
-	}
-
 	tr {
 		height: 1rem;
 	}
@@ -213,14 +208,6 @@
 		justify-content: space-between;
 		align-items: center;
 		gap: 1rem;
-	}
-
-	.amount h4 {
-		font-family: 'Roboto', monospace;
-		color: var(--lightBlue);
-		font-weight: 500;
-		font-size: 1.5rem;
-		margin: 0;
 	}
 
 	.amount {
