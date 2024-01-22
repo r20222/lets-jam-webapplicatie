@@ -172,11 +172,11 @@
 	@media (prefers-color-scheme: dark) {
 		details > summary {
 			background-color: var(--lightBlue);
-			box-shadow: 5px 5px 5px rgb(195, 192, 192);
+			box-shadow: none;
 		}
 
 		details > a {
-			box-shadow: 5px 5px 5px rgb(195, 192, 192);
+			box-shadow: none;
 			background-color: var(--lightBlue);
 			padding: .5em .5em;
 			margin: 0;
