@@ -2,7 +2,7 @@
 	export let data
 </script>
 
-<section class="continents-graph-container">
+<div class="continents-graph-container">
 	<section>
 		<details aria-label="more-info-ocean-cleanup" class="more-info-continents">
 			<summary>More info</summary>
@@ -99,7 +99,7 @@
 			</li>
 		</ul>
 	</div>
-</section>
+</div>
 
 <style>
 	.wrapper-continents {
