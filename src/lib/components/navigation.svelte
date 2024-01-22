@@ -28,7 +28,7 @@
 			<li>
 				<button on:click={toggleMobileMenu} class="btn-mobile" type="button">
 					<svg
-						class="svg-icon"
+						class="open"
 						role="img"
 						fill="#fff"
 						height="30"
@@ -39,24 +39,45 @@
 					>
 						<path d="m1 7h8v2h-8zm0-3h8v2h-8zm0-3h8v2h-8z" />
 					</svg>
+					<svg
+						class="close"
+						fill="#fff"
+						height="30"
+						width="50"
+						version="1.1"
+						id="Capa_1"
+						xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink"
+						viewBox="0 0 490 490"
+						xml:space="preserve"
+						><g id="SVGRepo_bgCarrier" stroke-width="0" /><g
+							id="SVGRepo_tracerCarrier"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						/><g id="SVGRepo_iconCarrier">
+							<polygon
+								points="456.851,0 245,212.564 33.149,0 0.708,32.337 212.669,245.004 0.708,457.678 33.149,490 245,277.443 456.851,490 489.292,457.678 277.331,245.004 489.292,32.337 "
+							/>
+						</g></svg
+					>
 				</button>
 			</li>
 		</ul>
-		<ul class="menu-list {menuOpen ? 'menu-list' : 'menu-list-open'}">
+		<ul class="menu-list {menuOpen ? 'menu-list' : 'menu-list-open' }">
 			<li>
-				<a href="/" class="nav-link active" aria-label="{data.navLinkjes[0]}">
+				<a href="/" class="nav-link active" aria-label={data.navLinkjes[0]}>
 					<span>{data.navLinkjes[0]}</span>
 				</a>
 			</li>
 
 			<li>
-				<a href="/" class="nav-link" aria-label="{data.navLinkjes[1]}">
+				<a href="/" class="nav-link" aria-label={data.navLinkjes[1]}>
 					<span>{data.navLinkjes[1]}</span>
 				</a>
 			</li>
 
 			<li>
-				<a href="/" class="nav-link" aria-label="{data.navLinkjes[2]}">
+				<a href="/" class="nav-link" aria-label={data.navLinkjes[2]}>
 					<span>{data.navLinkjes[2]}</span>
 				</a>
 			</li>
@@ -90,20 +111,28 @@
 		text-decoration: none;
 		color: white;
 	}
+	.open {
+		display: block;
+	}
+
+	.close {
+		display: none;
+	}
+
 	.menu-list {
 		z-index: -1;
 		padding: 3rem 0rem;
 		margin-top: -2rem;
 		opacity: 0;
 		transform: translateY(-300px);
-		transition: 0.3s;
+		transition: 0.5s;
 	}
 
 	.menu-list-open {
 		z-index: -1;
 		opacity: 1;
 		transform: translateY(0px);
-		transition: 0.3s;
+		transition: 0.5s;
 	}
 
 	/* Nav */
@@ -127,6 +156,7 @@
 		justify-content: space-between;
 		/* overflow: hidden; */
 	}
+
 
 	.btn-mobile {
 		margin: 1rem;
@@ -213,8 +243,8 @@
 		.menu-list-open {
 			opacity: 1;
 		}
-		ul{
-			padding:0;
+		ul {
+			padding: 0;
 		}
 
 		.btn-mobile {
