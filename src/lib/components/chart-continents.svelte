@@ -1,5 +1,5 @@
 <script>
-	export let data;
+	export let data
 </script>
 
 <section class="continents-graph-container">
@@ -26,50 +26,75 @@
 		<ul class="continents-key">
 			<li class="key-item">
 				<details>
-					<summary class="continent-summary"><div class="key-item-asia" />Asia</summary>
-					<p>{data.dataApi.totals.world_ratio.asia}% of total global removed trash is from the Asian continent</p>
+					<summary class="continent-summary"><span class="key-item-asia" />Asia</summary>
+					<p>
+						{data.dataApi.totals.world_ratio.asia}% of total global removed trash is from the Asian
+						continent
+					</p>
 				</details>
 			</li>
 
 			<li class="key-item">
 				<details>
-					<summary class="continent-summary"><div class="key-item-africa" />Africa</summary>
-					<p>{data.dataApi.totals.world_ratio.africa}% of total global removed trash is from the African continent</p>
+					<summary class="continent-summary"><span class="key-item-africa" />Africa</summary>
+					<p>
+						{data.dataApi.totals.world_ratio.africa}% of total global removed trash is from the
+						African continent
+					</p>
 				</details>
 			</li>
 
 			<li class="key-item">
 				<details>
-					<summary class="continent-summary"><div class="key-item-north-america" />North America</summary>
-					<p>{data.dataApi.totals.world_ratio.north_america}% of total global removed trash is from the North American continent</p>
+					<summary class="continent-summary"
+						><span class="key-item-north-america" />North America</summary
+					>
+					<p>
+						{data.dataApi.totals.world_ratio.north_america}% of total global removed trash is from
+						the North American continent
+					</p>
 				</details>
 			</li>
 
 			<li class="key-item">
 				<details>
-					<summary class="continent-summary"><div class="key-item-south-america" />South America</summary>
-					<p>{data.dataApi.totals.world_ratio.south_america}% of total global removed trash is from the South American continent</p>
+					<summary class="continent-summary"
+						><span class="key-item-south-america" />South America</summary
+					>
+					<p>
+						{data.dataApi.totals.world_ratio.south_america}% of total global removed trash is from
+						the South American continent
+					</p>
 				</details>
 			</li>
 
 			<li class="key-item">
 				<details>
-					<summary class="continent-summary"><div class="key-item-europe" />Europe</summary>
-					<p>{data.dataApi.totals.world_ratio.europe}% of total global removed trash is from the European continent</p>
+					<summary class="continent-summary"><span class="key-item-europe" />Europe</summary>
+					<p>
+						{data.dataApi.totals.world_ratio.europe}% of total global removed trash is from the
+						European continent
+					</p>
 				</details>
 			</li>
 
 			<li class="key-item">
 				<details>
-					<summary class="continent-summary"><div class="key-item-antarctica" />Antarctica</summary>
-					<p>{data.dataApi.totals.world_ratio.antarctica}% of total global removed trash is from the Antartic continent</p>
+					<summary class="continent-summary"><span class="key-item-antarctica" />Antarctica</summary
+					>
+					<p>
+						{data.dataApi.totals.world_ratio.antarctica}% of total global removed trash is from the
+						Antartic continent
+					</p>
 				</details>
 			</li>
 
 			<li class="key-item">
 				<details>
-					<summary class="continent-summary"><div class="key-item-oceania" />Oceania</summary>
-					<p>Kilograms of removed trash from Oceania is {data.dataApi.totals.world_ratio.oceania}%</p>
+					<summary class="continent-summary"><span class="key-item-oceania" />Oceania</summary>
+					<p>
+						Kilograms of removed trash from Oceania is {data.dataApi.totals.world_ratio.oceania}%
+					</p>
 				</details>
 			</li>
 		</ul>

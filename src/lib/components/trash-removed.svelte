@@ -1,18 +1,18 @@
 <script>
-	export let data;
-	export let text;
+	export let data
+	export let text
 </script>
 
 <!-- was box-1 -->
 <section class="trash-removed-total">
 	<span>{new Intl.NumberFormat().format(data.debris_extracted_total)} KG</span>
-	<p>{text.dashboard.trashRemoved.total}</p>
+	<h2>{text.dashboard.trashRemoved.total}</h2>
 </section>
 
 <!-- was box-2 -->
 <section class="trash-removed-last-month">
 	<span>{new Intl.NumberFormat().format(data.debris_extracted_last_30d)} KG</span>
-	<p>{text.dashboard.trashRemoved.month}</p>
+	<h2>{text.dashboard.trashRemoved.month}</h2>
 </section>
 
 <style>
