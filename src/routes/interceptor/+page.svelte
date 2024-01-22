@@ -22,8 +22,8 @@
 	onMount(() => {
 		map = initializeMap()
 
-		const riverGeoData = createRiverGeoData(data)
-		const oceanGeoData = createOceanGeoData(data)
+		let riverGeoData = createRiverGeoData(data)
+		let oceanGeoData = createOceanGeoData(data)
 
 		addMapLoadEvent(map, oceanGeoData, riverGeoData)
 

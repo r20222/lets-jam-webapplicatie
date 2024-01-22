@@ -95,3 +95,4 @@ export function initializeMap() {
       map.getCanvas().style.cursor = '';
     });
   }
+

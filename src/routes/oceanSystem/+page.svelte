@@ -8,8 +8,8 @@
 	import { Map } from '../../lib/index.js'
 	import {
 		initializeMap,
-		RiverGeoData,
-		OceanGeoData,
+		createRiverGeoData,
+		createOceanGeoData,
 		addMapLoadEvent,
 		addClickEvent,
 		addMouseEnterEvent,
@@ -24,8 +24,8 @@
 	onMount(() => {
 		map = initializeMap()
 
-		const riverGeoData = RiverGeoData(data)
-		const oceanGeoData = OceanGeoData(data)
+		let riverGeoData = createRiverGeoData(data)
+		let oceanGeoData = createOceanGeoData(data)
 
 		addMapLoadEvent(map, oceanGeoData, riverGeoData)
 
