@@ -113,10 +113,12 @@
 	}
 	.open {
 		display: block;
+		transition: 0.5s;
 	}
 
 	.close {
 		display: none;
+		transition: 0.5s;
 	}
 
 	.menu-list {
