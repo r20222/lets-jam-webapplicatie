@@ -28,7 +28,7 @@
 			<li>
 				<button on:click={toggleMobileMenu} class="btn-mobile" type="button">
 					<svg
-						class="open"
+						class="{menuOpen ? 'open' : 'close' }"
 						role="img"
 						fill="#fff"
 						height="30"
@@ -40,7 +40,7 @@
 						<path d="m1 7h8v2h-8zm0-3h8v2h-8zm0-3h8v2h-8z" />
 					</svg>
 					<svg
-						class="close"
+						class="{menuOpen ? 'close' : 'open' }"
 						fill="#fff"
 						height="30"
 						width="50"
