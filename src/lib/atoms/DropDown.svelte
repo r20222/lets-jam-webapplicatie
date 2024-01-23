@@ -3,7 +3,7 @@
 </script>
 
 <details>
-	<summary><h2>{title}</h2></summary>
+	<summary>{title}</summary>
 	<slot />
 </details>
 

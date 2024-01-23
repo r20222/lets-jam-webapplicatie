@@ -6,11 +6,18 @@ export function initializeMap() {
   
     let newURL = window.location.href.split('?')[0];
     window.history.pushState('object', document.title, newURL);
-  
+
+    const isDarkMode =
+    window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+
+  const mapStyle = isDarkMode
+    ? 'mapbox://styles/mapbox/dark-v11'
+    : 'mapbox://styles/mapbox/light-v11'
+
     
     return new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/light-v11',
+      style: mapStyle,
       zoom: 8,
       center: JSON.parse(value)
     });
