@@ -1,30 +1,32 @@
 <script>
-	import Navigation from '../lib/components/navigation.svelte';
-	import Infotext from '../lib/components/info-text.svelte';
-	import TrashRemoved from '../lib/components/trash-removed.svelte';
-	import Map from '../lib/components/map.svelte';
-	import TrashChart from '../lib/components/trash-chart.svelte';
-	import ChartContinents from '../lib/components/chart-continents.svelte';
-	import ChartRiverOcean from '../lib/components/chart-river-ocean.svelte';
-	import SystemStatus from '../lib/components/system-status.svelte';
-	export let data;
-	let gridWithWithoutNav;
+	import Navigation from '../lib/components/navigation.svelte'
+	import Infotext from '../lib/components/info-text.svelte'
+	import TrashRemoved from '../lib/components/trash-removed.svelte'
+	import TrashChart from '../lib/components/trash-chart.svelte'
+	import ChartContinents from '../lib/components/chart-continents.svelte'
+	import ChartRiverOcean from '../lib/components/chart-river-ocean.svelte'
+	import SystemStatus from '../lib/components/system-status.svelte'
+	import { Map, MapDropDown } from '../lib/index.js'
+	export let data
+	let gridWithWithoutNav
 </script>
 
 <svelte:head>
 	<title>{data.dataHygraph.dashboard.titlePage}</title>
 </svelte:head>
 
-<!-- Met bind update je gridWithWithoutNav naar dezelfde waarde als visible uit het Navigation component -->
 <Navigation bind:visible={gridWithWithoutNav} data={data.dataHygraph.dashboard.nav} />
 
 <section class="main">
-
 	<!-- {#if visible} -->
-	<div class="grid-container {gridWithWithoutNav ? 'margin-with-navigation' : 'margin-without-navigation'}">
-	<!-- {:else}	 -->
-	<!-- <div class="grid-container margin-without-navigation"> -->
-	<!-- {/if} -->
+	<div
+		class="grid-container {gridWithWithoutNav
+			? 'margin-with-navigation'
+			: 'margin-without-navigation'}"
+	>
+		<!-- {:else}	 -->
+		<!-- <div class="grid-container margin-without-navigation"> -->
+		<!-- {/if} -->
 		<!-- Blue line -->
 		<div class="menu">
 			<div class="dashboard-line" />
@@ -43,6 +45,7 @@
 
 		<!-- map -->
 		<section class="map">
+			<MapDropDown {data} />
 			<Map {data} />
 		</section>
 
@@ -73,7 +76,6 @@
 	<!-- add icon -->{data.dataHygraph.dashboard.buttonTop}
 </a>
 
-
 <style>
 	/* Proxima font */
 	@font-face {
@@ -90,37 +92,6 @@
 		font-family: 'Proxima', sans-serif;
 	}
 
-	:root {
-		--darkBlue: #143653;
-		--trashRemovedBackground: white;
-		--lightBlue: #5cc8de;
-		--whiteColor: #ffffff;
-		--lightGray: #f7f7f7;
-		--accentGray: rgb(228, 228, 228);
-		--textColor: #143653;
-		--boxShadow: rgba(128, 128, 128, 0.132);
-		--color: rgb(212, 212, 212);
-		--textSize: 1.2rem;
-		--iconSize: 2rem;
-	}
-
-	/* Als darkmode de standaard instelling is */
-	@media (prefers-color-scheme: dark) {
-		:root {
-			--darkBlue: #ffffff;
-			--trashRemovedBackground: #143653;
-			--lightBlue: #5cc8de;
-			--whiteColor: #143653;
-			--lightGray: #0d2437;
-			--accentGray: rgb(228, 228, 228);
-			--textColor: #ffffff;
-			--boxShadow: rgba(128, 128, 128, 0);
-			--color: rgb(212, 212, 212);
-			--textSize: 1.2rem;
-			--iconSize: 2rem;
-		}
-	}
-
 	:global(html) {
 		scroll-behavior: smooth;
 	}
@@ -132,17 +103,15 @@
 	}
 
 	h2 {
-		line-height: 1.2;
-		font-weight: 500;
 		color: var(--darkBlue);
 		margin-bottom: 1rem;
+		margin-top: 1rem;
 	}
 
 	a {
 		text-decoration: none;
 	}
 
-	
 	/* Grid mobiel */
 	.grid-container {
 		margin: 5rem 1.5rem 1.5rem 1.5rem;
@@ -225,20 +194,6 @@
 		font-size: 2rem;
 	}
 
-	/* boxes styling */
-	/* .chart-river-ocean,
-	.chart-continents {
-		font-size: 1.6rem;
-		color: var(--lightBlue);
-	}
-
-	.chart-river-ocean,
-	.chart-continents,
-	h2 {
-		font-size: 1.6rem;
-		color: var(--darkBlue);
-	} */
-
 	/* Scroll to top */
 	.scroll-top {
 		position: absolute;
@@ -282,7 +237,6 @@
 	/* screens min-width: 992px */
 	@media (min-width: 62em) {
 		.grid-container {
-			
 			grid-template-columns: repeat(6, 1fr);
 			/* grid-template-rows: 0.01fr 0.1fr 0.3fr 0.4fr 0.4fr 0.6fr; */
 			grid-template-areas:
@@ -295,13 +249,13 @@
 				'trash-collected-over-time-chart trash-collected-over-time-chart trash-collected-over-time-chart trash-collected-over-time-chart trash-collected-over-time-chart trash-collected-over-time-chart';
 		}
 		/* past de margin aan als de nav in of uitgeklapt is */
-		.margin-with-navigation{
+		.margin-with-navigation {
 			margin: 0rem 2rem 2rem 18rem;
-			transition:.1s;
+			transition: 0.1s;
 		}
-		.margin-without-navigation{
+		.margin-without-navigation {
 			margin: 0rem 2rem 2rem 2rem;
-			transition:.1s;
+			transition: 0.1s;
 		}
 	}
 
@@ -316,19 +270,19 @@
 			padding: 1.5rem;
 		}
 
-		.chart-continents {
-			/* font-size: 3rem; */
+		/* .chart-continents {
+			font-size: 3rem;
 		}
 
 		.chart-river-ocean {
-			/* font-size: 2.5rem; */
+			font-size: 2.5rem;
 		}
 
 		.chart-river-ocean,
 		.chart-continents,
 		h2 {
-			/* font-size: 1.5rem; */
-		}
+			font-size: 1.5rem;
+		} */
 
 		.dashboard-line {
 			height: 2px;
