@@ -19,12 +19,29 @@
 	})
 
 	onMount(() => {
-		console.log(monthNames[0])
-
 		isEnabled = true
 
-		// HighchartsMore(Highcharts);
+		// hieronder haal ik de data op uit de html tabel (progressive enhancement)
+		let dataFromTable = []
+		let monthsFromTable = []
+		const tableDataTh = document.querySelectorAll('.th-month-name')
+		const tableDataTd = document.querySelectorAll('.total-debris')
+		
+		tableDataTh.forEach((month) => {
+			monthsFromTable.push(month.textContent)
+		})
 
+		tableDataTd.forEach((tdElement, index) => {
+			dataFromTable.push({
+				x: index,
+				y: parseFloat(tdElement.textContent), // y moet een number zijn
+				z: 20,
+				name: `${tdElement.textContent} kg`,
+				month: monthsFromTable[index]
+			})
+		});
+
+	
 		// Gebruik een setTimeout om ervoor te zorgen dat er wat tijd is om de DOM op te zetten voordat de grafiek wordt geïnitialiseerd
 		setTimeout(() => {
 			Highcharts.chart('container', {
@@ -46,13 +63,13 @@
 				},
 				xAxis: {
 					categories: [
-						monthNames[0],
-						monthNames[1],
-						monthNames[2],
-						monthNames[3],
-						monthNames[4],
-						monthNames[5],
-						monthNames[6]
+						monthsFromTable[0],
+						monthsFromTable[1],
+						monthsFromTable[2],
+						monthsFromTable[3],
+						monthsFromTable[4],
+						monthsFromTable[5],
+						monthsFromTable[6]
 					],
 					title: {
 						text: 'Months'
@@ -99,50 +116,7 @@
 
 				series: [
 					{
-						data: [
-							{
-								x: 0,
-								y: laatsteVierMaanden[0].debris_extracted,
-								z: 20,
-								name: `${laatsteVierMaanden[0].debris_extracted} kg`,
-								month: monthNames[0]
-							},
-							{
-								x: 1,
-								y: laatsteVierMaanden[1].debris_extracted,
-								z: 20,
-								name: `${laatsteVierMaanden[1].debris_extracted} kg`,
-								month: monthNames[1]
-							},
-							{
-								x: 2,
-								y: laatsteVierMaanden[2].debris_extracted,
-								z: 20,
-								name: `${laatsteVierMaanden[2].debris_extracted} kg`,
-								month: monthNames[2]
-							},
-							{
-								x: 3,
-								y: laatsteVierMaanden[3].debris_extracted,
-								z: 20,
-								name: `${laatsteVierMaanden[3].debris_extracted} kg`,
-								month: monthNames[3]
-							},
-							{
-								x: 4,
-								y: laatsteVierMaanden[4].debris_extracted,
-								z: 20,
-								name: `${laatsteVierMaanden[4].debris_extracted} kg`,
-								month: monthNames[4]
-							},
-							{
-								x: 5,
-								y: laatsteVierMaanden[5].debris_extracted,
-								z: 20,
-								name: `${laatsteVierMaanden[5].debris_extracted} kg`,
-								month: monthNames[5]
-							}
-						],
+						data: dataFromTable,
 						colorByPoint: true
 					}
 				]
@@ -154,28 +128,38 @@
 <h2>{data.dataHygraph.dashboard.trashChart.title}</h2>
 <p>{data.dataHygraph.dashboard.trashChart.measurement}</p>
 
-{#if !isEnabled}
+<section id="container">
 	<table>
 		<tr>
-			<th>{monthNames[0]}</th>
-			<td>{laatsteVierMaanden[0].debris_extracted}</td>
+			<th class="th-month-name">{monthNames[0]}</th>
+			<td class="total-debris">{laatsteVierMaanden[0].debris_extracted}</td>
 		</tr>
 		<tr>
-			<th>{monthNames[1]}</th>
-			<td>{laatsteVierMaanden[1].debris_extracted}</td>
+			<th class="th-month-name">{monthNames[1]}</th>
+			<td class="total-debris">{laatsteVierMaanden[1].debris_extracted}</td>
 		</tr>
 		<tr>
-			<th>{monthNames[2]}</th>
-			<td>{laatsteVierMaanden[2].debris_extracted}</td>
+			<th class="th-month-name">{monthNames[2]}</th>
+			<td class="total-debris">{laatsteVierMaanden[2].debris_extracted}</td>
 		</tr>
 		<tr>
-			<th>{monthNames[3]}</th>
-			<td>{laatsteVierMaanden[3].debris_extracted}</td>
+			<th class="th-month-name">{monthNames[3]}</th>
+			<td class="total-debris">{laatsteVierMaanden[3].debris_extracted}</td>
+		</tr>
+		<tr>
+			<th class="th-month-name">{monthNames[4]}</th>
+			<td class="total-debris">{laatsteVierMaanden[4].debris_extracted}</td>
+		</tr>
+		<tr>
+			<th class="th-month-name">{monthNames[5]}</th>
+			<td class="total-debris">{laatsteVierMaanden[5].debris_extracted}</td>
 		</tr>
 	</table>
-{:else}
-	<section id="container" dataOne={monthNames[0]} />
-{/if}
+</section>
+	
+
+	<!-- <section id="container" dataOne={monthNames[0]} /> -->
+
 
 <style>
 	#container {
