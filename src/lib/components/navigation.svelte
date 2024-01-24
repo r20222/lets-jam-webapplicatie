@@ -1,14 +1,14 @@
 <script>
-	export let data;
-	export let visible = true;
+	export let data
+	export let visible = true
 	function ToggleMenu() {
-		visible = !visible;
+		visible = !visible
 	}
 
-	let menuOpen = true;
+	let menuOpen = true
 
 	function toggleMobileMenu() {
-		menuOpen = !menuOpen;
+		menuOpen = !menuOpen
 	}
 
 	// const mobileButton = document.querySelector('.btn-mobile');
@@ -28,9 +28,9 @@
 			<li>
 				<button on:click={toggleMobileMenu} class="btn-mobile" type="button">
 					<svg
-						class="{menuOpen ? 'open' : 'close' }"
+						class={menuOpen ? 'open' : 'close'}
 						role="img"
-						fill="#fff"
+						fill="var(--darkBlue)"
 						height="30"
 						width="50"
 						viewBox="0 0 10 10"
@@ -40,8 +40,8 @@
 						<path d="m1 7h8v2h-8zm0-3h8v2h-8zm0-3h8v2h-8z" />
 					</svg>
 					<svg
-						class="{menuOpen ? 'close' : 'open' }"
-						fill="#fff"
+						class={menuOpen ? 'close' : 'open'}
+						fill="var(--darkBlue)"
 						height="30"
 						width="50"
 						version="1.1"
@@ -63,7 +63,7 @@
 				</button>
 			</li>
 		</ul>
-		<ul class="menu-list {menuOpen ? 'menu-list' : 'menu-list-open' }">
+		<ul class="menu-list {menuOpen ? 'menu-list' : 'menu-list-open'}">
 			<li>
 				<a href="/" class="nav-link active" aria-label={data.navLinkjes[0]}>
 					<span>{data.navLinkjes[0]}</span>
@@ -89,7 +89,6 @@
 <button on:click={ToggleMenu} class="btn-show-menu">SHOW MENU</button>
 
 <style>
-
 	ul,
 	li {
 		list-style: none;
@@ -110,7 +109,7 @@
 
 	a {
 		text-decoration: none;
-		color: white;
+		color: var(--darkBlue);
 	}
 	.open {
 		display: block;
@@ -160,10 +159,9 @@
 		/* overflow: hidden; */
 	}
 
-
 	.btn-mobile {
 		margin: 1rem;
-		background-color: #143653;
+		background-color: var(--whiteColor);
 		text-decoration: none;
 		border: none;
 	}
@@ -257,16 +255,15 @@
 		.button-nav {
 			position: absolute;
 			display: block;
-			background-color: #143653;
-			border: 1px #fff solid;
-			border-radius: 1rem;
+			background-color: var(--whiteColor);
+			border: 1.5px solid var(--darkBlue);
+			border-radius: 0.5rem;
 			padding: 0.8rem;
 			bottom: 2rem;
 			left: 2rem;
 			width: fit-content;
-			color: #fff;
-			font-weight: 600;
-			/* font-size: 1.5rem; */
+			color: var(--darkBlue);
+			font-weight: 500;
 			text-transform: uppercase;
 			letter-spacing: 0.05rem;
 		}
@@ -274,16 +271,15 @@
 		.btn-show-menu {
 			position: fixed;
 			display: block;
-			background-color: #143653;
-			border: 1px #fff solid;
-			border-radius: 1rem;
+			background-color: var(--whiteColor);
+			border: 1.5px solid var(--darkBlue);
+			border-radius: 0.5rem;
 			padding: 0.8rem;
 			bottom: 2rem;
 			left: 2rem;
 			width: fit-content;
-			color: #fff;
-			font-weight: 600;
-			/* font-size: 1.5rem; */
+			color: var(--darkBlue);
+			font-weight: 500;
 			text-transform: uppercase;
 			letter-spacing: 0.05rem;
 			z-index: 2;
