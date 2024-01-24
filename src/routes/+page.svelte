@@ -20,15 +20,12 @@
 <Navigation bind:visible={gridWithWithoutNav} data={data.dataHygraph.dashboard.nav} />
 
 <section class="main">
-	<!-- {#if visible} -->
+
 	<div
 		class="grid-container {gridWithWithoutNav
 			? 'margin-with-navigation'
 			: 'margin-without-navigation'}"
 	>
-		<!-- {:else}	 -->
-		<!-- <div class="grid-container margin-without-navigation"> -->
-		<!-- {/if} -->
 		<!-- Blue line -->
 		<div class="menu">
 			<div class="dashboard-line" />

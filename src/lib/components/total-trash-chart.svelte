@@ -1,23 +1,25 @@
 <script>
-	import { onMount } from 'svelte'
+		import { onMount } from 'svelte';
 
-	export let data
-	let trashdata = data
+export let data;
+let trashdata = data;
 
-	// controle of JS aanstaat in de browser
-	let isEnabled = false
 
-	// de slice -4 pakt de laatste vier months
-	const laatsteVierMaanden = trashdata.dataApi.totals.months.slice(-6)
+// controle of JS aanstaat in de browser
+let isEnabled = false;
 
-	// gebruik de Intl browser API om nummers om te zetten in maandnaam
-	const monthNames = laatsteVierMaanden.map((item) => {
-		const date = new Date()
-		date.setMonth(item.month - 1) // Maanden zijn zero-based in JavaScript
 
-		return new Intl.DateTimeFormat('nl-NL', { month: 'long' }).format(date)
-	})
+// de slice -4 pakt de laatste vier months
+const laatsteVierMaanden = trashdata.dataApi.totals.months.slice(-6);
 
+
+// gebruik de Intl browser API om nummers om te zetten in maandnaam
+const monthNames = laatsteVierMaanden.map(item => {
+	const date = new Date();
+	date.setMonth(item.month - 1); // Maanden zijn zero-based in JavaScript
+
+	return new Intl.DateTimeFormat('nl-NL', { month: 'long' }).format(date);
+});
 	onMount(() => {
 		isEnabled = true
 
