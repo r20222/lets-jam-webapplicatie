@@ -1,5 +1,6 @@
 # Ocean Cleanup Dashboard
-![image](https://github.com/mcphendriks/the-ocean-cleanup/assets/101579892/97f3cd13-fff6-42f2-89fc-c6d8bb57cf76)
+![image](https://github.com/r20222/lets-jam-webapplicatie/assets/112860052/e256be5d-d9ee-4356-a745-a416539139f5)
+![image](https://github.com/r20222/lets-jam-webapplicatie/assets/112860052/6f1f8585-6a8b-4f97-847c-4a35c40b2ad8)
 
 ## Inhoudsopgave 
 
