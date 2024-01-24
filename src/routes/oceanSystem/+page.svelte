@@ -5,7 +5,7 @@
 	import LastPortCall from '../../lib/components/lastportcall.svelte'
 	import Image from '../../lib/molecules/image.svelte'
 	import Startdate from '../../lib/components/startdate.svelte'
-	import { Map } from '../../lib/index.js'
+	import { Map, MapDropDown } from '../../lib/index.js'
 	import {
 		initializeMap,
 		createRiverGeoData,
@@ -35,7 +35,7 @@
 					coordinates
 				)}`
 			} else {
-				window.location.href = `/oceanSystem?coordinates=${JSON.stringify(coordinates)}`
+				window.location.href = `/oceanSystem?&coordinates=${JSON.stringify(coordinates)}`
 			}
 		})
 		addMouseEnterEvent(map)
@@ -59,9 +59,10 @@
 	/>
 	<LastPortCall {data} />
 	<Image data={data.dataHygraph.dashboard.ocean.oceanImage} />
-	<section class="map">
+	<div class="map">
+		<MapDropDown {data} />
 		<Map {data} />
-	</section>
+	</div>
 </section>
 
 <!-- Scroll to top button -->

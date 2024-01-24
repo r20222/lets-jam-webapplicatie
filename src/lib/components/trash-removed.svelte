@@ -33,7 +33,12 @@
 	}
 
 	span {
-		font-size: 2em;
+		font-size: 1.2em;
 		font-weight: bold;
+	}
+	@media screen and (min-width: 460px){
+		span {
+		font-size: 2em;
+	}
 	}
 </style>

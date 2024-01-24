@@ -1,20 +1,5 @@
 // mapUtils.js
 export function initializeMap() {
-    const queryString = window.location.search;
-    const parameters = new URLSearchParams(queryString);
-    const value = parameters.get('coordinates');
-  
-    let newURL = window.location.href.split('?')[0];
-    window.history.pushState('object', document.title, newURL);
-
-    const isDarkMode =
-    window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-
-  const mapStyle = isDarkMode
-    ? 'mapbox://styles/mapbox/dark-v11'
-    : 'mapbox://styles/mapbox/light-v11'
-
-    
     return new mapboxgl.Map({
       container: 'map',
       style: mapStyle,

@@ -4,7 +4,7 @@
 	import TrashRemoved from '../../lib/components/trash-removed.svelte'
 	import Startdate from '../../lib/components/startdate.svelte'
 	import Image from '../../lib/molecules/image.svelte'
-	import { Map } from '../../lib/index.js'
+	import { Map, MapDropDown } from '../../lib/index.js'
 	import {
 		initializeMap,
 		createRiverGeoData,
@@ -56,6 +56,7 @@
 	/>
 	<Image data={data.currentInterceptorHygraph[0].riverImage} />
 	<div class="map">
+		<MapDropDown {data} />
 		<Map {data} />
 	</div>
 </section>
