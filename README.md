@@ -46,14 +46,9 @@ You can request one here: [Educational License - Highcharts Blog | Highcharts](h
 ## The use of this dashboard 💻
 This dashboard is intended for anyone interested in The Ocean Cleanup and can be used to view information about the interceptors, such as the amount of waste an interceptor has removed from the water.
 
-## Bronnen 📻
-
-Chartjs grafieken:
-* https://www.chartjs.org/
-
-API & Hygraph data koppelen:
+## Sources 📻
+API & Hygraph connection:
 * https://kit.svelte.dev/docs/hooks#server-hooks
 
-## Licentie
-
+## License
 This project is licensed under the terms of the [MIT license](https://github.com/fdnd-task/lose-your-head-the-client-case/blob/main/LICENSE).
