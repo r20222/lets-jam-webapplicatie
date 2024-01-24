@@ -21,16 +21,21 @@
 </script>
 
 <section>
-	<DropDown title="FILTER ON SYSTEMS">
-		<ul>
-			{#each data.dataHygraph.dashboard.river as item, index}
-				<li>
-					<Link href="/interceptor?id={item.slug}" link={data.riverDataJson.systems[index].name} />
-					<span style="background: {getStatusColor(data.riverDataJson.systems[index].status)}" />
-				</li>
-			{/each}
-		</ul>
-		<DropDown title="River System">
+	<DropDown title="FILTER ON SYSTEM">
+		<DropDown title="River Systems">
+			<ul>
+				{#each data.dataHygraph.dashboard.river as item, index}
+					<li>
+						<Link
+							href="/interceptor?id={item.slug}"
+							link={data.riverDataJson.systems[index].name}
+						/>
+						<span style="background: {getStatusColor(data.riverDataJson.systems[index].status)}" />
+					</li>
+				{/each}
+			</ul>
+		</DropDown>
+		<DropDown title="Ocean System">
 			<ul>
 				<li>
 					<Link class="drop-link" href="/oceanSystem" link={data.oceanDataJson.systems[0].name} />
