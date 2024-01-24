@@ -140,34 +140,6 @@
 {/if}
 
 <style>
-	:root {
-		--darkBlue: #143653;
-		--lightBlue: #5cc8de;
-		--whiteColor: #ffffff;
-		--lightGray: #f7f7f7;
-		--accentGray: rgb(228, 228, 228);
-		--textColor: #143653;
-		--boxShadow: rgba(128, 128, 128, 0.132);
-		--color: rgb(212, 212, 212);
-		--textSize: 1.2rem;
-		--iconSize: 2rem;
-	}
-
-	/* Als darkmode de standaard instelling is */
-	@media (prefers-color-scheme: dark) {
-		:root {
-			--darkBlue: #ffffff;
-			--lightBlue: #5cc8de;
-			--whiteColor: #143653;
-			--lightGray: #0d2437;
-			--accentGray: rgb(228, 228, 228);
-			--textColor: #ffffff;
-			--boxShadow: rgba(128, 128, 128, 0);
-			--color: rgb(212, 212, 212);
-			--textSize: 1.2rem;
-			--iconSize: 2rem;
-		}
-	}
 	#container {
     width: 100%;
     height: 500px; 
