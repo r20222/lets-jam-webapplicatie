@@ -23,6 +23,7 @@
 		"fetch": "^1.1.0",
 		"graphql": "^16.8.1",
 		"graphql-request": "^6.1.0",
+		"highcharts": "^11.3.0",
 		"mapbox": "^1.0.0-beta10",
 		"mapbox-gl": "^2.15.0",
 		"node-fetch": "^3.3.2"

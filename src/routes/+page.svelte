@@ -3,6 +3,8 @@
 	import Infotext from '../lib/components/info-text.svelte'
 	import TrashRemoved from '../lib/components/trash-removed.svelte'
 	import TrashChart from '../lib/components/trash-chart.svelte'
+	import TotalTrashChart from '../lib/components/total-trash-chart.svelte'
+
 	import ChartContinents from '../lib/components/chart-continents.svelte'
 	import ChartRiverOcean from '../lib/components/chart-river-ocean.svelte'
 	import SystemStatus from '../lib/components/system-status.svelte'
@@ -18,15 +20,12 @@
 <Navigation bind:visible={gridWithWithoutNav} data={data.dataHygraph.dashboard.nav} />
 
 <section class="main">
-	<!-- {#if visible} -->
+
 	<div
 		class="grid-container {gridWithWithoutNav
 			? 'margin-with-navigation'
 			: 'margin-without-navigation'}"
 	>
-		<!-- {:else}	 -->
-		<!-- <div class="grid-container margin-without-navigation"> -->
-		<!-- {/if} -->
 		<!-- Blue line -->
 		<div class="menu">
 			<div class="dashboard-line" />
@@ -65,7 +64,7 @@
 
 		<!-- TrashChart over time (bottles) -->
 		<section class="panel trash-collected-over-time-chart">
-			<TrashChart {data} />
+			<TotalTrashChart {data} />
 		</section>
 	</div>
 </section>
