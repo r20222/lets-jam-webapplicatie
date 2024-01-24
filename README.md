@@ -30,7 +30,7 @@ npm install
 npm install graphql-request graphql
 ```
 ```
-npm install chart.js
+npm install highcharts
 ```
 ```
 npm install mapbox
@@ -38,10 +38,13 @@ npm install mapbox
 ```
 npm install mapbox-gl
 ```
+
+Keep in mind if you want to continue working with highcharts you will need to request a license.
+
+You can request one here: [Educational License - Highcharts Blog | Highcharts](https://www.highcharts.com/blog/certificate/education/#:~:text=An%20Education%20or%20Personal%20license,servers%20you%20own%20or%20control.)
    
 ## The use of this dashboard 💻
-
-Dit dashboard is bedoeld voor iedereen die interesse heeft in de Ocean Cleanup en kan gebruikt worden om informatie in te zien over de interceptors, zoals bijvoorbeeld hoeveel afval een interceptor uit het water heeft gehaald.
+This dashboard is intended for anyone interested in The Ocean Cleanup and can be used to view information about the interceptors, such as the amount of waste an interceptor has removed from the water.
 
 ## Bronnen 📻
 
