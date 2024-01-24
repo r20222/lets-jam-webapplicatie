@@ -14,8 +14,8 @@
 	}
 
 	summary {
-		outline-color: var(--darkBlue);
+		outline-color: var(--borderFilterColor);
 		font-weight: 550;
-		color: var(--darkBlue);
+		color: var(--borderFilterColor);
 	}
 </style>

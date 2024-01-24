@@ -5,8 +5,8 @@
 <div class="continents-graph-container">
 	<section>
 		<details aria-label="more-info-ocean-cleanup" class="more-info-continents">
-			<summary>More info</summary>
-			<p>more info over continents ocean cleanup</p>
+			<summary>{data.dataHygraph.dashboard.chartContinent.buttons[0]}</summary>
+			<p>{data.dataHygraph.dashboard.chartContinent.moreInfo[0]}</p>
 		</details>
 	</section>
 
@@ -26,75 +26,50 @@
 		<ul class="continents-key">
 			<li class="key-item">
 				<details>
-					<summary class="continent-summary"><span class="key-item-asia" />Asia</summary>
-					<p>
-						{data.dataApi.totals.world_ratio.asia}% of total global removed trash is from the Asian
-						continent
-					</p>
+					<summary class="continent-summary"><span class="key-item-asia" />{data.dataHygraph.dashboard.chartContinent.buttons[1]}</summary>
+					<p>{data.dataApi.totals.world_ratio.asia}{data.dataHygraph.dashboard.chartContinent.moreInfo[1]}</p>
 				</details>
 			</li>
 
 			<li class="key-item">
 				<details>
-					<summary class="continent-summary"><span class="key-item-africa" />Africa</summary>
-					<p>
-						{data.dataApi.totals.world_ratio.africa}% of total global removed trash is from the
-						African continent
-					</p>
+					<summary class="continent-summary"><span class="key-item-africa" />{data.dataHygraph.dashboard.chartContinent.buttons[2]}</summary>
+					<p>{data.dataApi.totals.world_ratio.africa}{data.dataHygraph.dashboard.chartContinent.moreInfo[2]}</p>
 				</details>
 			</li>
 
 			<li class="key-item">
 				<details>
-					<summary class="continent-summary"
-						><span class="key-item-north-america" />North America</summary
-					>
-					<p>
-						{data.dataApi.totals.world_ratio.north_america}% of total global removed trash is from
-						the North American continent
-					</p>
+					<summary class="continent-summary"><span class="key-item-north-america" />{data.dataHygraph.dashboard.chartContinent.buttons[3]}</summary>
+					<p>{data.dataApi.totals.world_ratio.north_america}{data.dataHygraph.dashboard.chartContinent.moreInfo[3]}</p>
 				</details>
 			</li>
 
 			<li class="key-item">
 				<details>
-					<summary class="continent-summary"
-						><span class="key-item-south-america" />South America</summary
-					>
-					<p>
-						{data.dataApi.totals.world_ratio.south_america}% of total global removed trash is from
-						the South American continent
-					</p>
+					<summary class="continent-summary"><span class="key-item-south-america" />{data.dataHygraph.dashboard.chartContinent.buttons[4]}</summary>
+					<p>{data.dataApi.totals.world_ratio.south_america}{data.dataHygraph.dashboard.chartContinent.moreInfo[4]}</p>
 				</details>
 			</li>
 
 			<li class="key-item">
 				<details>
-					<summary class="continent-summary"><span class="key-item-europe" />Europe</summary>
-					<p>
-						{data.dataApi.totals.world_ratio.europe}% of total global removed trash is from the
-						European continent
-					</p>
+					<summary class="continent-summary"><span class="key-item-europe" />{data.dataHygraph.dashboard.chartContinent.buttons[5]}</summary>
+					<p>{data.dataApi.totals.world_ratio.europe}{data.dataHygraph.dashboard.chartContinent.moreInfo[5]}</p>
 				</details>
 			</li>
 
 			<li class="key-item">
 				<details>
-					<summary class="continent-summary"><span class="key-item-antarctica" />Antarctica</summary
-					>
-					<p>
-						{data.dataApi.totals.world_ratio.antarctica}% of total global removed trash is from the
-						Antartic continent
-					</p>
+					<summary class="continent-summary"><span class="key-item-antarctica" />{data.dataHygraph.dashboard.chartContinent.buttons[6]}</summary>
+					<p>{data.dataApi.totals.world_ratio.antarctica}{data.dataHygraph.dashboard.chartContinent.moreInfo[6]}</p>
 				</details>
 			</li>
 
 			<li class="key-item">
 				<details>
-					<summary class="continent-summary"><span class="key-item-oceania" />Oceania</summary>
-					<p>
-						Kilograms of removed trash from Oceania is {data.dataApi.totals.world_ratio.oceania}%
-					</p>
+					<summary class="continent-summary"><span class="key-item-oceania" />{data.dataHygraph.dashboard.chartContinent.buttons[7]}</summary>
+					<p>{data.dataApi.totals.world_ratio.oceania}{data.dataHygraph.dashboard.chartContinent.moreInfo[7]}</p>
 				</details>
 			</li>
 		</ul>
@@ -122,26 +97,15 @@
 		margin: 0 auto;
 		width: 15rem;
 		height: 15rem;
+
 		background: conic-gradient(
 			#5cc8de var(--asia),
 			#b0b0b0 var(--asia) calc(var(--africa) + var(--asia)),
 			#64d0f2 var(--africa) calc(var(--africa) + var(--asia) + var(--north-america)),
-			#003854 var(--north-america)
-				calc(var(--africa) + var(--asia) + var(--north-america) + var(--south-america)),
-			#84ce5f var(--south-america)
-				calc(
-					var(--africa) + var(--asia) + var(--north-america) + var(--south-america) + var(--europe)
-				),
-			#95d6e3 var(--europe)
-				calc(
-					var(--africa) + var(--asia) + var(--north-america) + var(--south-america) + var(--europe) +
-						var(--antarctica)
-				),
-			#ebebcb var(--antarctica)
-				calc(
-					var(--africa) + var(--asia) + var(--north-america) + var(--south-america) + var(--europe) +
-						var(--antarctica) + var(--oceania)
-				)
+			#003854 var(--north-america) calc(var(--africa) + var(--asia) + var(--north-america) + var(--south-america)),
+			#84ce5f var(--south-america) calc(var(--africa) + var(--asia) + var(--north-america) + var(--south-america) + var(--europe)),
+			#95d6e3 var(--europe) calc(var(--africa) + var(--asia) + var(--north-america) + var(--south-america) + var(--europe) +	var(--antarctica)),
+			#ebebcb var(--antarctica) calc(var(--africa) + var(--asia) + var(--north-america) + var(--south-america) + var(--europe) +	var(--antarctica) + var(--oceania))
 		);
 
 		border-radius: 50%;
@@ -153,8 +117,18 @@
 		list-style: none;
 		display: flex;
 		flex-direction: column;
-		gap: 0.3rem;
+		gap: 0.5rem;
 	}
+
+	.key-item {
+		/* width: 10em; */
+	}
+	.continent-summary:hover {
+		background-color: rgba(225, 220, 197, 0.185);
+		font-weight: 700;
+	}
+
+
 
 	.key-item-asia {
 		width: 2rem;

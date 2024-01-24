@@ -18,6 +18,8 @@ export async function load() {
           }
         }
         chartContinent {
+          buttons
+          moreInfo
           title
         }
         chartRiverOcean {
