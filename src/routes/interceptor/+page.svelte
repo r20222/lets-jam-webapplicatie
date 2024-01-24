@@ -1,8 +1,8 @@
 <script>
 	import Navigation from '../../lib/components/navigation.svelte'
-	import Infotext from '../../lib/components/info-text.svelte'
-	import TrashRemoved from '../../lib/components/trash-removed.svelte'
-	import Startdate from '../../lib/components/startdate.svelte'
+	import Infotext from '../../lib/index.js'
+	import TrashRemoved from '../../lib/index.js'
+	import Startdate from '../../lib/index.js'
 	import Image from '../../lib/molecules/image.svelte'
 	import { Map } from '../../lib/index.js'
 	import {

@@ -1,7 +1,7 @@
 <script>
 	import Navigation from '../lib/components/navigation.svelte'
-	import Infotext from '../lib/components/info-text.svelte'
-	import TrashRemoved from '../lib/components/trash-removed.svelte'
+	import Infotext from '../lib/index.js'
+	import TrashRemoved from '../lib/index.js'
 	import TrashChart from '../lib/components/trash-chart.svelte'
 	import ChartContinents from '../lib/components/chart-continents.svelte'
 	import ChartRiverOcean from '../lib/components/chart-river-ocean.svelte'

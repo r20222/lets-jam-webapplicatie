@@ -1,10 +1,10 @@
 <script>
 	import Navigation from '../../lib/components/navigation.svelte'
-	import Infotext from '../../lib/components/info-text.svelte'
-	import TrashRemovedOcean from '../../lib/components/trash-removed.svelte'
-	import LastPortCall from '../../lib/components/lastportcall.svelte'
+	import Infotext from '../../lib/index.js'
+	import TrashRemovedOcean from '../../lib/index.js'
+	import LastPortCall from '../../lib/index.js'
 	import Image from '../../lib/molecules/image.svelte'
-	import Startdate from '../../lib/components/startdate.svelte'
+	import Startdate from '../../lib/index.js'
 	import { Map } from '../../lib/index.js'
 	import {
 		initializeMap,
