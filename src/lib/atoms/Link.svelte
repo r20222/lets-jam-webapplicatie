@@ -7,16 +7,16 @@
 
 <style>
 	a {
-		color: var(--darkBlue);
+		color: var(--borderFilterColor);
 		padding: 0.4em;
 		text-decoration: none;
 	}
 
 	a:focus {
-		outline-color: var(--darkBlue);
+		outline-color: var(--borderFilterColor);
 	}
 
 	a:hover {
-		border-bottom: 1px solid var(--darkBlue);
+		border-bottom: 1px solid var(--borderFilterColor);
 	}
 </style>
