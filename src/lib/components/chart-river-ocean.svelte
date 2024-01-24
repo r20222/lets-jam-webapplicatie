@@ -4,11 +4,6 @@
 
 	export let data;
 
-	// console.log(data)
-	// data.riverDataJson.systems.forEach( system => {
-	// 	totalTrashKgRiver.push(system.debris_extracted_total)
-	// });
-
 	let totalTrashKgRiver = 0;
 	for (let i = 0; i < data.riverDataJson.systems.length; i++) {
 		if (data.riverDataJson.systems[i] !== null) {
@@ -17,82 +12,79 @@
 			i++;
 		}
 	}
-	console.log(data.dataApi.totals.ocean_river_ratio)
 </script>
 
+<!-- HTML  -->
 <section class="container-chart-river-ocean">
 
-<h2>{data.dataHygraph.dashboard.chartRiverOcean.titel}</h2>
+	<h2>{data.dataHygraph.dashboard.chartRiverOcean.titel}</h2>
 
-<!-- show more info -->
-
-<section>
-	<details aria-label="more-info-ocean-cleanup" class="more-info-systems">
-		<summary>{data.dataHygraph.dashboard.chartRiverOcean.buttons[0]}</summary>
-		<p>
-			{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[0]}
-		</p>
-		<a href="interceptor?id=100">{data.dataHygraph.dashboard.chartRiverOcean.buttons[1]}</a>
-	</details>
-</section>
-
-<!-- 2x SVG bottle graph  -->
-<div class="wrapper-graph-ocean-river">
-	<section class="wrapper-ocean-trash-removed">
-		<!-- style="--percentageBeforeAnimation:{percentage}" -->
-		<a href="/oceanSystem"><SvgPlasticBottle /></a>
-
-		<div>
-			<h3>{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[1]} {new Intl.NumberFormat().format(data.dataApi.totals.ocean_river_ratio.percent_ocean)}%</h3>
-
-			<details class="more-info-ocean">
-				<summary>{data.dataHygraph.dashboard.chartRiverOcean.buttons[0]}</summary>
-				<p>
-					{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[2]} 
-					{new Intl.NumberFormat().format(data.dataApi.totals.debris_extracted_total)} 
-					{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[3]} 
-					{new Intl.NumberFormat().format(data.oceanDataJson.systems[0].debris_extracted_total)} 
-					{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[4]}
-					{new Intl.NumberFormat().format(data.dataApi.totals.ocean_river_ratio.percent_ocean)}
-					{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[5]}
-				</p>
-				<a href="/oceanSystem">{data.dataHygraph.dashboard.chartRiverOcean.buttons[2]}</a>
-			</details>
-
-		</div>
+	<!-- DETAILS: show more info -->
+	<section>
+		<details aria-label="more-info-ocean-cleanup" class="more-info-systems">
+			<summary>{data.dataHygraph.dashboard.chartRiverOcean.buttons[0]}</summary>
+			<p>{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[0]}</p>
+			<p>{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[1]}</p>
+			<a href="interceptor?id=100">{data.dataHygraph.dashboard.chartRiverOcean.buttons[1]}</a>
+		</details>
 	</section>
 
-	<section class="wrapper-river-trash-removed">
-		<a href="/interceptor?id=100"><SvgPlasticBottle /></a>
+	<!-- SVG 2X BOTTLE  -->
+	<div class="wrapper-graph-ocean-river">
 
-		<div>
-			<h3>{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[6]} {new Intl.NumberFormat().format(data.dataApi.totals.ocean_river_ratio.percent_river)}%</h3>
-			<!-- {percentage} -->
+		<section class="wrapper-ocean-trash-removed">
+			<a href="/oceanSystem"><SvgPlasticBottle /></a>
 
-			<details class="more-info-river">
-				<summary>{data.dataHygraph.dashboard.chartRiverOcean.buttons[0]}</summary>
-				<p>
-					{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[2]} 
-					{new Intl.NumberFormat().format(data.dataApi.totals.debris_extracted_total)} 
-					{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[7]} 
-					{new Intl.NumberFormat().format(totalTrashKgRiver)} 
-					{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[4]}
-					{new Intl.NumberFormat().format(data.dataApi.totals.ocean_river_ratio.percent_river)}{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[8]}
-				</p>
-				<a href="/interceptor?id=100"> {data.dataHygraph.dashboard.chartRiverOcean.buttons[3]}</a>
-			</details>
+			<div class="wrapper-more-info-ocean">
+				<h3>{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[2]} {new Intl.NumberFormat().format(data.dataApi.totals.ocean_river_ratio.percent_ocean)}%</h3>
 
-		</div>
-	</section>
-</div>
+				<details class="more-info-ocean">
+					<summary>{data.dataHygraph.dashboard.chartRiverOcean.buttons[0]}</summary>
+					<p>	{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[3]} 
+						{new Intl.NumberFormat().format(data.dataApi.totals.debris_extracted_total)} 
+						{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[4]} </p>
+					<p> {data.dataHygraph.dashboard.chartRiverOcean.moreInfo[5]}
+						{new Intl.NumberFormat().format(data.oceanDataJson.systems[0].debris_extracted_total)} 
+						{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[4]} </p>
+					<p> {data.dataHygraph.dashboard.chartRiverOcean.moreInfo[6]} 
+						{new Intl.NumberFormat().format(data.dataApi.totals.ocean_river_ratio.percent_ocean)}
+						{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[7]}</p>
+					<a href="/oceanSystem">{data.dataHygraph.dashboard.chartRiverOcean.buttons[2]}</a>
+				</details>
+
+			</div>
+		</section>
+
+		<section class="wrapper-river-trash-removed">
+
+			<a href="/interceptor?id=100"><SvgPlasticBottle /></a>
+
+			<div>
+				<h3>{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[8]} {new Intl.NumberFormat().format(data.dataApi.totals.ocean_river_ratio.percent_river)}%</h3>
+
+				<details class="more-info-river">
+					<summary>{data.dataHygraph.dashboard.chartRiverOcean.buttons[0]}</summary>
+					<p>{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[3]} 
+						{new Intl.NumberFormat().format(data.dataApi.totals.debris_extracted_total)} 
+						{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[4]}</p>
+					<p>{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[9]} 
+						{new Intl.NumberFormat().format(totalTrashKgRiver)} 
+						{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[4]}</p>
+					<p> {data.dataHygraph.dashboard.chartRiverOcean.moreInfo[6]} 
+						{new Intl.NumberFormat().format(data.dataApi.totals.ocean_river_ratio.percent_river)}
+						{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[10]}</p>
+					<a href="/interceptor?id=100"> {data.dataHygraph.dashboard.chartRiverOcean.buttons[3]}</a>
+				</details>
+			</div>
+
+		</section>
+
+	</div>
 
 </section>
 
 <style>
 
-.container-chart-river-ocean {
-
-}
 	/* SVG */
 
 	.wrapper-graph-ocean-river {
@@ -109,10 +101,10 @@
 		gap: 2em;
 		align-items: center;
 		justify-content: center;
-		/* padding: 0 0 2em 1em; */
 	}
 
 	/* DETAILS */
+
 	details {
 		cursor: pointer;
 	}
@@ -137,6 +129,7 @@
 		box-shadow: 5px 5px 5px rgb(195, 192, 192);
 		display: flex;
 		flex-direction: column;
+		/* align-items: start; */
 	}
 
 	details > p {
@@ -162,6 +155,14 @@
 		color: var(--accentGray);
 		translate: 0 2px;
 		transition: 0.4s;
+	}
+
+	.wrapper-more-info-ocean {
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		padding-left: 1em;
+		padding-right: 1em;
 	}
 
 	/* SVG ANIMATIONS */
@@ -221,6 +222,7 @@
 		flex-direction: row;
 		gap: 2em;
 		justify-content: space-around;
+		align-items: start;
 	}
 	}
 
