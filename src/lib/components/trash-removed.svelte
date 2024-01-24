@@ -1,6 +1,6 @@
 <script>
-	export let data;
-	export let text;
+	export let data
+	export let text
 </script>
 
 <!-- was box-1 -->

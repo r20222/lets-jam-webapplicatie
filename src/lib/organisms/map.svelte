@@ -13,11 +13,18 @@
 	let map
 
 	onMount(() => {
+		const isDarkMode =
+			window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+
+		const mapStyle = isDarkMode
+			? 'mapbox://styles/mapbox/dark-v11'
+			: 'mapbox://styles/mapbox/light-v11'
+
 		mapboxgl.accessToken =
 			'pk.eyJ1IjoibWNwaGVuZHJpa3MiLCJhIjoiY2xuYWpkajM3MDRvNzJxbzdjbGg1YXc0MiJ9.mRRivdosZVdSXQ9FDd0ZwA'
 		map = new mapboxgl.Map({
 			container: 'map',
-			style: 'mapbox://styles/mapbox/light-v11',
+			style: mapStyle,
 			zoom: 2,
 			center: [-74.5, 40]
 		})

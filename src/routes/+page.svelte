@@ -19,8 +19,7 @@
 
 <Navigation bind:visible={gridWithWithoutNav} data={data.dataHygraph.dashboard.nav} />
 
-<section class="main">
-
+<div class="main">
 	<div
 		class="grid-container {gridWithWithoutNav
 			? 'margin-with-navigation'
@@ -67,7 +66,7 @@
 			<TotalTrashChart {data} />
 		</section>
 	</div>
-</section>
+</div>
 <!-- End main section -->
 
 <!-- Scroll to top button -->

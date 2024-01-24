@@ -2,7 +2,7 @@
 export function initializeMap() {
     return new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/light-v11',
+      style: mapStyle,
       zoom: 8,
       center: JSON.parse(value)
     });
