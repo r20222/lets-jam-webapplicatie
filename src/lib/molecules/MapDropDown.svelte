@@ -55,7 +55,7 @@
 		font-weight: 500;
 		font-size: 1.2rem;
 		background-color: #fff;
-		border: 1.5px solid var(--darkBlue);
+		border: 1.5px solid var(--borderFilterColor);
 		border-radius: 0.5rem;
 		max-height: 435px;
 		overflow: auto;

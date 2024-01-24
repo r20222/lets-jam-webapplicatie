@@ -14,9 +14,11 @@
     --textSize: 1.2rem;
     --iconSize: 2rem;
     --trashRemovedBackground: white;
+    --borderFilterColor: #143653;
 }
 @media (prefers-color-scheme: dark) {
     :root {
+        --borderFilterColor: #143653;
         --darkBlue: #ffffff;
         --trashRemovedBackground: #143653;
         --lightBlue: #5cc8de;

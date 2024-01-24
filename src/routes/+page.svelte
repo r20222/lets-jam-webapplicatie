@@ -44,10 +44,10 @@
 		<Infotext data={data.dataHygraph.dashboard.infotext} />
 
 		<!-- map -->
-		<section class="map">
+		<div class="map">
 			<MapDropDown {data} />
 			<Map {data} />
-		</section>
+		</div>
 
 		<!-- system statuses -->
 		<SystemStatus {data} />
