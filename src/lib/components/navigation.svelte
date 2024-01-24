@@ -253,16 +253,16 @@
 		}
 
 		.button-nav {
-			position: absolute;
+			position: absolute; 
 			display: block;
-			background-color: var(--whiteColor);
+			background-color: var(--borderFilterColor);
 			border: 1.5px solid var(--darkBlue);
 			border-radius: 0.5rem;
 			padding: 0.8rem;
 			bottom: 2rem;
 			left: 2rem;
 			width: fit-content;
-			color: var(--darkBlue);
+			color: var(--buttonText);
 			font-weight: 500;
 			text-transform: uppercase;
 			letter-spacing: 0.05rem;
@@ -271,14 +271,14 @@
 		.btn-show-menu {
 			position: fixed;
 			display: block;
-			background-color: var(--whiteColor);
+			background-color: var(--borderFilterColor);
 			border: 1.5px solid var(--darkBlue);
 			border-radius: 0.5rem;
 			padding: 0.8rem;
 			bottom: 2rem;
 			left: 2rem;
 			width: fit-content;
-			color: var(--darkBlue);
+			color: var(--buttonText);
 			font-weight: 500;
 			text-transform: uppercase;
 			letter-spacing: 0.05rem;
