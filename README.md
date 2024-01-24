@@ -1,15 +1,11 @@
-# Ocean Cleanup Dashboard
-![image](https://github.com/r20222/lets-jam-webapplicatie/assets/112860052/e256be5d-d9ee-4356-a745-a416539139f5)
-![image](https://github.com/r20222/lets-jam-webapplicatie/assets/112860052/6f1f8585-6a8b-4f97-847c-4a35c40b2ad8)
+# The Ocean Cleanup Dashboard
+![The Ocean Cleanup dashboard · 4 52pm · 01-24](https://github.com/r20222/lets-jam-webapplicatie/assets/112860052/6312adf5-f7f0-4068-aa9c-b60bd7611bcf)
 
-## Inhoudsopgave 
 
-## Beschrijving 📖
-
-De Ocean Cleanup is organisatie die als doel heeft de oceaan afvalvrij te maken, dit doen ze onder andere door het plaatsen van interceptors in de oceaan en in de riviermondingen. Deze interceptors vangen het afval op. De Ocean Cleanup wil mensen informeren over wat ze aan het doen zijn. Daarom hebben wij voor de Ocean Cleanup een dashboard gemaakt waarin je allerlei informatie kan vinden over de interceptors. Deze opdracht is gemaakt voor de opleiding Frontend Design & Development aan de HVA.
+## About & Our Project 📖
+The Ocean Cleanup is an organization with the goal of making the ocean plastic-free. They do this by deploying interceptors in the ocean and at river mouths. These interceptors catch plastic waste. The Ocean Cleanup wants to inform people about what they are doing. Therefore, our project was to create a dashboard for The Ocean Cleanup that provides information about these interceptors. This assignment was created for students at the Frontend Design & Development program at HVA.
 
 ## Kenmerken 🛠️
-
 Dit project is gemaakt met de volgende technologiën:
 
 * HTML
@@ -17,8 +13,8 @@ Dit project is gemaakt met de volgende technologiën:
 * JavaScript
 * Svelte
 * Sveltekit
+* HighCharts
 * Node.js
-* Chart.js
 * Mapbox
 * Hygraph
  
