@@ -4,12 +4,12 @@
 </main>
 
 <style>
-    /* Proxima font */
-    @font-face {
-    font-family: 'Proxima';
-    src: url("/ProximaNovaFont.otf") format("opentype") weight("normal");
-    src: url("/Proxima-Nova-Bold.otf") format("opentype") weight("bold");
-    }
+	/* Proxima font */
+	@font-face {
+		font-family: 'Proxima';
+		src: url('/ProximaNovaFont.otf') format('opentype') weight('normal');
+		src: url('/Proxima-Nova-Bold.otf') format('opentype') weight('bold');
+	}
 
 	/* Base */
 	* {
@@ -28,8 +28,5 @@
 		color: var(--textColor);
 		position: relative;
 	}	
-	:focus-visible{
-		border: 1rem solid black;
-		background-color: yellow;
-	}
 </style>
+
