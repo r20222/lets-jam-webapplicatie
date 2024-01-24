@@ -5,8 +5,8 @@
 ## About & Our Project 📖
 The Ocean Cleanup is an organization with the goal of making the ocean plastic-free. They do this by deploying interceptors in the ocean and at river mouths. These interceptors catch plastic waste. The Ocean Cleanup wants to inform people about what they are doing. Therefore, our project was to create a dashboard for The Ocean Cleanup that provides information about these interceptors. This assignment was created for students at the Frontend Design & Development program at HVA.
 
-## Kenmerken 🛠️
-Dit project is gemaakt met de volgende technologiën:
+## Languages, Frameworks & Tools 🛠️
+Our project is build with the following technologies tools and tech stack:
 
 * HTML
 * CSS
@@ -18,16 +18,28 @@ Dit project is gemaakt met de volgende technologiën:
 * Mapbox
 * Hygraph
  
-## Installatie 🎛️
+## Instalation 🎛️
+>  Clone this repository to your code editor.
 
-1. Clone deze repository naar je code editor.
-2. npm install
-3. npm install graphql-request graphql
-4. npm install chart.js
-5. npm install mapbox
-6. npm install mapbox-gl
+>  Open the terminal and use the following commands.
+
+```
+npm install
+```
+```
+npm install graphql-request graphql
+```
+```
+npm install chart.js
+```
+```
+npm install mapbox
+```
+```
+npm install mapbox-gl
+```
    
-## Gebruik 💻
+## The use of this dashboard 💻
 
 Dit dashboard is bedoeld voor iedereen die interesse heeft in de Ocean Cleanup en kan gebruikt worden om informatie in te zien over de interceptors, zoals bijvoorbeeld hoeveel afval een interceptor uit het water heeft gehaald.
 
