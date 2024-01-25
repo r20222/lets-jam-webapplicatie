@@ -2,7 +2,6 @@
 	import Navigation from '../lib/components/navigation.svelte'
 	import Infotext from '../lib/components/info-text.svelte'
 	import TrashRemoved from '../lib/components/trash-removed.svelte'
-	import TrashChart from '../lib/components/trash-chart.svelte'
 	import TotalTrashChart from '../lib/components/total-trash-chart.svelte'
 
 	import ChartContinents from '../lib/components/chart-continents.svelte'
