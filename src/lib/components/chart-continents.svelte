@@ -1,8 +1,8 @@
 <script>
-	export let data;
+	export let data
 </script>
 
-<section class="continents-graph-container">
+<div class="continents-graph-container">
 	<section>
 		<details aria-label="more-info-ocean-cleanup" class="more-info-continents">
 			<summary>{data.dataHygraph.dashboard.chartContinent.buttons[0]}</summary>
@@ -26,55 +26,55 @@
 		<ul class="continents-key">
 			<li class="key-item">
 				<details>
-					<summary class="continent-summary"><div class="key-item-asia" />{data.dataHygraph.dashboard.chartContinent.buttons[1]}</summary>
+					<summary class="continent-summary"><span class="key-item-asia" />{data.dataHygraph.dashboard.chartContinent.buttons[1]}</summary>
 					<p>{data.dataApi.totals.world_ratio.asia}{data.dataHygraph.dashboard.chartContinent.moreInfo[1]}</p>
 				</details>
 			</li>
 
 			<li class="key-item">
 				<details>
-					<summary class="continent-summary"><div class="key-item-africa" />{data.dataHygraph.dashboard.chartContinent.buttons[2]}</summary>
+					<summary class="continent-summary"><span class="key-item-africa" />{data.dataHygraph.dashboard.chartContinent.buttons[2]}</summary>
 					<p>{data.dataApi.totals.world_ratio.africa}{data.dataHygraph.dashboard.chartContinent.moreInfo[2]}</p>
 				</details>
 			</li>
 
 			<li class="key-item">
 				<details>
-					<summary class="continent-summary"><div class="key-item-north-america" />{data.dataHygraph.dashboard.chartContinent.buttons[3]}</summary>
+					<summary class="continent-summary"><span class="key-item-north-america" />{data.dataHygraph.dashboard.chartContinent.buttons[3]}</summary>
 					<p>{data.dataApi.totals.world_ratio.north_america}{data.dataHygraph.dashboard.chartContinent.moreInfo[3]}</p>
 				</details>
 			</li>
 
 			<li class="key-item">
 				<details>
-					<summary class="continent-summary"><div class="key-item-south-america" />{data.dataHygraph.dashboard.chartContinent.buttons[4]}</summary>
+					<summary class="continent-summary"><span class="key-item-south-america" />{data.dataHygraph.dashboard.chartContinent.buttons[4]}</summary>
 					<p>{data.dataApi.totals.world_ratio.south_america}{data.dataHygraph.dashboard.chartContinent.moreInfo[4]}</p>
 				</details>
 			</li>
 
 			<li class="key-item">
 				<details>
-					<summary class="continent-summary"><div class="key-item-europe" />{data.dataHygraph.dashboard.chartContinent.buttons[5]}</summary>
+					<summary class="continent-summary"><span class="key-item-europe" />{data.dataHygraph.dashboard.chartContinent.buttons[5]}</summary>
 					<p>{data.dataApi.totals.world_ratio.europe}{data.dataHygraph.dashboard.chartContinent.moreInfo[5]}</p>
 				</details>
 			</li>
 
 			<li class="key-item">
 				<details>
-					<summary class="continent-summary"><div class="key-item-antarctica" />{data.dataHygraph.dashboard.chartContinent.buttons[6]}</summary>
+					<summary class="continent-summary"><span class="key-item-antarctica" />{data.dataHygraph.dashboard.chartContinent.buttons[6]}</summary>
 					<p>{data.dataApi.totals.world_ratio.antarctica}{data.dataHygraph.dashboard.chartContinent.moreInfo[6]}</p>
 				</details>
 			</li>
 
 			<li class="key-item">
 				<details>
-					<summary class="continent-summary"><div class="key-item-oceania" />{data.dataHygraph.dashboard.chartContinent.buttons[7]}</summary>
+					<summary class="continent-summary"><span class="key-item-oceania" />{data.dataHygraph.dashboard.chartContinent.buttons[7]}</summary>
 					<p>{data.dataApi.totals.world_ratio.oceania}{data.dataHygraph.dashboard.chartContinent.moreInfo[7]}</p>
 				</details>
 			</li>
 		</ul>
 	</div>
-</section>
+</div>
 
 <style>
 	.wrapper-continents {

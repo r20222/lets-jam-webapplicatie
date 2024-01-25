@@ -54,11 +54,11 @@
 		data={data.currentInterceptor[0]}
 		text={data.currentInterceptorHygraph[0].riverStartDate}
 	/>
-	<Image data={data.currentInterceptorHygraph[0].riverImage} />
 	<div class="map">
 		<MapDropDown {data} />
 		<Map {data} />
 	</div>
+	<Image data={data.currentInterceptorHygraph[0].riverImage} />
 </section>
 
 <!-- Scroll to top button -->

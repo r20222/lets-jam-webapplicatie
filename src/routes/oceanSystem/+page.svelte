@@ -58,11 +58,11 @@
 		text={data.dataHygraph.dashboard.ocean.oceanStartDate}
 	/>
 	<LastPortCall {data} />
-	<Image data={data.dataHygraph.dashboard.ocean.oceanImage} />
 	<div class="map">
 		<MapDropDown {data} />
 		<Map {data} />
 	</div>
+	<Image data={data.dataHygraph.dashboard.ocean.oceanImage} />
 </section>
 
 <!-- Scroll to top button -->
