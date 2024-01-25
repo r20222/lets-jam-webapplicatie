@@ -1,5 +1,9 @@
 // mapUtils.js
 export function initializeMap() {
+    const queryString = window.location.search;
+    const parameters = new URLSearchParams(queryString);
+    const value = parameters.get('coordinates');
+
     return new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/light-v11',
