@@ -33,7 +33,7 @@
 	<div class="wrapper-graph-ocean-river">
 
 		<section class="wrapper-ocean-trash-removed">
-			<a href="/oceanSystem" aria-label="Read more about the ocean system"><SvgPlasticBottle /></a>
+			<a href="/oceanSystem" target="_self" aria-label="Read more about the ocean system"><SvgPlasticBottle /></a>
 
 			<div class="wrapper-more-info-ocean">
 				<h3>{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[2]} {new Intl.NumberFormat().format(data.dataApi.totals.ocean_river_ratio.percent_ocean)}%</h3>
@@ -49,7 +49,7 @@
 					<p> {data.dataHygraph.dashboard.chartRiverOcean.moreInfo[6]} 
 						{new Intl.NumberFormat().format(data.dataApi.totals.ocean_river_ratio.percent_ocean)}
 						{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[7]}</p>
-					<a href="/oceanSystem">{data.dataHygraph.dashboard.chartRiverOcean.buttons[2]}</a>
+					<a href="/oceanSystem" target="_self">{data.dataHygraph.dashboard.chartRiverOcean.buttons[2]}</a>
 				</details>
 
 			</div>
@@ -57,7 +57,7 @@
 
 		<section class="wrapper-river-trash-removed">
 
-			<a href="/interceptor?id=100" aria-label="Read more about the interceptor"><SvgPlasticBottle /></a>
+			<a href="/interceptor?id=100" target="_self" aria-label="Read more about the interceptor"><SvgPlasticBottle /></a>
 
 			<div>
 				<h3>{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[8]} {new Intl.NumberFormat().format(data.dataApi.totals.ocean_river_ratio.percent_river)}%</h3>
@@ -73,7 +73,7 @@
 					<p> {data.dataHygraph.dashboard.chartRiverOcean.moreInfo[6]} 
 						{new Intl.NumberFormat().format(data.dataApi.totals.ocean_river_ratio.percent_river)}
 						{data.dataHygraph.dashboard.chartRiverOcean.moreInfo[10]}</p>
-					<a href="/interceptor?id=100"> {data.dataHygraph.dashboard.chartRiverOcean.buttons[3]}</a>
+					<a href="/interceptor?id=100" target="_self"> {data.dataHygraph.dashboard.chartRiverOcean.buttons[3]}</a>
 				</details>
 			</div>
 

@@ -3,7 +3,7 @@
 	export let href
 </script>
 
-<a {href}>{link}</a>
+<a {href}  target="_self">{link}</a>
 
 <style>
 	a {
